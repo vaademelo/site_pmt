@@ -1,0 +1,67 @@
+extends ../../main-layout/layout.jade
+
+block assets
+  - var assets = "../../assets/"
+  
+block page-title
+  | Corpo Docente | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
+
+block page-name
+  | Equipe
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home"   : home_path, 
+                        "Equipe" : home_path+"equipe",  
+                        "Corpo Docente" : false}
+block page-navigation
+  -
+    navigation = [{ title : "Corpo Docente", link : "#", class : "active" },
+                  { title : "Equipe de apoio", link : home_path+"equipe/apoio/", class : "" }]
+
+block content
+  
+  link(rel="stylesheet" type="text/css" href=assets+"css/equipe.css")
+  
+  .container.content.professors-list
+    
+    include professors-info/professors-info.jade
+    
+    each lecturer in professors 
+      .row.lecturer
+        .col-sm-3.col-lg-2
+          .lecturer-picture
+            img(src=lecturer.picture)
+        .col-sm-9.col-lg-10
+          .lecturer-name
+            a(href=lecturer.page+".html")  
+              | #{lecturer.name}
+          
+          .lecturer-info
+            span.title 
+              | Telefone:
+            span.value  
+              | #{lecturer.phone}
+          
+          .lecturer-info
+            span.title 
+              | E-mail: 
+            a(href="mailto:"+lecturer.email)  
+              span.value  
+                | #{lecturer.email}
+          
+          .lecturer-info
+            span.title 
+              | Professor(a):
+            span.value  
+              | #{lecturer.category}
+              
+              
+          .lecturer-info.research-area
+            span.title 
+              | Áreas de Pesquisa:
+            each area in lecturer.research
+              span.value  
+                | #{area}
+              span.comma
+                | ,

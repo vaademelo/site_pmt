@@ -1,0 +1,12 @@
+.breadcrumbs  
+  block breadcrumbs-path
+    - var breadcrumbs_path = {"Path1" : "#", "Path2" : "#", "Path3" : "#", "Path4" : false}
+  each link, path_name in breadcrumbs_path
+    if link
+      a(href=link)
+        span.path
+          | #{path_name}
+      span(class="breadcrumb-divider glyphicon glyphicon-menu-right" aria-hidden="true")
+    else
+      span.current-path
+        | #{path_name}

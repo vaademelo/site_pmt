@@ -1,0 +1,8 @@
+!.keep
+*.DS_Store
+/.env
+/log/*
+/tmp/*
+.sass-cache
+deploy
+node_modules

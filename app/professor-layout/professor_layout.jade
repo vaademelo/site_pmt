@@ -1,0 +1,143 @@
+extends ../main-layout/layout.jade
+
+block page-title
+  | Professor
+
+block page-name
+  | Equipe
+  
+block page-navigation
+  - var navigation = { "Corpo Docente" : "#", "Equipe de Apoio" : "#" } 
+  
+block content
+  block lecturer-info
+    -
+      lecturer = { picture_path : "assets/img/professores/profAndrePauloTschiptschin.jpg", 
+                   phone : "Telefone",
+                   email : "Email",
+                   laboratory : { name: "Nome Laboratório", link: "#" },
+                   lattes: "Link Lattes" } 
+    -
+      education_background = [{ year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: false },
+                              { year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: false },
+                              { year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: "#" }]   
+    
+    -
+      undergraduation_module = [{ name : "Nome da Disciplina", link : "#" },
+                                { name : "Nome da Disciplina", link : "#" },
+                                { name : "Nome da Disciplina", link : "#" }]
+    -
+      graduation_module = [{ name : "Nome da Disciplina", link : "#" },
+                           { name : "Nome da Disciplina", link : "#" },
+                           { name : "Nome da Disciplina", link : "#" }]
+                           
+    -
+      research_areas = ["Área1","Área2","Área3"]
+      
+    -
+      consultings = ["Consultoria1","Consultoria2"]
+
+  link(rel="stylesheet" href=assets+"css/professor_layout.css")
+  
+  .row.session.general-info
+    .col-sm-3
+      img(alt="Imagem do Professor" src=lecturer.picture_path)
+      
+    .col-sm-9
+      h2.lecturer-name
+        | Nome do Professor
+      
+      .lecturer-info
+        span.title 
+          | Telefone:
+        span.value  
+          | #{lecturer.phone}
+      
+      .lecturer-info
+        span.title 
+          | E-mail:
+        span.value  
+          | #{lecturer.email}
+      
+      .lecturer-info
+        span.title 
+          | Laboratório: 
+        a(href=lecturer.laboratory.link)
+          span.value  
+            | #{lecturer.laboratory.name}
+      
+      .lecturer-info
+        span.title 
+          | Lattes:
+        a(href=lecturer.lattes target="_blank")
+          span.value  
+            | #{lecturer.lattes}
+          span(class="external-link glyphicon glyphicon-new-window")  
+
+  .row.session.education_background
+    .col-md-12
+      
+      h3.session-title
+        | Formação Acadêmica
+      
+      each info in education_background
+        .row
+          .col-xs-2.year
+            span
+              | #{info.year}
+          .col-xs-10.info
+            p.title
+              | #{info.title}
+            p.university
+              if info.link_university
+                a(href=info.link_university target="_blank")
+                  | #{info.university}
+                  span(class="external-link glyphicon glyphicon-new-window")  
+              else
+                | #{info.university}
+
+  .row.session.modules
+    .col-md-12
+      h3.session-title
+        | Disciplinas Ministradas no Departamento
+        
+      h4.session-subtitle
+        | Graduação
+      
+      ul
+        each module in undergraduation_module
+          li 
+            a(href=module.link)
+              | #{module.name}
+
+      h4.session-subtitle
+        | Pós-Graduação
+
+      ul
+        each module in graduation_module
+          li 
+            a(href=module.link)
+              | #{module.name}
+        
+  .row.session.research
+    .col-md-12
+      h3.session-title
+        | Linhas de Pesquisa e Consultorias
+        
+      h4.session-subtitle
+        | Linhas de Pesquisa
+      
+      ul
+        each area in research_areas
+          li 
+            | #{area}
+
+      h4.session-subtitle
+        | Consultorias
+
+      ul
+        each consulting in consultings
+          li 
+            | #{consulting}
+        
+      

@@ -1,0 +1,136 @@
+@import '../shared/colors'
+@import '../shared/fonts'
+@import '../shared/breakpoints'
+
+@import 'includes/sass/banner'
+@import 'includes/sass/breadcrumbs'
+@import 'includes/sass/dark_header'
+
+body
+  background: #fafafa
+
+a,a:active,a:visited
+  color: $link
+  text-decoration: none
+
+a:hover
+  color: $link_hover
+  text-decoration: underline
+
+.page-info
+  border-bottom: 1px solid #bbbbbb
+
+  .page-name
+    display: inline-block
+    font-family: 'Open Sans Condensed', sans-serif
+    font-weight: 700
+    color: $light_gray
+
+  .expand-menu
+    text-align: center
+    margin-top: 20px
+    display: none
+
+  .page-menu
+    display: inline-block
+    float: right
+    padding: 0px
+    list-style: none
+    margin-top: 35px
+    margin-bottom: 0px
+
+    li
+      float: left
+      font-family: 'PT Sans Narrow', sans-serif
+      font-weight: 300
+      font-size: 14px
+      margin-left: 10px
+      padding: 0px 5px 10px 5px
+      font-size: 16px
+
+.social-networks
+  margin-top: 15px
+
+  ul
+    list-style: none
+    padding: 0px
+
+    li
+      display: inline-block
+      float:left
+      margin-right: 10px
+      margin-bottom: 15px
+
+      .fb-share-button
+        position: relative
+        top: -5px
+.session
+  border-bottom: 1px solid #bbb
+  padding-bottom: 50px
+  padding-top: 50px
+  margin-left: 0px
+  margin-right: 0px
+
+.session-title
+  font-family: 'Open Sans Condensed', sans-serif
+  font-weight: 700
+  font-size: 25px
+  margin: 0px 0px 20px 0px
+
+.session-subtitle
+  font-weight: 700
+  font-size: 15px
+  margin-top: 20px
+
+@media (max-width: $breakpoint-mobile)
+  .breadcrumbs
+    display: none
+  .page-name
+    display: block !important
+
+  .expand-menu
+    display: block !important
+
+  .arrow-down
+    transition: all .3s ease-in-out
+
+  .expand-menu:hover
+    .arrow-down
+      transform: rotate(180deg)
+      -ms-transform: rotate(180deg)
+      -webkit-transform: rotate(180deg)
+    .page-menu
+      display: block !important
+
+  .page-menu
+    display: none !important
+    width: 100%
+    padding-left: 20px !important
+    padding-right: 20px !important
+    padding-bottom: 10px !important
+    float: none !important
+    margin: 0px !important
+
+
+    li
+      clear: both
+      float: none !important
+      display: block
+      width: 100%
+      text-align: left
+      border-bottom: 1px solid #ddd
+      padding-top: 10px !important
+      padding-bottom: 10px !important
+      text-transform: none !important
+      margin: 0px !important
+
+      a
+        color: #333
+
+  .page-menu
+    li:last-child
+      border-bottom: 1px solid transparent !important
+      margin-bottom: 20px
+
+  .social-networks
+    margin-top: 30px

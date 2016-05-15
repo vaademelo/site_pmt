@@ -1,0 +1,108 @@
+doctype html
+html(lang="pt-br")
+  head
+    title
+      block page-title 
+        | Departamento de Engenhaia Metalúrgica e de Materiais
+    meta(http-equiv="content-type", name="viewport", content="width=device-width, initial-scale=1, charset=UTF-8")
+    - var home_path = "../../"
+    block assets
+      - var assets = "../assets/"
+      
+    link(rel="stylesheet" type="text/css" href=assets+"bootstrap/css/bootstrap.min.css")
+    link(rel="stylesheet" href=assets+"iconpack/flaticon.css")
+    link(rel="stylesheet" href=assets+"css/layout.css")
+    
+    link(rel="canonical" href="https://dev.twitter.com/web/tweet-button")
+    
+    script(src=assets+"js/jquery-1.11.3.min.js")
+    script(src=assets+"bootstrap/js/bootstrap.min.js")
+  body
+    //- Google Plus share button
+    <!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
+    script(src="https://apis.google.com/js/platform.js" async defer)
+      {lang: 'pt-BR'}
+  
+    //- facebook share button script
+    div(id="fb-root")
+    script.
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    
+    //- Linkedin share button script
+    script(src="//platform.linkedin.com/in.js" type="text/javascript")
+      lang: pt_BR
+      
+    //- Twitter share button script
+    script.
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+       
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+       
+        return t;
+      }(document, "script", "twitter-wjs"));
+
+        
+    include includes/dark_header.jade
+    
+    include includes/banner.jade
+    .container
+      include includes/breadcrumbs.jade
+      
+      .page-info
+        h1.page-name
+          block page-name
+            | Título da Página
+        
+        block page-navigation
+          -
+            navigation = [{ title : "Page1", link : "#", class : "active" },
+                          { title : "Page2", link : "#", class : "" },
+                          { title : "Page2", link : "#", class : "" }]
+          
+        div.expand-menu
+          span(class="arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
+          ul.page-menu
+            each page in navigation
+              li(class=page.class)
+                a(href=page.link)
+                  | #{page.title}
+          
+        ul.page-menu
+          each page in navigation
+            li(class=page.class)
+              a(href=page.link)
+                | #{page.title}
+                
+      .row.social-networks
+        .col-xs-12
+          ul
+            li
+              div(class="fb-share-button" data-href="http://www.pmt.usp.br" data-layout="button_count" data-mobile-iframe="true")
+            li
+              script(type="IN/Share" data-url="www.pmt.usp.br" data-counter="right")  
+            li
+              a(class="twitter-share-button" href="https://twitter.com/intent/tweet")
+                | Tweet
+            li
+              div(class="g-plus" data-action="share" data-annotation="bubble")
+        
+      block content
+        
+          
+            

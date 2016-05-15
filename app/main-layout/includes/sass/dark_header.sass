@@ -1,0 +1,144 @@
+.department-name
+
+  background-color: #fff
+  font-family: 'Josefin Sans', serif
+  font-weight: 400
+  font-size: 12px
+  text-transform: uppercase
+  text-align: center
+
+  a,a:focus,a:active
+    color: #333
+    text-decoration: none
+    border-bottom: 1px dotted #333
+    transition: all .2s ease-in-out
+
+  a:hover
+    color: #999
+    text-decoration: none
+    border-bottom: 1px dotted #333
+
+  p
+    padding-top: 13px
+
+  .poli-shorten
+    display: none
+
+
+.header-dark
+  background: $dark_background
+  height: 66px
+  position: relative
+  z-index: 1
+
+  .header-logo
+    display: inline-block
+
+    img
+      height: 66px
+      padding-top: calc((66px - 42px)/2)
+      padding-bottom: calc((66px - 42px)/2)
+
+  .header-menu,.header-mobile-menu
+    display: inline-block
+    height: 66px
+    float: right
+
+    a
+      color: #fff
+      transition: all .2s ease-in-out
+
+    a:hover
+      text-decoration: none
+
+    >ul
+      height: 100%
+      margin: 0
+
+    ul
+      padding: 0
+
+      li
+        list-style: none
+
+      .level-1-menu.not-expandable
+        padding-bottom: 20px
+
+      .level-1-menu.not-expandable:hover
+        border-bottom: 3px solid #fff
+
+      .level-1-menu
+        float: left
+        overflow-y: hidden
+        font-family: 'PT Sans Narrow', serif
+        letter-spacing: 0.42px
+        margin-left: 20px
+        color: #fff
+        font-size: 15px
+        padding-top: 25px
+        padding-bottom: 20px
+        -webkit-font-smoothing: antialiased
+
+        .arrow-down
+          font-size: 10px
+          margin-left: 3px
+          transition: all .3s ease-in-out
+
+        ul
+          position: absolute
+          margin-top: 20px
+          display: none
+
+      .level-1-menu:hover .arrow-down
+        transform: rotate(180deg)
+        -ms-transform: rotate(180deg)
+        -webkit-transform: rotate(180deg)
+
+      .level-1-menu:hover ul,.level-1-menu:active ul
+        display: block
+
+      .level-2-menu
+        position: relative
+        background: $dark_background
+        padding: 10px 60px 10px 20px
+        left: -20px
+
+        a:hover
+          color: #999
+
+  .header-mobile-menu
+    display: none
+
+@media (max-width: $breakpoint-tablet)
+  .department-name
+
+    .poli
+      display: none
+
+    .poli-shorten
+      display: inline
+
+  .header-dark
+
+    .header-logo img
+      padding-left: 0px
+
+    .header-menu
+      .level-1-menu
+        display: none
+
+    .header-mobile-menu
+      height: 66px
+      float: right
+      display: inline
+
+      .level-1-menu
+        padding-top: 17px !important
+
+        ul
+          width: 100%
+          padding: 0px
+          left: 0px
+
+          li
+            padding: 15px 15px
