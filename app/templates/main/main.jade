@@ -11,7 +11,11 @@ html(lang="pt-br")
       
     link(rel="stylesheet" type="text/css" href=assets+"bootstrap/css/bootstrap.min.css")
     link(rel="stylesheet" href=assets+"iconpack/flaticon.css")
-    link(rel="stylesheet" href=assets+"css/layout.css")
+    
+    block stylesheet
+      - var stylesheet = ""
+    
+    link(rel="stylesheet" href=assets+stylesheet)
     
     link(rel="canonical" href="https://dev.twitter.com/web/tweet-button")
     

@@ -1,4 +1,4 @@
-extends ../../main-layout/layout.jade
+extends ../../templates/main/main.jade
 
 block assets
   - var assets = "../../assets/"
@@ -25,7 +25,7 @@ block content
   
   .container.content.professors-list
     
-    include professors-info/professors-info.jade
+    include _professores-info/professores-info.jade
     
     each lecturer in professors 
       .row.lecturer
