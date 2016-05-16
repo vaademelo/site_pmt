@@ -5,7 +5,9 @@ html(lang="pt-br")
       block page-title 
         | Departamento de Engenhaia Metalúrgica e de Materiais
     meta(http-equiv="content-type", name="viewport", content="width=device-width, initial-scale=1, charset=UTF-8")
-    - var home_path = "../../"
+    block home
+      - var home_path = "../../"
+      
     block assets
       - var assets = "../assets/"
       
@@ -15,7 +17,7 @@ html(lang="pt-br")
     block stylesheet
       - var stylesheet = ""
     
-    link(rel="stylesheet" href=assets+stylesheet)
+    link(rel="stylesheet" href=assets+"css/"+stylesheet)
     
     link(rel="canonical" href="https://dev.twitter.com/web/tweet-button")
     
@@ -24,7 +26,7 @@ html(lang="pt-br")
   body
     //- Google Plus share button
     <!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
-    script(src="https://apis.google.com/js/platform.js" async defer)
+    script(src="https://apis.google.com/js/platform.js" async defer).
       {lang: 'pt-BR'}
   
     //- facebook share button script

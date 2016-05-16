@@ -3,6 +3,9 @@ extends ../../templates/main/main.jade
 block assets
   - var assets = "../../assets/"
   
+block stylesheet
+  - var stylesheet = "equipe_docentes.min.css"
+  
 block page-title
   | Corpo Docente | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
 
@@ -20,48 +23,50 @@ block page-navigation
                   { title : "Equipe de apoio", link : home_path+"equipe/apoio/", class : "" }]
 
 block content
+
+  .equipe-docentes
   
-  link(rel="stylesheet" type="text/css" href=assets+"css/equipe.css")
-  
-  .container.content.professors-list
+    link(rel="stylesheet" type="text/css" href=assets+"css/equipe.css")
     
-    include _professores-info/professores-info.jade
-    
-    each lecturer in professors 
-      .row.lecturer
-        .col-sm-3.col-lg-2
-          .lecturer-picture
-            img(src=lecturer.picture)
-        .col-sm-9.col-lg-10
-          .lecturer-name
-            a(href=lecturer.page+".html")  
-              | #{lecturer.name}
-          
-          .lecturer-info
-            span.title 
-              | Telefone:
-            span.value  
-              | #{lecturer.phone}
-          
-          .lecturer-info
-            span.title 
-              | E-mail: 
-            a(href="mailto:"+lecturer.email)  
-              span.value  
-                | #{lecturer.email}
-          
-          .lecturer-info
-            span.title 
-              | Professor(a):
-            span.value  
-              | #{lecturer.category}
-              
-              
-          .lecturer-info.research-area
-            span.title 
-              | Áreas de Pesquisa:
-            each area in lecturer.research
-              span.value  
-                | #{area}
-              span.comma
-                | ,
+    .container.content.professors-list
+      
+      include _professores-info/professores-info.jade
+      
+      each professor in professors 
+        .row.professor
+          .col-sm-3.col-lg-2
+            .professor-picture
+              img(src=professor.picture)
+          .col-sm-9.col-lg-10
+            .professor-name
+              a(href=professor.page+"index.html")  
+                | #{professor.name}
+            
+            .professor-info
+              span.field-title 
+                | Telefone: 
+              span.field-body
+                | #{professor.phone}
+            
+            .professor-info
+              span.field-title 
+                | E-mail: 
+              a(href="mailto:"+professor.email)  
+                span.field-body
+                  | #{professor.email}
+            
+            .professor-info
+              span.field-title 
+                | Professor(a): 
+              span.field-body
+                | #{professor.category}
+                
+                
+            .professor-info.research-area
+              span.field-title 
+                | Áreas de Pesquisa: 
+              each area in professor.research
+                span.field-body
+                  | #{area}
+                span.comma
+                  | , 

@@ -1,4 +1,4 @@
-.content
+.equipe-docentes-professor
   font-family: 'PT Sans', sans-serif
   font-size: 15px
 
@@ -8,28 +8,27 @@
   .external-link
     font-size: 10px
     padding-left: 5px
+  
+  .session:last-child
+    border-bottom: 0px
+  
+  .professor-general-info
+    
+    .professor-picture
+      img
+        width: 100%
 
-  .general-info
-    img
-      width: 100%
-
-    .lecturer-name
+    .professor-name
       font-family: 'Open Sans Condensed', sans-serif
       font-weight: 700
       font-size: 30px
 
-    .lecturer-info
+    .info-row
       margin-bottom: 5px
-      .title
-        font-weight: 700
       
-
-  .education_background
+  .professor-academic-background
     .year
       text-align: right
-
-      span
-        font-weight: 700
 
     .info
       border-left: 1px solid #bbb
@@ -41,3 +40,19 @@
 
       .university
         margin-bottom: 0px
+        
+@media (max-width: $breakpoint-mobile)
+  .equipe-docentes-professor
+  
+    .professor-general-info
+       
+      .professor-picture
+        text-align: center
+        
+        img
+          width: 60% 
+          margin-bottom: 20px
+    
+    .professor-academic-background
+      .year
+        text-align: left

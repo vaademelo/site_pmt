@@ -1,0 +1,54 @@
+extends ../../../templates/docentes/professor/professor.jade
+
+block assets
+  - var assets = "../../../assets/" 
+
+block stylesheet
+  - var stylesheet = "equipe_docentes_professor.min.css" 
+  
+block page-title
+  | André Paulo Tschiptschin | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
+
+block page-name
+  | Equipe
+  
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home"   : home_path, 
+                        "Equipe" : home_path+"equipe/index.html",  
+                        "Corpo Docente" : home_path+"equipe/docentes/index.html",
+                        "Samuel Marcio Toffoli" : false}
+block page-navigation
+  -
+    navigation = [{ title : "Corpo Docente", link : "#", class : "active" },
+                  { title : "Equipe de apoio", link : home_path+"equipe/apoio/", class : "" }]
+
+  
+block professor-info
+  
+  - var name = "Samuel Marcio Toffoli"
+  
+  include ../_professores-info/professores-info.jade
+  
+  each professorInfo in professors
+    if professorInfo.name == name
+   
+      -
+        professor = { name: professorInfo.name,
+                      picture_path : professorInfo.picture, 
+                      phone : professorInfo.phone,
+                      email : professorInfo.email,
+                      category : professorInfo.category,
+                      laboratory : professorInfo.laboratory,
+                      lattes: professorInfo.lattes } 
+      -
+        education_background = professorInfo.academic_backgroud   
+      -
+        undergraduation_module = professorInfo.modules.undergraduation
+      -
+        graduation_module = professorInfo.modules.graduation                     
+      -
+        research_areas = professorInfo.research
+      -
+        consultings = professorInfo.consultings
+  

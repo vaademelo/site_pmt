@@ -1,0 +1,159 @@
+extends ../../main/main.jade
+
+block page-title
+  | Professor
+
+block page-name
+  | Equipe
+  
+block home
+  - var home_path = "../../../"
+  
+block page-navigation
+  - var navigation = { "Corpo Docente" : "#", "Equipe de Apoio" : "#" } 
+
+block content
+  
+  .equipe-docentes-professor
+  
+    block professor-info
+      -
+        professor = {name = "Nome", 
+                    picture_path : "assets/img/professores/profAndrePauloTschiptschin.jpg", 
+                    phone : "Telefone",
+                    email : "Email",
+                    category : "Categoria",
+                    laboratory : { name: "Nome Laboratório", link: "#" },
+                    lattes: "Link Lattes" } 
+      -
+        education_background = [{ year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: false },
+                                { year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: false },
+                                { year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: "#" }]   
+      
+      -
+        undergraduation_module = [{ name : "Nome da Disciplina", link : "#" },
+                                  { name : "Nome da Disciplina", link : "#" },
+                                  { name : "Nome da Disciplina", link : "#" }]
+      -
+        graduation_module = [{ name : "Nome da Disciplina", link : "#" },
+                            { name : "Nome da Disciplina", link : "#" },
+                            { name : "Nome da Disciplina", link : "#" }]
+                            
+      -
+        research_areas = ["Área1","Área2","Área3"]
+        
+      -
+        consultings = ["Consultoria1","Consultoria2"]
+  
+    .row.session.professor-general-info
+      .col-sm-3.professor-picture
+        img(alt="Imagem do Professor" src=professor.picture_path)
+        
+      .col-sm-9
+        h2.session-title.professor-name
+          | #{professor.name}
+        
+        .info-row
+          span.field-title 
+            | Telefone: 
+          span.field-body  
+            | #{professor.phone}
+        
+        .info-row
+          span.field-title 
+            | E-mail:
+          a(href="mailto:"+professor.email target="_blank")
+            span.field-body  
+              | #{professor.email}
+        
+        if professor.laboratory
+          .info-row
+            span.field-title 
+              | Laboratório: 
+            a(href=professor.laboratory.link)
+              span.field-body  
+                | #{professor.laboratory.name}
+              
+        .info-row
+          span.field-title 
+            | Professor(a):           
+          span.field-body  
+            | #{professor.category}      
+        
+        .info-row
+          span.field-title 
+            | Lattes:
+          a(href=professor.lattes target="_blank")
+            span.field-body  
+              | #{professor.lattes}
+            span(class="external-link glyphicon glyphicon-new-window")  
+
+    .row.session.professor-academic-background
+      .col-md-12
+        
+        h3.session-title
+          | Formação Acadêmica
+        
+        each info in education_background
+          .row
+            .col-sm-2.year.field-title
+              span
+                | #{info.year}
+                
+            .col-sm-10.info
+              p.title.field-title
+                | #{info.title}
+                
+              p.field-body.university
+                if info.link
+                  a(href=info.link target="_blank")
+                    | #{info.university}
+                    span(class="external-link glyphicon glyphicon-new-window")  
+                else
+                  | #{info.university}
+
+    .row.session.professor-modules
+      .col-md-12
+        h3.session-title
+          | Disciplinas Ministradas no Departamento
+          
+        h4.session-subtitle
+          | Graduação
+        
+        ul
+          each module in undergraduation_module
+            li 
+              a(href=module.link)
+                | #{module.name}
+
+        h4.session-subtitle
+          | Pós-Graduação
+
+        ul
+          each module in graduation_module
+            li 
+              a(href=module.link)
+                | #{module.name}
+          
+    .row.session.research
+      .col-md-12
+        h3.session-title
+          | Linhas de Pesquisa e Consultorias
+          
+        h4.session-subtitle
+          | Linhas de Pesquisa
+        
+        ul
+          each area in research_areas
+            li 
+              | #{area}
+
+        h4.session-subtitle
+          | Consultorias
+
+        ul
+          each consulting in consultings
+            li 
+              | #{consulting}
+          
+        

@@ -25,3 +25,8 @@ gulp.task('sass', function(){
       .pipe(rename({ suffix: ".min" }))
       .pipe(gulp.dest('../deploy/assets/css/'));
 });
+
+gulp.task("watch", function(){
+  gulp.watch("app/**/*.jade", ['templates']);
+  gulp.watch("app/**/*.sass", ['sass']);
+});
