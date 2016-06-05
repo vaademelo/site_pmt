@@ -1,0 +1,53 @@
+extends ../templates/main/main.jade
+
+block home
+  - var home_path = "../"
+
+block assets
+  - var assets = "../assets/"
+  
+block stylesheet
+  - var stylesheet = "graduacao.min.css"
+  
+block page-title
+  | Graduação | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
+
+block page-name
+  | Graduação
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home"   : home_path,
+                        "Graduação" : false }
+block page-navigation
+  -
+    navigation = [{ title : "Programa dos Cursos", link : home_path+"graduacao/programa/index.html", class : "" },  
+                  { title : "Disciplinas e Horários", link : home_path+"graduacao/disciplinas-horarios/index.html", class : "" },
+                  { title : "Calendário Acadêmico", link : home_path+"graduacao/calendario/index.html", class : "" },
+                  { title : "Administração", link : home_path+"graduacao/adminstracao/index.html", class : "" }]
+
+block content
+
+  .graduacao
+    .session
+      p
+        ul
+          li
+            a(href=home_path+"graduacao/programa/index.html")
+              span.field-body  
+                | Programa dos Cursos
+            
+          li
+            a(href=home_path+"graduacao/programa/index.html")
+              span.field-body  
+                | Disciplinas e Horários
+      
+          li
+            a(href=home_path+"graduacao/programa/index.html")
+              span.field-body  
+                | Calendário Acadêmico
+      
+          li
+            a(href=home_path+"graduacao/programa/index.html")
+              span.field-body  
+                | Administração

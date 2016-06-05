@@ -1,0 +1,59 @@
+extends ../../templates/main/main.jade
+
+block home
+  - var home_path = "../../"
+
+block assets
+  - var assets = "../../assets/"
+  
+block stylesheet
+  - var stylesheet = "graduacao-disciplinas-horarios.min.css"
+  
+block page-title
+  | Disciplinas e Horários - Graduação | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
+
+block page-name
+  | Graduação
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home"   : home_path,
+                        "Graduação" : home_path+"graduacao/index.html",
+                        "Disciplinas e Horários" : false}
+block page-navigation
+  -
+    navigation = [{ title : "Programa dos Cursos", link : home_path+"graduacao/programa/index.html", class : "" },  
+                  { title : "Disciplinas e Horários", link : home_path+"graduacao/disciplinas-horarios/index.html", class : "active" },
+                  { title : "Calendário Acadêmico", link : home_path+"graduacao/calendario/index.html", class : "" },
+                  { title : "Administração", link : home_path+"graduacao/administracao/index.html", class : "" }]
+
+block content
+
+  .graduacao-programa
+    .session
+      h1.session-title
+        | Disciplinas e Horários
+      
+      p.session-subtitle
+        | Horário das disciplinas oferecidas pelo PMT
+      p.session-body
+        ul
+          li
+            a(href=assets+"downloads/horarios_2016.pdf" target="_blank")
+              | Download dos horários - 2016
+      
+      p.session-subtitle
+        | Lista de disciplinas oferecidas pelo departamento:
+      p
+        ul
+          li
+            a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3062&codhab=3000&tipo=N" target="_blank")
+              span.field-body  
+                | Graduação
+            span(class="external-link glyphicon glyphicon-new-window")
+          li
+            a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3062&codhab=3000&tipo=N" target="_blank")
+              span.field-body  
+                | Pós-Graduação
+            span(class="external-link glyphicon glyphicon-new-window")
+      
