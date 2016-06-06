@@ -4,14 +4,30 @@
   padding-top: 40px
   margin-bottom: 40px
   margin-top: -61px
+  -webkit-box-shadow: inset 0px 5px 5px -3px rgba(0,0,0,0.3)
+  -moz-box-shadow: inset 0px 5px 5px -3px rgba(0,0,0,0.3)
+  box-shadow: inset 0px 5px 5px -3px rgba(0,0,0,0.3)
 
   .session-title
     display: inline-block
     color: #ffffff
 
+  .more-news-btn
+    margin-top: 2px
+    font-family: "PT Sans"
+    font-size: 16px
+    padding: 0px 5px
+    border: 1px solid #117f89
+    color: #117f89
+    border-radius: 5px
+
+  .more-news-btn:hover
+    background: #117f89
+    color: #ACF0F2
+
   .news-block
     background-color: #ffffff
-    border-bottom: 1px solid #cccccc
+    border-bottom: 2px solid rgba(0,0,0,0.3)
 
     .news-image
       height: 150px
@@ -45,11 +61,13 @@
 
 @media (max-width: $breakpoint-mobile)
   .news-bar
-
-    
+    margin-bottom: 15px
 
     .news-block
       margin-bottom: 30px
 
       .news-image
         display: none
+
+    .news-col:last-child .news-block
+      margin-bottom: 0px

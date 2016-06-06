@@ -1,0 +1,36 @@
+extends ../base.jade
+
+block home
+  - var home_path = "../../"
+  
+block stylesheet
+  - var stylesheet = "pos-graduacao-noticias.min.css"
+  
+block page-title
+  - var page_title = "Notícias - " + page_title
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home"   : home_path,
+                        "Pós-graduação" : home_path+"/pos-graduacao/index.html",
+                        "Notícias" : false}
+
+block content
+  
+  .pos-graduacao-noticias
+    .container
+      
+      include ../_news/news.jade
+      
+      .session-title
+        | Todas as Notícias
+      each item in news.sort(function(a,b){return b.date-a.date})
+        .session
+          .session-subtitle
+            | #{item.title}
+          .news-date.session-body
+            span(class="icon glyphicon glyphicon-time" aria-hidden="true") 
+            = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() + " - "
+          span.session-body
+            = ' '
+            != item.body

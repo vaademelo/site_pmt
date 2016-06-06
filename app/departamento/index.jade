@@ -1,99 +1,88 @@
-extends ../templates/main/main.jade
+extends base.jade
 
 block home
   - var home_path = "../"
-
-block assets
-  - var assets = "../assets/"
   
 block stylesheet
   - var stylesheet = "departamento.min.css"
   
 block page-title
-  | O Departamento | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
-
-block page-name
-  | O Departamento
+  - var page_title = page_title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home"   : home_path, 
+    breadcrumbs_path = {"Home": home_path, 
                         "O Departamento" : false}
-block page-navigation
-  -
-    navigation = [{ title : "Panorama", link : "#departamento-overview", class : "" },  
-                  { title : "Nossa História", link : "#departamento-history", class : "" },
-                  { title : "Missão", link : "#departamento-mission", class : "" },
-                  { title : "Contato", link : "#departamento-contact", class : "" }]
 
 block content
 
   .departamento
-    #departamento-overview.session
-      h1.session-title
-        | Panorama
-      .row
-        .col-md-6
-          img.full-width(src=assets+"img/praca_relogio.jpg")
-        .col-md-6
-          h2.session-subtitle
-            | Universidade de São Paulo
-          p.session-body
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra.
-    .session
-      .row
-        .col-md-6
-          h2.session-subtitle
-            | Escola Politécnica
-          p.session-body
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra.
-        .col-md-6
-          img.full-width(src=assets+"img/bienio.jpg")
-          
-    #departamento-history.session
-      h1.session-title
-        | Nossa História
-      .row
-        .col-md-6
-          img.full-width(src=assets+"img/pmt.jpg")
-        .col-md-6
-          h2.session-subtitle
-            | O PMT
-          p.session-body
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra.
-
-    #departamento-mission.session
-      h1.session-title
-        | Missão
-      p.session-body
-        | A missão do departamento é ser um centro internacional de excelência no ensino, pesquisa e extensão em engenharia metalúrgica e de materiais. Focada na criação de profissionais qualificados e éticos capazes de exercerem atividades técnicas e científicas dentro da sociedade brasileira.
-
-    #departamento-contact.session
-      h1.session-title
-        | Contato
-      .row  
-        .col-md-6
-          iframe.full-width(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.432512515424!2d-46.73069728531061!3d-23.552904867164468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdb372587646a5901!2sDepartamento+de+Engenharia+Metal%C3%BArgica+e+de+Materiais!5e0!3m2!1sen!2sbr!4v1463971653120" height="350" frameborder="0" style="border:0" allowfullscreen)
-        .col-md-6
-          .session-body
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
-            br/
-            br/
-            span.field-title
-              | Endereço:
-            br/
-            | Av. Professor Mello Moraes, 2463
-            br/
-            | CEP: 05508-030
-            br/
-            | São Paulo/SP
-            br/
-            br/
-            span.field-title
-              | Telefone: 
-            | +55 (11) 3091-5235
-            br/
-            span.field-title
-              | Fax: 
-            | +55 (11) 3091-5243
+    .container
+      #departamento-overview.session
+        h1.session-title
+          | Panorama
+        .row
+          .col-md-6
+            img.full-width(src=assets+"img/praca_relogio.jpg")
+          .col-md-6
+            h2.session-subtitle
+              | Universidade de São Paulo
+            p.session-body
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra.
+      .session
+        .row
+          .col-md-6
+            h2.session-subtitle
+              | Escola Politécnica
+            p.session-body
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra.
+          .col-md-6
+            img.full-width(src=assets+"img/bienio.jpg")
             
+      #departamento-history.session
+        h1.session-title
+          | Nossa História
+        .row
+          .col-md-6
+            img.full-width(src=assets+"img/pmt.jpg")
+          .col-md-6
+            h2.session-subtitle
+              | O PMT
+            p.session-body
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra.
+
+      #departamento-mission.session
+        h1.session-title
+          | Missão
+        p.session-body
+          | A missão do departamento é ser um centro internacional de excelência no ensino, pesquisa e extensão em engenharia metalúrgica e de materiais. Focada na criação de profissionais qualificados e éticos capazes de exercerem atividades técnicas e científicas dentro da sociedade brasileira.
+
+      #departamento-contact.session
+        h1.session-title
+          | Contato
+        .row  
+          .col-md-6
+            iframe.full-width(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.432512515424!2d-46.73069728531061!3d-23.552904867164468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdb372587646a5901!2sDepartamento+de+Engenharia+Metal%C3%BArgica+e+de+Materiais!5e0!3m2!1sen!2sbr!4v1463971653120" height="350" frameborder="0" style="border:0" allowfullscreen)
+          .col-md-6
+            .session-body
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
+              br/
+              br/
+              span.field-title
+                | Endereço:
+              br/
+              | Av. Professor Mello Moraes, 2463
+              br/
+              | CEP: 05508-030
+              br/
+              | São Paulo/SP
+              br/
+              br/
+              span.field-title
+                | Telefone: 
+              | +55 (11) 3091-5235
+              br/
+              span.field-title
+                | Fax: 
+              | +55 (11) 3091-5243
+              

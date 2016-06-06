@@ -37,57 +37,20 @@ header
                       
       .header-menu
         ul
-          li.level-1-menu
-            a(href="#") 
-              | O Departamento
-              span(class="arrow-down arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
-            ul
-              li.level-2-menu
-                a(href=home_path+"departamento/index.html#departamento-overview") 
-                  | Panorama
-              li.level-2-menu
-                a(href=home_path+"departamento/index.html#departamento-history") 
-                  | Nossa História
-              li.level-2-menu
-                a(href=home_path+"departamento/index.html#departamento-mission") 
-                  | Missão
-              li.level-2-menu
-                a(href=home_path+"departamento/index.html#departamento-contact") 
-                  | Contato
-          li.level-1-menu
-            a 
-              | Graduação
-              span(class="arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
-            ul
-              li.level-2-menu
-                a(href=home_path+"graduacao/programa/index.html") 
-                  |Programa dos Cursos
-              li.level-2-menu
-                a(href=home_path+"graduacao/disciplinas-horarios/index.html") 
-                  | Disciplinas e Horários
-              li.level-2-menu
-                a(href="#") 
-                  | Calendário Acadêmico
-              li.level-2-menu
-                a(href="#") 
-                  | Administração
-          li.level-1-menu
-            a(href="#") 
-              | Pós-Graduação
-              span(class="arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
-          li.level-1-menu
-            a(href="#") 
-              | Equipe
-              span(class="arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
-            ul
-              li.level-2-menu
-                a(href=home_path+"equipe/docentes/index.html") 
-                  | Corpo Docente
-              li.level-2-menu
-                a(href="#") 
-                  | Equipe de Apoio
-          li.level-1-menu.not-expandable
-            a(href="#") 
-              | Laboratórios
-      
+          each attribute, index in paths
+            = attribute.length
+            if attribute.length > 1
+              li.level-1-menu
+                a(href="")
+                  | #{index}
+                  span(class="arrow-down arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
+                ul
+                  each item in attribute
+                    li.level-2-menu
+                      a(href=home_path + item.relative_path)
+                        | #{item.name}
+            else
+              li.level-1-menu.not-expandable
+                a(href=home_path + attribute[0].relative_path)
+                  | #{index}
             

@@ -1,27 +1,19 @@
-extends ../../templates/main/main.jade
+extends ../base.jade
 
-block assets
-  - var assets = "../../assets/"
+block home
+  - var home_path = "../../"
   
 block stylesheet
   - var stylesheet = "equipe_docentes.min.css"
   
 block page-title
-  | Corpo Docente | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
-
-block page-name
-  | Equipe
+  - var page_title = page_name + page_title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home"   : home_path, 
-                        "Equipe" : home_path+"equipe",  
-                        "Corpo Docente" : false}
-block page-navigation
-  -
-    navigation = [{ title : "Corpo Docente", link : "#", class : "active" },
-                  { title : "Equipe de apoio", link : home_path+"equipe/apoio/", class : "" }]
-
+    breadcrumbs_path = { "Home" : home_path, 
+                         "Equipe" : home_path + "equipe" }
+                         
 block content
 
   .equipe-docentes

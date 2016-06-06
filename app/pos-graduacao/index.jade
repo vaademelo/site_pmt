@@ -1,29 +1,18 @@
-extends ../templates/main/main.jade
+extends base.jade
 
 block home
   - var home_path = "../"
-
-block assets
-  - var assets = "../assets/"
   
 block stylesheet
   - var stylesheet = "pos-graduacao.min.css"
   
 block page-title
-  | Pós-Graduação | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
-
-block page-name
-  | Pós-Graduação
+  - var page_title = page_title
 
 block breadcrumbs-path
   -
     breadcrumbs_path = {"Home"   : home_path,
                         "Pós-graduação" : false}
-block page-navigation
-  -
-    navigation = [{ title : "Sobre o Curso", link : home_path+"pos-graduacao/index.html", class : "" },  
-                  { title : "Administração", link : home_path+"pos-graduacao/administracao/index.html", class : "" },
-                  { title : "Documentos", link : home_path+"pos-graduacao/documentos/index.html", class : "" }]
 
 block content
   
@@ -35,12 +24,13 @@ block content
       .container 
         h1.session-title
           | Notícias
-        span.pull-right
-          | + Notícias
+        a(href=home_path+"pos-graduacao/noticias/index.html")  
+          span.pull-right.more-news-btn
+            | + Notícias
         .row
-          each item, index in news 
+          each item, index in news.sort(function(a,b){return b.date-a.date})
             if index < 4
-              .col-sm-3
+              .col-sm-3.news-col
                 .news-block
                   .news-image(style="background-image: url('../assets/img/news/#{item.image}')")
                   .news-content
@@ -49,7 +39,7 @@ block content
                         | #{item.title}
                       p.news-date 
                         span(class="glyphicon glyphicon-time" aria-hidden="true")
-                        | #{item.date}
+                        = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
                     p.news-body 
                       != item.body
             
@@ -58,18 +48,8 @@ block content
     
     .pos-graduacao
       .row
-        .col-sm-3
-          .sidebar
-            h2.sidebar-title
-              | Documentos & Formulários
             
-            ul
-              each document in documents
-                li.sidebar-body
-                  a(href=document.url target="_blank")
-                    | #{document.title}
-            
-        .col-sm-9
+        .col-sm-9.col-sm-push-3
           .session
             h1.session-title
               | Objetivos (Visão Geral, Evolução e Tendências)
@@ -168,3 +148,13 @@ block content
               defesa o aluno necessita submeter dois trabalho para revista 
               internacional. Os doutorandos deverão ser aprovados em exame de inglês.
           
+        .col-sm-3.col-sm-pull-9
+          .sidebar
+            h2.sidebar-title
+              | Documentos & Formulários
+            
+            ul
+              each document in documents
+                li.sidebar-body
+                  a(href=document.url target="_blank")
+                    | #{document.title}

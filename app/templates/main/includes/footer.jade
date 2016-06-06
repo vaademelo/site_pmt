@@ -1,0 +1,50 @@
+footer
+  .container-fluid.footer
+    .container  
+      .row
+        .col-sm-4
+          h3.footer-title
+            | O Departamento
+          ul  
+            each page in paths["O Departamento"]
+              li 
+                a(href=home_path+page.relative_path)
+                  | #{page.name}
+          
+          h3.footer-title
+            | Equipe
+          ul  
+            each page in paths["Equipe"]
+              li 
+                a(href=home_path+page.relative_path)
+                  | #{page.name}
+        
+        .col-sm-4
+          h3.footer-title
+            | Graduação
+          ul  
+            each page in paths["Graduação"]
+              li 
+                a(href=home_path+page.relative_path)
+                  | #{page.name}
+
+          h3.footer-title
+            | Pós-Graduação
+          ul  
+            each page in paths["Pós-Graduação"]
+              li 
+                a(href=home_path+page.relative_path)
+                  | #{page.name}
+
+        .col-sm-4
+          h3.footer-title
+            | Laboratórios
+          ul  
+            each page in paths["Laboratórios"]
+              li 
+                a(href=home_path+page.relative_path)
+                  | #{page.name}
+      .row
+        .col-sm-12
+          p.copyright
+            != "&copy; " + new Date().getFullYear() + " - Departamento de Engenharia Metalúrgica e de Materiais da Escola Politécnica de Universidade de São Paulo"

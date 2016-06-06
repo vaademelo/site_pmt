@@ -1,6 +1,7 @@
 .pos-graduacao
   ul
     list-style-image: url('../img/bullet.png')
+
   .session-title
     margin-top: 50px
 
@@ -9,3 +10,10 @@
 
   .session-body
     line-height: 24px
+
+@media (max-width: $breakpoint-mobile)
+
+.pos-graduacao
+  .session:last-child
+    padding-bottom: 0px
+    margin-bottom: 40px

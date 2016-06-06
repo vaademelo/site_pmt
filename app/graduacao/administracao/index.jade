@@ -1,48 +1,37 @@
-extends ../../templates/main/main.jade
+extends ../base.jade
 
 block home
   - var home_path = "../../"
-
-block assets
-  - var assets = "../../assets/"
   
 block stylesheet
   - var stylesheet = "graduacao-administracao.min.css"
   
 block page-title
-  | Administração - Graduação | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
-
-block page-name
-  | Graduação
+  - var page_title = "Administração - " + page_title
 
 block breadcrumbs-path
   -
     breadcrumbs_path = {"Home"   : home_path,
-                        "Graduação" : home_path+"graduacao/index.html",
+                        "Graduação" : home_path + paths[page_name],
                         "Administração" : false}
-block page-navigation
-  -
-    navigation = [{ title : "Programa dos Cursos", link : home_path+"graduacao/programa/index.html", class : "" },  
-                  { title : "Disciplinas e Horários", link : home_path+"graduacao/disciplinas-horarios/index.html", class : "" },
-                  { title : "Calendário Acadêmico", link : home_path+"graduacao/calendario/index.html", class : "" },
-                  { title : "Administração", link : home_path+"graduacao/administracao/index.html", class : "" }]
 
 block content
 
   .graduacao-administracao
-    .session
-      h1.session-title
-        | Administração
-      p.session-body
-        | A coordenação dos cursos de Engenharia Metalúrgica e de Materiais é eleita a cada X anos durante reunião lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales sollicitudin justo, euismod elementum urna congue vitae. Sed turpis nisl, faucibus nec lacus vitae, fringilla ullamcorper neque. In hendrerit laoreet turpis, ac scelerisque sapien finibus quis
-      br/
-      h2.session-subtitle
-        | Coordenação - Chefia PMT
-      h2.session-subtitle
-        | CoC Materias/Metalurgia
-      h2.session-subtitle
-        | CPG - PMT 
-      h2.session-subtitle
-        | Congregação da Escola Politécnica da USP
-         
-            
+    .container
+      .session
+        h1.session-title
+          | Administração
+        p.session-body
+          | A coordenação dos cursos de Engenharia Metalúrgica e de Materiais é eleita a cada X anos durante reunião lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales sollicitudin justo, euismod elementum urna congue vitae. Sed turpis nisl, faucibus nec lacus vitae, fringilla ullamcorper neque. In hendrerit laoreet turpis, ac scelerisque sapien finibus quis
+        br/
+        h2.session-subtitle
+          | Coordenação - Chefia PMT
+        h2.session-subtitle
+          | CoC Materias/Metalurgia
+        h2.session-subtitle
+          | CPG - PMT 
+        h2.session-subtitle
+          | Congregação da Escola Politécnica da USP
+           
+              

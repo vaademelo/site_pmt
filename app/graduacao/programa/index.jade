@@ -1,57 +1,46 @@
-extends ../../templates/main/main.jade
+extends ../base.jade
 
 block home
   - var home_path = "../../"
 
-block assets
-  - var assets = "../../assets/"
-  
 block stylesheet
   - var stylesheet = "graduacao-programa.min.css"
   
 block page-title
-  | Programa dos Cursos - Graduação | Departamento de Engenharia Metalúrgica e de Materiais da POLI - USP
-
-block page-name
-  | Graduação
+  - var page_title = "Programa dos Cursos - " + page_title
 
 block breadcrumbs-path
   -
     breadcrumbs_path = {"Home"   : home_path,
                         "Graduação" : home_path+"graduacao/index.html",
                         "Programa dos Cursos" : false}
-block page-navigation
-  -
-    navigation = [{ title : "Programa dos Cursos", link : home_path+"graduacao/programa/index.html", class : "" },  
-                  { title : "Disciplinas e Horários", link : home_path+"graduacao/disciplinas-horarios/index.html", class : "" },
-                  { title : "Calendário Acadêmico", link : home_path+"graduacao/calendario/index.html", class : "" },
-                  { title : "Administração", link : home_path+"graduacao/administracao/index.html", class : "" }]
 
 block content
 
   .graduacao-programa
-    .session
-      h1.session-title
-        | Programa dos Cursos
-      p.session-body
-        | Nos links abaixo é possível encontrar o programa dos cursos de graduação oferecidos pelo departamento, já de acordo com o currículo reformulado proposto na EC3.
-      
-      p.session-subtitle
-        | 3061 - Engenharia Metalúrgica
-      p
-        ul
-          li
-            a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3062&codhab=3000&tipo=N" target="_blank")
-              span.field-body  
-                | Programa do Curso (Jupiterweb)
-            span(class="external-link glyphicon glyphicon-new-window")
-      
-      p.session-subtitle
-        | 3101 - Engenharia de Materiais
-      p        
-        ul
-          li
-            a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3102&codhab=3000&tipo=N" target="_blank")
-              span.field-body  
-                | Programa do Curso (Jupiterweb)
-            span(class="external-link glyphicon glyphicon-new-window")
+    .container
+      .session
+        h1.session-title
+          | Programa dos Cursos
+        p.session-body
+          | Nos links abaixo é possível encontrar o programa dos cursos de graduação oferecidos pelo departamento, já de acordo com o currículo reformulado proposto na EC3.
+        
+        p.session-subtitle
+          | 3061 - Engenharia Metalúrgica
+        p
+          ul
+            li
+              a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3062&codhab=3000&tipo=N" target="_blank")
+                span.field-body  
+                  | Programa do Curso (Jupiterweb)
+              span(class="external-link glyphicon glyphicon-new-window")
+        
+        p.session-subtitle
+          | 3101 - Engenharia de Materiais
+        p        
+          ul
+            li
+              a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3102&codhab=3000&tipo=N" target="_blank")
+                span.field-body  
+                  | Programa do Curso (Jupiterweb)
+              span(class="external-link glyphicon glyphicon-new-window")

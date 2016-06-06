@@ -1,6 +1,7 @@
 @import 'includes/banner'
 @import 'includes/breadcrumbs'
 @import 'includes/dark_header'
+@import 'includes/footer'
 
 body
   background: #fafafa
@@ -12,6 +13,9 @@ a,a:active,a:visited
 a:hover
   color: $link_hover
   text-decoration: underline
+
+ul
+  list-style-image: url('../img/bullet.png')
 
 .page-info
   border-bottom: 1px solid #bbbbbb
@@ -73,6 +77,8 @@ a:hover
 
 .session:last-child
   border-bottom: 0px
+  margin-bottom: 0px
+  padding-bottom: 0px
 
 .session-title
   font-family: 'Open Sans Condensed', sans-serif
@@ -104,6 +110,11 @@ a:hover
 .field-body
   font-size: 15px
   font-family: 'PT Sans', sans-serif
+
+.shadow
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.52)
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.52)
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.52)
 
 @media (max-width: $breakpoint-mobile)
   .breadcrumbs
