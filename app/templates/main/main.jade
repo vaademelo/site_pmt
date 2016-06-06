@@ -1,12 +1,13 @@
 include ../../../config/paths.jade
 
-block before
-  
 block page-name
   - var page_name = "O Departamento"
+
+- var page_title = page_name + " | PMT - POLI/USP"
+
+block before
   
 block page-title 
-  - var page_title = "#{page_name} | Departamento de Engenhaia Metalúrgica e de Materiais"
 
 block home
   - var home_path = "../../"

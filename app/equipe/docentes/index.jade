@@ -7,12 +7,13 @@ block stylesheet
   - var stylesheet = "equipe_docentes.min.css"
   
 block page-title
-  - var page_title = page_name + page_title
+  - page_title = page_title
 
 block breadcrumbs-path
   -
     breadcrumbs_path = { "Home" : home_path, 
-                         "Equipe" : home_path + "equipe" }
+                         "Equipe" : home_path+"equipe/index.html",
+                         "Corpo Docente" : ""}
                          
 block content
 
