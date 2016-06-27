@@ -140,9 +140,10 @@ block content
           h4.session-subtitle
             | Consultorias
 
-          ul
-            each consulting in consultings
-              li 
-                | #{consulting}
+          if (consultings.length > 0)
+            ul
+              each consulting in consultings
+                li 
+                  | #{consulting}
             
           
