@@ -41,28 +41,28 @@ html(lang="pt-br")
     
     include includes/banner.jade
     
-    .container
+    .container.info-bar
     
       include includes/breadcrumbs.jade
       
       .page-info
         h1.page-name
           | #{page_name}
-          
-        div.expand-menu
-          if paths[page_name].length > 0
+        
+        if paths[page_name].length > 1
+          div.expand-menu
             span(class="arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
             ul.page-menu
               each page in paths[page_name]
                 li(class=page.class)
                   a(href=home_path + page.relative_path)
                     | #{page.name}
-          
-        ul.page-menu
-          each page in paths[page_name]
-            li(class=page.class)
-              a(href=home_path + page.relative_path)
-                | #{page.name}
+            
+          ul.page-menu
+            each page in paths[page_name]
+              li(class=page.class)
+                a(href=home_path + page.relative_path)
+                  | #{page.name}
                 
     block content
     

@@ -26,10 +26,10 @@ ul
     font-family: 'Open Sans Condensed', sans-serif
     font-weight: 700
     color: $light_gray
+    margin-bottom: 20px
 
   .expand-menu
     text-align: center
-    margin-top: 20px
     display: none
 
   .page-menu
@@ -68,12 +68,12 @@ ul
         top: -5px
 
 .session
-  border-bottom: 1px solid #bbb
-  padding-bottom: 70px
+  border-bottom: 1px dashed #bbb
+  padding-bottom: 50px
   padding-top: 0px
   margin-left: 0px
   margin-right: 0px
-  margin-bottom: 70px
+  margin-bottom: 50px
 
 .session:last-child
   border-bottom: 0px
@@ -116,17 +116,62 @@ ul
   -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.52)
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.52)
 
+.external-link-icon
+  margin-top: -1px
+  font-size: 10px !important
+  padding-left: 5px !important
+
+.image-subtitle
+  color: #666666
+  font-style: italic
+  font-size: 13px
+  font-family: 'PT Sans', sans-serif
+  margin-top: 5px
+  margin-bottom: 30px
+
+
 @media (max-width: $breakpoint-mobile)
   .breadcrumbs
     display: none
+
   .page-name
     display: block !important
+
+  .page-menu
+    display: none !important
 
   .expand-menu
     display: block !important
 
-  .arrow-down
-    transition: all .3s ease-in-out
+    .arrow-down
+      transition: all .3s ease-in-out
+
+    .page-menu
+      width: 100%
+      padding-left: 20px !important
+      padding-right: 20px !important
+      padding-bottom: 10px !important
+      float: none !important
+      margin: 0px !important
+
+      li
+        clear: both
+        float: none !important
+        display: block
+        width: 100%
+        text-align: left
+        border-bottom: 1px solid #ddd
+        padding-top: 10px !important
+        padding-bottom: 10px !important
+        text-transform: none !important
+        margin: 0px !important
+
+        a
+          color: #333
+
+      li:last-child
+        border-bottom: 1px solid transparent !important
+        margin-bottom: 20px
 
   .expand-menu:hover
     .arrow-down
@@ -136,35 +181,18 @@ ul
     .page-menu
       display: block !important
 
-  .page-menu
-    display: none !important
-    width: 100%
-    padding-left: 20px !important
-    padding-right: 20px !important
-    padding-bottom: 10px !important
-    float: none !important
-    margin: 0px !important
+  .mobile-session
+    padding-bottom: 0px
+    padding-top: 0px
+    margin-left: 0px
+    margin-right: 0px
+    margin-bottom: 30px
+    margin-top: 10px
 
-
-    li
-      clear: both
-      float: none !important
-      display: block
-      width: 100%
-      text-align: left
-      border-bottom: 1px solid #ddd
-      padding-top: 10px !important
-      padding-bottom: 10px !important
-      text-transform: none !important
-      margin: 0px !important
-
-      a
-        color: #333
-
-  .page-menu
-    li:last-child
-      border-bottom: 1px solid transparent !important
-      margin-bottom: 20px
+  .mobile-session:last-child
+    border-bottom: 0px
+    margin-bottom: 30px
+    padding-bottom: 0px
 
   .social-networks
     margin-top: 30px

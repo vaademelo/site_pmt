@@ -1,0 +1,143 @@
+extends ./templates/main/main.jade
+
+block page-name
+  - var page_name = "Pós-Graduação"
+
+block home
+  - var home_path = "./"
+  
+block stylesheet
+  - var stylesheet = "landing.min.css"
+  
+block page-title
+  - page_title = page_title
+
+block content
+  
+  .news-bar
+    
+    include _news/news.jade
+    
+    .container-fluid
+      .container 
+        h1.session-title
+          | Últimas Notícias
+        a(href=home_path+"pos-graduacao/noticias/index.html")  
+          span.pull-right.more-news-btn
+            | + Notícias
+        .row
+          each item, index in news.sort(function(a,b){return b.date-a.date})
+            if index < 4
+              .col-sm-3.news-col
+                .news-block
+                  .news-content
+                    .news-header
+                      h3.news-title
+                        | #{item.title}
+                      p.news-date 
+                        span(class="glyphicon glyphicon-time" aria-hidden="true")
+                        = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
+                    p.news-body 
+                      != item.body
+    
+  .container
+    .row
+      .col-sm-9
+        .row
+          .col-sm-6.mobile-session
+            h1.session-title
+              | Engenharia de Materiais
+            p.session-body.
+              A revolução que nos últimos anos tem ocorrido no campo da ciência e 
+              engenharia de materiais, manifestada por importantes inovações 
+              tecnológicas em praticamente todos os setores de atividade humana e, 
+              particularmente, no de computação, telecomunicação, transporte e 
+              saúde, tem levado a maioria das universidades e instituições de 
+              pesquisa a ampliar o escopo de atuação com relação a esse campo.
+              <br /><br />
+              O desenvolvimento da Engenharia de Materiais tem sido muito forte na 
+              área de nanomateriais, definidos como materiais constituídos de grãos 
+              ou partículas com aspectos morfológicos menores que um décimo de um 
+              micrometro em pelo menos uma dimensão.
+              <br /><br />
+              O campo de atuação do Engenheiro de Materiais abrange os materiais 
+              metálicos, poliméricos, cerâmicos e materiais compósitos, nos aspectos 
+              de caracterização de propriedades, processos de fabricação e aplicações, 
+              assim como a análise, criação e desenvolvimento de novos produtos.
+              <br /><br />
+              Ao lado do estudo dos materiais em si, é essencial o entendimento dos 
+              fundamentos dos processos de fabricação. Os materiais constituem os 
+              recursos através dos quais são implementados os mais diversos projetos 
+              de Engenharia, nos quais o Engenheiro de Materiais encontra amplo 
+              campo de atuação. Deste modo os estudantes do curso adquirem 
+              conhecimentos teóricos e práticos que enfatizam as relações entre 
+              microestrutura, processa­mento, propriedades e o conseqüente desempenho 
+              do material em serviço.
+
+          .col-sm-6.mobile-session
+            h1.session-title
+              | Engenharia Metalúrgica
+            p.session-body.
+              Com mais de 50 anos de existência no campo da metalurgia brasileira 
+              o Departamento de Engenharia Metalúrgica e de Materiais consolidou 
+              uma posição de destaque, constituindo-se num dos focos de formação 
+              de recursos humanos de alto nível. Esse fato é evidenciado pelo 
+              elevado número de profissionais formados por este Departamento 
+              ocupando cargos de primeiro escalão tanto na indústria como no campo 
+              de pesquisa e desenvolvimento.
+              <br /><br />
+              Seus formados têm tido participação em órgãos de planejamento 
+              governamentais e em associações técnicas responsáveis pelo crescimento 
+              e desenvolvimento da indústria metalúrgica nacional. A atuação do 
+              Engenheiro Metalurgista cobre o extenso campo que vai desde o 
+              desenvolvimento e otimização de processos de redução de minérios e 
+              produção primária de metais até o acabamento de peças e montagem de 
+              componentes.
+              <br /><br />
+              A formação do Metalurgista cobre três campos: metalurgia extrativa 
+              (processos de produção primária de metais e refino de metais e ligas 
+              metálicas), metalurgia de transformação (conformação mecânica, 
+              fundição, tratamentos térmicos, tratamentos superficiais, 
+              soldagem, metalurgia do pó, etc.) e metalurgia física (trata 
+              dos fenômenos físicos e transformações que ocorrem nos metais 
+              e ligas e correlaciona a estrutura dos materiais metálicos 
+              com suas propriedades).
+
+
+      .col-sm-3
+        .sidebar
+          h2.sidebar-title
+            | Contatos          
+          p.sidebar-body
+            | Alguma dúvida sobre a <strong>graduação</strong>? Entre em contato com a 
+            a(href="mailto:patricia") 
+              | Patrícia.
+          p.sidebar-body
+            | Alguma dúvida sobre a <strong>pós-graduação</strong>? Entre em contato com a 
+            a(href="mailto:patricia") 
+              | Suellen.
+          p.sidebar-body
+            span.field-title
+              | Telefone: 
+            | +55 (11) 3091-5235
+            br/
+            span.field-title
+              | Fax: 
+            | +55 (11) 3091-5243
+            br/
+            br/
+            | Segunda a sexta-feira das 08:00 às 11:00 e das 12h30 às 16h30
+        
+        .sidebar
+          h2.sidebar-title
+            | Endereço
+          p.sidebar-body
+            | Av. Professor Mello Moraes, 2463
+            br/
+            | CEP: 05508-030
+            br/
+            | São Paulo/SP
+            br/
+            br/
+          
+              

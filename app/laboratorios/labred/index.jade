@@ -1,7 +1,7 @@
-extends base.jade
+extends ../base.jade
 
 block home
-  - var home_path = "../"
+  - var home_path = "../../"
 
 block stylesheet
   - var stylesheet = "graduacao.min.css"
@@ -12,37 +12,10 @@ block page-title
 block breadcrumbs-path
   -
     breadcrumbs_path = {"Home" : home_path,
-                        "Graduação" : false }
+                        "Laboratórios" : false }
 
 block content
   .graduacao
-    .news-bar
-      
-      include _news/news.jade
-      
-      .container-fluid
-        .container 
-          h1.session-title
-            | Notícias
-          a(href=home_path+"graduacao/noticias/index.html")  
-            span.pull-right.more-news-btn
-              | + Notícias
-          .row
-            each item, index in news.sort(function(a,b){return b.date-a.date})
-              if index < 4
-                .col-sm-3.news-col
-                  .news-block
-                    //- .news-image(style="background-image: url('../assets/img/news/#{item.image}')")
-                    .news-content
-                      .news-header
-                        h3.news-title
-                          | #{item.title}
-                        p.news-date 
-                          span(class="glyphicon glyphicon-time" aria-hidden="true")
-                          = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
-                      p.news-body 
-                        != item.body
-    
     .container
       .row
         .col-sm-9.col-sm-push-3
@@ -150,25 +123,3 @@ block content
                       | Programa do Curso (3101)
                   span(class="external-link-icon glyphicon glyphicon-new-window")
                   
-        include _documentos/documentos.jade
-        include _quick-links/quick-links.jade
-        
-        .col-sm-3.col-sm-pull-9
-          .sidebar
-            h2.sidebar-title
-              | Links úteis
-            ul
-              each link in quick_links
-                li.sidebar-body
-                  a(href=link.url target="_blank")
-                    | #{link.title}
-
-          .sidebar
-            h2.sidebar-title
-              | Documentos & Formulários
-            
-            ul
-              each document in documents
-                li.sidebar-body
-                  a(href=document.url target="_blank")
-                    | #{document.title}
