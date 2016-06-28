@@ -112,7 +112,7 @@ block content
           ul
             each module in undergraduation_module
               li 
-                a(href=module.link)
+                a(href=module.link target="_blank")
                   | #{module.name}
 
           h4.session-subtitle
@@ -121,7 +121,7 @@ block content
           ul
             each module in graduation_module
               li 
-                a(href=module.link)
+                a(href=module.link target="_blank")
                   | #{module.name}
             
       .row.session.research

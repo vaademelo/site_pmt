@@ -2,3 +2,75 @@ extends ../templates/main/main.jade
 
 block page-name
   - var page_name = "Laboratórios"
+
+block home
+  - var home_path = "../../"
+
+block stylesheet
+  - var stylesheet = "laboratorios.min.css"
+  
+block page-title
+  - page_title = laboratory_name + " - " + page_title
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home" : home_path,
+                        "Laboratórios" : home_path + "/laboratorios/index.html"}
+  
+  - breadcrumbs_path[laboratory_name] = "" 
+
+block content
+
+  include ./_lab-info/lab-info.jade
+  include ../equipe/docentes/_professores-info/professores-info.jade
+  
+  - var laboratory = {}
+  - var professor = {}  
+  
+  each item in laboratories
+    if item.name == laboratory_name
+      - laboratory = item
+  
+  each item in professors
+    if item.name == laboratory.professor
+      - professor = item
+
+  .laboratorios
+    .container
+      #departamento-overview.session
+        h1.session-title
+          | !{laboratory.initials} - #{laboratory.name}
+        .row
+          .col-md-6
+            img.full-width(src=laboratory.image_url[0]) 
+          .col-md-6
+            p.session-body
+              strong
+                | Professor responsável: 
+              a(href=home_path+"equipe/docentes/"+professor.page+"index.html" target="_blank")
+                | #{professor.name}
+            p.session-body
+              strong
+                | Telefone: 
+              | #{laboratory.phone_number}
+            if (laboratory.external_site_url)
+              p.session-body
+                strong
+                  | Site do laboratório: 
+                a(href=laboratory.external_site_url target="_blank")
+                  | !{laboratory.initials} 
+            h2.session-subtitle
+              | Atividades
+            p.session-body
+              | #{laboratory.activities}
+      .session
+        .row
+          .col-sm-12
+            h2.session-subtitle
+              | Principais equipamentos
+            ul.session-body
+              each equipment in laboratory.equipments
+                li
+                  | #{equipment}
+            
+              
