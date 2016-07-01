@@ -1,9 +1,40 @@
-.departamento
+.laboratorios
+  .laboratories-list
+    font-family: 'PT Sans', sans-serif
+    font-size: 16px
 
-  .session-subtitle
-    margin-top: 0px !important
-    border-left: 10px solid #1595A3
-    padding-left: 10px
+    .laboratory
+      margin-bottom: 50px
 
-  .right-image
-    margin-bottom: 0px
+      .laboratory-picture
+        img
+          width: 100%
+
+      .laboratory-name
+        margin-bottom: 10px
+
+        a
+          font-weight: 700
+
+      .research-area
+        margin-top: 10px
+
+        .comma:last-child
+          display: none
+
+@media (max-width: $breakpoint-mobile)
+  .equipe-docentes
+    .laboratories-list
+      .laboratory
+        padding-bottom: 30px
+        border-bottom: 1px solid #ccc
+
+        .laboratory-picture
+          text-align: center
+
+          img
+            width: 60%
+            margin-bottom: 20px
+
+      .laboratory:last-child
+        border-bottom: 0px

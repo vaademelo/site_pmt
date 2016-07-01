@@ -4,7 +4,7 @@ block home
   - var home_path = "../"
 
 block stylesheet
-  - var stylesheet = "graduacao.min.css"
+  - var stylesheet = "laboratorios.min.css"
   
 block page-title
   - page_title = page_title
@@ -15,122 +15,28 @@ block breadcrumbs-path
                         "Laboratórios" : false }
 
 block content
-  .graduacao
-    .container
-      .row
-        .col-sm-9.col-sm-push-3
-          .session
-            h1.session-title
-              | Engenharia Metalúrgica
-            p.session-body.
-              O curso de Engenharia metalúrgica cobre três áreas principais:
-            ul
-              li.session-body
-                strong
-                  | Metalurgia extrativa: 
-                | Processos de produção primário e refino de metais e ligas metálicas
-              li.session-body
-                strong
-                  | TRANSFORMATION METALLURGY: 
-                | Conformação mecânica, fundição, tratamentos térmicos, tratamento de superfícies, soldagem e metalurgia do pó)
-              li.session-body
-                strong
-                  | Metalurgia física: 
-                | Lida com as características do material
-            br/
-            p.session-body.
-              Sendo assim, os engenheiros e engenheiras metalúrgicos podem operar 
-              tanto em processos de beneficiamento de minérios, quanto na obtenção 
-              de ligas metálicas com propriedades físicas, químicas e metalúrgicas 
-              adaptadas aos mais variados usos e inclusive na fabricação de peças 
-              e produtos para uso em outras indústrias, com propriedades adaptadas 
-              às diferentes necessidades.
-            br/
-            p.session-body.
-              Adicionalmente estas atividades estão fortemente relacionadas às 
-              indústrias de base e ao setor metal-mecânico, sendo assim o escopo 
-              de responsabilidade do engenheiro metalurgista se expandiu 
-              consideravelmente no que tange o desenvolvimento e gestão de 
-              projetos, seleção de materiais, controle de qualidade, segurança 
-              e gestão ambiental.
-            br/
-            p.session-body.
-              Nos últimos 20 anos cerca de 300 engenheiras e engenheiros 
-              metalurgistas foram formados pelo departamento. Atualmente são 
-              oferecidas 20 vagas por ano. O Departamento de Engenharia 
-              Metalúrgica e de Materiais da Escola Politécnica, possui renome 
-              no campo de ensino de engenharia metalúrgica. Não somente pela 
-              sua tradição, mas também por estar sempre na vanguarda e focada 
-              em criar os melhores e mais completos engenheiros. Tal fato é 
-              acentuado pelo grande número de profissionais, formados pelo 
-              departamento, ocupando posições de destaque tanto na indústria 
-              quanto no setor de P&D. Não menos importante é a participação de 
-              ex alunos em instituições de planejamento governamentais e na 
-              indústria metalúrgica doméstica.
-            h2.session-subtitle
-              | Programa do curso
-            p
-              ul
-                li
-                  a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3062&codhab=3000&tipo=N" target="_blank")
-                    span.field-body  
-                      | Programa do Curso (3061)
-                  span(class="external-link-icon glyphicon glyphicon-new-window")
-           
-            h1.session-title
-              | Engenharia de Materiais
-            p.session-body.
-              O escopo de responsabilidades dos engenheiros e engenheiras de 
-              materiais compreende o estudo dos materiais metálicos, poliméricos 
-              e cerâmicos no que se refere à caracterização de propriedades, 
-              processos de manufatura e aplicações, adicionalmente à análise, 
-              criação e desenvolvimento de novos produtos. Além disso a análise 
-              de materiais em si é essencial para entender as bases dos processos 
-              de manufatura, que são as pedras fundamentais da competitividade 
-              das indústrias.
-            br/
-            p.session-body.
-              Os materiais representam as matérias-primas nas quais uma grande 
-              quantidade de projetos de engenharia se baseiam. Sendo assim, 
-              engenheiras e engenheiros de materiais possuem uma extensa área de 
-              atuação, uma vez que o curso provê um amplo conhecimento teórico 
-              e prático que enfatiza as relações entre microestruturas, 
-              processamento, propriedades e consequentemente a performance 
-              do material durante sua utilização.
-            br/
-            p.session-body.
-              O curso de engenharia de materiais foi criado na Escola 
-              Politécnica em 1995, com o objetivo de acompanhar a revolução em 
-              curso no campo de materiais, refletida em inovações em 
-              praticamente todos os setores de atividade humana, e, 
-              principalmente nos campos da computação, telecomunicações, 
-              transporte e saúde. O mercado de trabalho para engenheiros e 
-              engenheiras de materiais compreende o suprimento de 
-              matérias-primas, indústrias de transformação, prestação de 
-              serviço, consultorias técnica e P&D. 20 vagas por ano são 
-              atualmente oferecidas ao curso de engenharia de materiais, que se 
-              diferencia do curso de engenharia metalúrgica no que se refere ao 
-              espaço dedicado ao estudo de materiais poliméricos e cerâmicos 
-              além dos metálicos.
-          
-            h2.session-subtitle
-              | Programa do curso
-            p        
-              ul
-                li
-                  a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3102&codhab=3000&tipo=N" target="_blank")
-                    span.field-body  
-                      | Programa do Curso (3101)
-                  span(class="external-link-icon glyphicon glyphicon-new-window")
-                  
-        include _quick-links/quick-links.jade
-        
-        .col-sm-3.col-sm-pull-9
-          .sidebar
-            h2.sidebar-title
-              | Links úteis
-            ul
-              each link in quick_links
-                li.sidebar-body
-                  a(href=link.url target="_blank")
-                    | #{link.title}
+  include ./_lab-info/lab-info.jade
+  include ../equipe/docentes/_professores-info/professores-info.jade
+  
+  .laboratorios
+    .container.laboratories-list
+      each laboratory in laboratories.sort(function (a, b) { if (a.name > b.name) {return 1;} if (a.name < b.name) { return -1; } return 0;})
+        .row.laboratory
+          .col-sm-12
+            .session    
+              .laboratory-name
+                a(href=laboratory.internal_site_url)
+                  | #{laboratory.name} - !{laboratory.initials}
+              .laboratory-info
+                span.field-title
+                  | Professor Responsável: 
+                span.field-body  
+                  each professor in professors
+                    if professor.name == laboratory.professor
+                      a(href=home_path+"equipe/docentes/"+professor.page+"index.html" target="_blank")
+                        | #{laboratory.professor}
+              .laboratory-info.research-area  
+                span.field-title
+                  | Atividades: 
+                span.field-body
+                  | #{laboratory.activities} 

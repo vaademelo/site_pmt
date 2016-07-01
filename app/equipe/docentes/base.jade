@@ -23,6 +23,13 @@ block breadcrumbs-path
 block professor-info
    
   include _professores-info/professores-info.jade
+  include ../../laboratorios/_lab-info/lab-info.jade
+  
+  - var laboratory = {}
+  
+  each item in laboratories
+    if item.professor == professor_name
+      - laboratory = item
  
   each professorInfo in professors
     if professorInfo.name == professor_name
@@ -33,7 +40,7 @@ block professor-info
                      phone : professorInfo.phone,
                      email : professorInfo.email,
                      category : professorInfo.category,
-                     laboratory : professorInfo.laboratory,
+                     laboratory : { name: laboratory.name, link: laboratory.internal_site_url},
                      lattes: professorInfo.lattes } 
      -
        education_background = professorInfo.academic_backgroud   
