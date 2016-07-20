@@ -1,0 +1,72 @@
+extends base.jade
+
+block home
+  - var home_path = "../"
+  
+block stylesheet
+  - var stylesheet = "extensao.min.css"
+  
+block page-title
+  - page_title = page_title
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home": home_path, 
+                        "Extensão" : false}
+
+block content
+
+  .extensao
+    .container
+      .session
+        h1.session-title
+          | Grupos de Extensão
+        p.session-body
+          | Na área de extensão e cultura, a Escola Politécnica dispõe de diversos programas e projetos que possibilitam estreitar os laços da instituição com a sociedade.
+        
+      .session.extension-group
+        .row
+          .col-md-2.group-logo
+            img.full-width(src=assets+"img/polijr_logo.png")
+          
+          .col-md-10
+            h2.session-subtitle
+              a(href="http://polijr.com.br" target="_blank")
+                | POLI Jr
+            h2.session-subtitle
+              | Apresentação
+            p.session-body.
+              "A Poli Júnior fica localizada na própria Escola Politécnica da USP, na Cidade Universitária, que é uma das escolas mais reconhecidas no mundo. Desenvolvemos as soluções para seu projeto de forma customizada, buscando atender às necessidades, construindo um relacionamento próximo. Contamos com um histórico de projetos de sucesso em diversas áreas da engenharia, o que nos oferece embasamento para a condução de nossas atividades.<br>
+              Você pode nos encontrar no Edifí­cio da Engenharia Mecânica, onde podemos fazer reuniões para a discussão dos detalhes do seu projeto. Nossa sede possui toda a infraestrutura física e computacional para que os membros executem suas tarefas. Dessa maneira, usufruindo dos recursos adequados, conectamos conhecimento, estratégia, informação e dados para criar, desenvolver, elaborar e solucionar. Lembrando que a busca pelo baixo custo é um dos nossos principais objetivos."
+            
+      .session.extension-group
+        .row
+          .col-md-2.group-logo
+            img.full-width(src=assets+"img/semm_logo.jpg")
+          
+          .col-md-10
+            h2.session-subtitle
+              a(href="http://semm.com.br" target="_blank")
+                | SEMM – Semana de Estudos Mínero-Metalúrgicos
+            h2.session-subtitle
+              | Apresentação
+            p.session-body.
+              "A SEMM é um dos mais tradicionais eventos da Poli. Há mais de cinco décadas, alunos de graduação anualmente organizam uma semana repleta de atividades, exaltando o orgulho do setor mínero-metalúrgico. São palestras e minicursos ministrados por profisionais da área, mesas-redondas com debates de assuntos relevantes ao setor, workshop e visitas técnicas a grandes empresas. Tudo isso para propiciar ao participante o amadurecimento de seu network e sua interação com a indústria, além de abrir a mente dos futuros engenheiros a novos assuntos e pontos de vista. Em suma, a SEMM investe nos maiores ativos que um Engenheiro pode ter: seu intelecto e seus contatos!"
+                  
+              
+      .session.extension-group
+        .row
+          .col-md-2.group-logo
+            img.full-width(src=assets+"img/cmr_logo.png")
+          
+          .col-md-10
+            h2.session-subtitle
+              a(href="http://cmr.poli.usp.br/" target="_blank")
+                | CRM – Centro Moraes Rego
+            h2.session-subtitle
+              | Apresentação
+            p.session-body.
+              "O Centro Moraes Rêgo (CMR) é o centro acadêmico das Engenharias de Materiais/Metalúrgica, de Minas e de Petróleo da Escola Politécnica da USP. Nossos principais objetivos são representar os interesses de nossos alunos frente à diretoria e/ou aos outros centros acadêmicos, fornecer aos alunos um ambiente agradadável para se passar o tempo, conhecer novas pessoas, além de prestar assistência acadêmica a nossos alunos."
+            
+    
+        
