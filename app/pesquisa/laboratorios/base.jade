@@ -1,10 +1,10 @@
-extends ../templates/main/main.jade
+extends ./../../templates/main/main.jade
 
 block page-name
-  - var page_name = "Laboratórios"
+  - var page_name = "Pesquisa"
 
 block home
-  - var home_path = "../../"
+  - var home_path = "../../../"
 
 block stylesheet
   - var stylesheet = "laboratorios.min.css"
@@ -15,14 +15,15 @@ block page-title
 block breadcrumbs-path
   -
     breadcrumbs_path = {"Home" : home_path,
-                        "Laboratórios" : home_path + "/laboratorios/index.html"}
+                        "Pesquisa": home_path + "/pesquisa/index.html",
+                        "Laboratórios" : home_path + "/pesquisa/laboratorios/index.html"}
   
   - breadcrumbs_path[laboratory_name] = "" 
 
 block content
 
   include ./_lab-info/lab-info.jade
-  include ../equipe/docentes/_professores-info/professores-info.jade
+  include ./../../equipe/docentes/_professores-info/professores-info.jade
   
   - var laboratory = {}
   - var professor = {}  
@@ -46,7 +47,10 @@ block content
               strong
                 | Professor responsável: 
               a(href=home_path+"equipe/docentes/"+professor.page+"index.html" target="_blank")
-                | #{professor.name}
+                if professor.name
+                  | #{professor.accademicTitle} #{professor.name}
+                else
+                  | #{laboratory.professor}
             p.session-body
               strong
                 | Telefone: 

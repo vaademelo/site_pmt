@@ -1,0 +1,41 @@
+extends ../base.jade
+
+block home
+  - var home_path = "../../"
+  
+block stylesheet
+  - var stylesheet = "graduacao.min.css"
+  
+block page-title
+  - page_title = "Estágio - " + page_title
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home"   : home_path,
+                        "Graduação" : home_path + "graduacao/index.html",
+                        "Trabalhos de Formatura" : false}
+
+block content
+
+  .graduacao-programa
+    .container
+      .session
+        h1.session-title
+          | Trabalhos de Formatura
+        
+        p.session-subtitle
+          | Normas e Diretrizes:
+        p
+          ul
+            
+            li
+              a(href="http://www.usp.br/prolam/ABNT_2011.pdf" target="_blank")
+                span.field-body  
+                  | Normas ABNT
+              span(class="external-link glyphicon glyphicon-new-window")
+
+            li
+              a(href="http://www.teses.usp.br/index.php?option=com_content&view=article&id=52&Itemid=67&lang=pt-br" target="_blank")
+                span.field-body  
+                  | Guia de formatação dos trabalhos de conclusão de curso
+              span(class="external-link glyphicon glyphicon-new-window")

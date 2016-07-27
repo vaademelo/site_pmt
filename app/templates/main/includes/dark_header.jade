@@ -42,7 +42,7 @@ header
         ul
           each attribute, index in paths
             = attribute.length
-            if attribute.length > 1
+            if attribute.length > 1 || index === "Pesquisa" || index === "Diversos"
               li.level-1-menu
                 a(href="")
                   | #{index}

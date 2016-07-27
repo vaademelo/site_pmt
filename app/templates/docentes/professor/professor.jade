@@ -32,7 +32,7 @@ block content
           research_areas = ["Área1","Área2","Área3"]
           
         -
-          consultings = ["Consultoria1","Consultoria2"]
+          consultings = []
     
       .row.session.professor-general-info
         .col-sm-3.professor-picture
@@ -55,7 +55,7 @@ block content
               span.field-body  
                 | #{professor.email}
           
-          if professor.laboratory
+          if professor.laboratory.name
             .info-row
               span.field-title 
                 | Laboratório: 
@@ -105,25 +105,26 @@ block content
         .col-md-12
           h3.session-title
             | Disciplinas Ministradas no Departamento
-            
-          h4.session-subtitle
-            | Graduação
           
-          ul
-            each module in undergraduation_module
-              li 
-                a(href=module.link target="_blank")
-                  | #{module.name}
-
-          h4.session-subtitle
-            | Pós-Graduação
-
-          ul
-            each module in graduation_module
-              li 
-                a(href=module.link target="_blank")
-                  | #{module.name}
+          if undergraduation_module.length > 0
+            h4.session-subtitle
+              | Graduação
             
+            ul
+              each module in undergraduation_module
+                li 
+                  a(href=module.link target="_blank")
+                    | #{module.name}
+          if graduation_module.length > 0
+            h4.session-subtitle
+              | Pós-Graduação
+
+            ul
+              each module in graduation_module
+                li 
+                  a(href=module.link target="_blank")
+                    | #{module.name}
+              
       .row.session.research
         .col-md-12
           h3.session-title
@@ -137,10 +138,11 @@ block content
               li 
                 | #{area}
 
-          h4.session-subtitle
-            | Consultorias
-
+          
           if (consultings.length > 0)
+            h4.session-subtitle
+              | Consultorias
+
             ul
               each consulting in consultings
                 li 

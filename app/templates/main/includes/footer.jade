@@ -53,9 +53,25 @@ footer
 
         .col-sm-4
           h3.footer-title
-            | Laboratórios
+            | Pesquisa
           ul  
-            each page in paths["Laboratórios"]
+            each page in paths["Pesquisa"]
+              li 
+                a(href=home_path+page.relative_path)
+                  | #{page.name}
+          
+          h3.footer-title
+            | Extensão e Cultura
+          ul  
+            each page in paths["Extensão e Cultura"]
+              li 
+                a(href=home_path+page.relative_path)
+                  | #{page.name}
+                  
+          h3.footer-title
+            | Diversos
+          ul  
+            each page in paths["Diversos"]
               li 
                 a(href=home_path+page.relative_path)
                   | #{page.name}

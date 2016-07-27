@@ -1,7 +1,7 @@
 extends base.jade
 
 block home
-  - var home_path = "../"
+  - var home_path = "../../"
 
 block stylesheet
   - var stylesheet = "laboratorios.min.css"
@@ -12,29 +12,36 @@ block page-title
 block breadcrumbs-path
   -
     breadcrumbs_path = {"Home" : home_path,
+                        "Pesquisa" : home_path + "pesquisa/index.html",
                         "Laboratórios" : false }
 
 block content
   include ./_lab-info/lab-info.jade
-  include ../equipe/docentes/_professores-info/professores-info.jade
+  include ./../../equipe/docentes/_professores-info/professores-info.jade
   
   .laboratorios
     .container.laboratories-list
+      .session-title
+        | Laboratórios 
       each laboratory in laboratories.sort(function (a, b) { if (a.name > b.name) {return 1;} if (a.name < b.name) { return -1; } return 0;})
         .row.laboratory
           .col-sm-12
-            .session    
+            .session
               .laboratory-name
                 a(href=laboratory.internal_site_url)
                   | #{laboratory.name} - !{laboratory.initials}
               .laboratory-info
                 span.field-title
-                  | Professor Responsável: 
+                  | Responsável: 
                 span.field-body  
+                  - var professorFound = false
                   each professor in professors
                     if professor.name == laboratory.professor
+                      - professorFound = true
                       a(href=home_path+"equipe/docentes/"+professor.page+"index.html" target="_blank")
-                        | #{laboratory.professor}
+                        | #{professor.accademicTitle} #{professor.name}
+                  if !professorFound  
+                    | #{laboratory.professor}
               .laboratory-info.research-area  
                 span.field-title
                   | Atividades: 

@@ -1,0 +1,35 @@
+.equipe-apoio
+  .staff-list
+    font-family: 'PT Sans', sans-serif
+    font-size: 16px
+
+    .staff
+      margin-bottom: 50px
+
+      .staff-picture
+        img
+          width: 100%
+
+      .staff-name
+        margin-bottom: 10px
+        font-weight: bold
+
+        a
+          font-weight: 700
+
+@media (max-width: $breakpoint-mobile)
+  .equipe-docentes
+    .staff-list
+      .staff
+        padding-bottom: 30px
+        border-bottom: 1px solid #ccc
+
+        .staff-picture
+          text-align: center
+
+          img
+            width: 60%
+            margin-bottom: 20px
+
+      .staff:last-child
+        border-bottom: 0px

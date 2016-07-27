@@ -1,0 +1,66 @@
+extends ../base.jade
+
+block home
+  - var home_path = "../../"
+  
+block stylesheet
+  - var stylesheet = "equipe_apoio.min.css"
+  
+block page-title
+  - page_title = page_title
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = { "Home" : home_path, 
+                         "Equipe" : home_path+"equipe/index.html",
+                         "Equipe de Apoio" : ""}
+                         
+block content
+
+  .equipe-apoio
+    
+    .container.content.staff-list
+      
+      include _staff-info/staff-info.jade
+      
+      .session-title
+        | Equipe de Apoio
+      
+      each staffMember in staff 
+        if staffMember.status === "active"
+          .row.staff
+            .col-sm-3.col-lg-2
+              .staff-picture
+                img(src=staffMember.picture)
+            .col-sm-9.col-lg-10
+              .staff-name
+                | #{staffMember.name}
+              
+              .staff-info
+                span.field-title 
+                  | Cargo: 
+                span.field-body
+                  | #{staffMember.function}
+              
+              if staffMember.email
+                .staff-info
+                  span.field-title 
+                    | E-mail: 
+                  a(href="mailto:"+staffMember.email)  
+                    span.field-body
+                      | #{staffMember.email}
+                      
+              if staffMember.phone
+                .staff-info
+                  span.field-title 
+                    | Telefone:   
+                  span.field-body
+                    | #{staffMember.phone}
+                    
+              if staffMember.fax
+                .staff-info
+                  span.field-title 
+                    | Fax:   
+                  span.field-body
+                    | #{staffMember.fax}
+              
