@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     ext_replace = require("gulp-ext-replace"),
     jade = require("gulp-jade");
+    minify = require('gulp-minify');
 
 gulp.task("templates", function(){
 
@@ -30,6 +31,18 @@ gulp.task("watch", function(){
   ['templates','sass'];
   gulp.watch("app/**/*.jade", ['templates']);
   gulp.watch("app/**/*.sass", ['sass']);
+  gulp.watch("app/**/*.js",   ['js']);
+});
+
+gulp.task('js', function() {
+  gulp.src('app/assets/javascript/*.js')
+    .pipe(minify({
+        ext:{
+            src:'-debug.js',
+            min:'.js'
+        }
+    }))
+    .pipe(gulp.dest('../deploy/assets/js/'))
 });
 
 gulp.task('default', ['templates','sass'])

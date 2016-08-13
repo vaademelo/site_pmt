@@ -1,0 +1,141 @@
+extends ../base.jade
+
+block home
+  - var home_path = "../../"
+  
+block stylesheet
+  - var stylesheet = "graduacao.min.css"
+  
+block page-title
+  - page_title = "Estágio - " + page_title
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {"Home" : home_path,
+                        "Diversos" : false,
+                        "Notícias" : false }
+
+block content
+
+  .graduacao-programa
+    .container
+      .session
+        h1.session-title
+          | Notícias
+           
+        p.session-subtitle
+          | Notícias e Informações:
+        p
+          ul
+            li
+              a(href="http://www.usp.br/agen/" target="_blank")
+                span.field-body  
+                  | Agência USP de Notícias
+              span(class="external-link glyphicon glyphicon-new-window") 
+            li
+              a(href="http://www.poli.usp.br/pt/comunicacao/noticias.html" target="_blank")
+                span.field-body  
+                  | Serviço de comunicação social da POLI-USP
+              span(class="external-link glyphicon glyphicon-new-window")
+
+      
+        p.session-subtitle
+          | Graduação
+        p
+          ul
+            li
+              a(href="http://www.prg.usp.br/" target="_blank")
+                span.field-body  
+                  | USP: Pró-Reitoria de Graduação
+              span(class="external-link glyphicon glyphicon-new-window") 
+            li
+              a(href="http://www.poli.usp.br/pt/comunicacao/noticias.html" target="_blank")
+                span.field-body  
+                  | POLI-USP: Graduação
+              span(class="external-link glyphicon glyphicon-new-window")
+
+
+        p.session-subtitle
+          | Intercâmbio USP & CR-Int
+        p
+          ul
+            li
+              a(href="http://www.reitoria.usp.br/intercambio/" target="_blank")
+                span.field-body  
+                  | USP: Programa de Bolsas de Intercâmbio Internacional para Alunos de Graduação
+              span(class="external-link glyphicon glyphicon-new-window") 
+            li
+              a(href="http://www.poli.usp.br/io/comissao-de-relacoes-internacionais.html" target="_blank")
+                span.field-body  
+                  | POLI-USP: Comissão de Relações Internacionais 
+              span(class="external-link glyphicon glyphicon-new-window")
+
+  
+        p.session-subtitle
+          | Jornal CMR
+        p
+          ul
+            li
+              a(href="http://www.cmr.poli.usp.br/noticias/Nosso-jornal-esta-de-volta.html" target="_blank")
+                span.field-body  
+                  | Jornal do CMR
+              span(class="external-link glyphicon glyphicon-new-window") 
+
+
+        p.session-subtitle
+          | Pesquisa
+        p
+          ul
+            li
+              a(href="http://www.prp.usp.br/" target="_blank")
+                span.field-body  
+                  | USP: Pró-reitoria de Pesquisa
+              span(class="external-link glyphicon glyphicon-new-window") 
+            li
+              a(href="http://www.poli.usp.br/pt/pesquisa.html" target="_blank")
+                span.field-body  
+                  | POLI-USP
+              span(class="external-link glyphicon glyphicon-new-window")
+
+
+        p.session-subtitle
+          | Cultura e Extensão
+        p
+          ul
+            li
+              a(href="http://prceu.usp.br/" target="_blank")
+                span.field-body  
+                  | USP: Pró-reitoria de Cultura e Extensão Universitária
+              span(class="external-link glyphicon glyphicon-new-window") 
+            li
+              a(href="http://www.poli.usp.br/pt/cultura-e-extensao.html" target="_blank")
+                span.field-body  
+                  | POLI-USP: Cultura e Extensão
+              span(class="external-link glyphicon glyphicon-new-window")
+
+
+        p.session-subtitle
+          | Pós-Graduação
+        p
+          ul
+            li
+              a(href="http://www.prpg.usp.br/index.php/pt-br/" target="_blank")
+                span.field-body  
+                  | USP: Pró-reitoria de Pós-graduação
+              span(class="external-link glyphicon glyphicon-new-window") 
+            li
+              a(href="http://www.poli.usp.br/pt/ensino/pos-graduacao/cpg.html" target="_blank")
+                span.field-body  
+                  | POLI-USP: Pós-graduação
+              span(class="external-link glyphicon glyphicon-new-window")
+
+
+        p.session-subtitle
+          | Escola Politécnica
+        p
+          ul
+            li
+              a(href="http://www.poli.usp.br/pt/ensino.html" target="_blank")
+                span.field-body  
+                  | POLI-USP: Ensino
+              span(class="external-link glyphicon glyphicon-new-window") 

@@ -1,4 +1,4 @@
-header
+header  
   .department-name
     .container
       p 
@@ -16,44 +16,52 @@ header
       .header-mobile-menu
         ul
           li.level-1-menu
-            a(class="menu-hamburger" href="#") 
-              span(class="flaticon-menu" aria-hidden="true")
+            a.js-hamburger-button(class="menu-hamburger" href="#") 
+              span(class="js-menu-icon flaticon-menu" aria-hidden="true")
             ul.level-2-menu
-              li
-                a(href=home_path+"departamento/index.html") 
-                  | O Departamento
-              li
-                a(href=home_path+"graduacao/index.html") 
-                  | Graduação
-              li
-                a(href=home_path+"pos-graduacao/index.html") 
-                  | Pós-Graduação
-              li
-                a(href=home_path+"equipe/docentes/index.html") 
-                  | Equipe
-              li
-                a(href=home_path+"laboratorios/index.html") 
-                  | Laboratórios
-              li
-                a(href=home_path+"extensao/index.html") 
-                  | Extensão
+              each attribute, index in paths
+                li.js-menu-category
+                  a
+                    | #{index}
+                  ul.js-menu-sub-category
+                    each item in attribute
+                      a(href=home_path + item.relative_path)
+                        li.level-3-menu
+                          | #{item.name}
+              
+              //- li
+              //-   a(href=home_path+"departamento/index.html") 
+              //-     | O Departamento
+              //- li
+              //-   a(href=home_path+"graduacao/index.html") 
+              //-     | Graduação
+              //- li
+              //-   a(href=home_path+"pos-graduacao/index.html") 
+              //-     | Pós-Graduação
+              //- li
+              //-   a(href=home_path+"equipe/docentes/index.html") 
+              //-     | Equipe
+              //- li
+              //-   a(href=home_path+"laboratorios/index.html") 
+              //-     | Laboratórios
+              //- li
+              //-   a(href=home_path+"extensao/index.html") 
+              //-     | Extensão
                       
       .header-menu
         ul
           each attribute, index in paths
-            = attribute.length
             if attribute.length > 1 || index === "Pesquisa" || index === "Diversos"
               li.level-1-menu
-                a(href="")
+                a
                   | #{index}
                   span(class="arrow-down arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
                 ul
                   each item in attribute
                     li.level-2-menu
-                      a(href=home_path + item.relative_path)
+                      a(href=home_path + item.relative_path target=item.target)
                         | #{item.name}
             else
               li.level-1-menu.not-expandable
                 a(href=home_path + attribute[0].relative_path)
                   | #{index}
-            

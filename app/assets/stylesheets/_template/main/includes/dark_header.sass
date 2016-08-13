@@ -48,7 +48,7 @@
       color: #fff
       transition: all .2s ease-in-out
 
-    a:hover
+    a:hover,a:active,a:visited
       text-decoration: none
 
     >ul
@@ -79,7 +79,7 @@
         padding-bottom: 20px
         -webkit-font-smoothing: antialiased
 
-        >a:not(.not-expandable)
+        >a
           cursor: default
 
         .arrow-down
@@ -87,18 +87,20 @@
           margin-left: 3px
           transition: all .3s ease-in-out
 
-        ul
+        >ul
           position: absolute
           margin-top: 20px
           display: none
+
+      .level-1-menu.not-expandable
+        >a
+          cursor: pointer
 
       .level-1-menu:hover .arrow-down
         transform: rotate(180deg)
         -ms-transform: rotate(180deg)
         -webkit-transform: rotate(180deg)
 
-      .level-1-menu:hover ul,.level-1-menu:active ul
-        display: block
 
       .level-2-menu
         position: relative
@@ -108,8 +110,12 @@
 
         a:hover
           color: #999
+  .header-menu
+    .level-1-menu:hover>ul,.level-1-menu:active>ul
+      display: block
 
   .header-mobile-menu
+
     display: none
 
 @media (max-width: $breakpoint-tablet)
@@ -145,3 +151,25 @@
 
           li
             padding: 15px 15px
+            position: relative
+
+        .level-2-menu
+          ul
+            position: relative
+            width: 100vw
+            margin-left: -15px
+            margin-top: 20px
+            background-color: #37474F
+            display: none
+
+            li
+              border-bottom: 1px dotted #546E7A
+              padding: 15px
+              margin: 0 15px
+
+            li:last-child
+              border-bottom: 1px dotted transparent
+
+          // >li:active,>li:hover
+          //   >ul
+          //     display: block
