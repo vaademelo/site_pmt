@@ -28,32 +28,13 @@ header
                       a(href=home_path + item.relative_path)
                         li.level-3-menu
                           | #{item.name}
-              
-              //- li
-              //-   a(href=home_path+"departamento/index.html") 
-              //-     | O Departamento
-              //- li
-              //-   a(href=home_path+"graduacao/index.html") 
-              //-     | Graduação
-              //- li
-              //-   a(href=home_path+"pos-graduacao/index.html") 
-              //-     | Pós-Graduação
-              //- li
-              //-   a(href=home_path+"equipe/docentes/index.html") 
-              //-     | Equipe
-              //- li
-              //-   a(href=home_path+"laboratorios/index.html") 
-              //-     | Laboratórios
-              //- li
-              //-   a(href=home_path+"extensao/index.html") 
-              //-     | Extensão
                       
       .header-menu
         ul
           each attribute, index in paths
             if attribute.length > 1 || index === "Pesquisa" || index === "Diversos"
               li.level-1-menu
-                a
+                a(href=home_path + attribute[0].relative_path, target=attribute[0].taget)
                   | #{index}
                   span(class="arrow-down arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
                 ul

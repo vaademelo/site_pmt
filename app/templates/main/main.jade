@@ -27,6 +27,7 @@ html(lang="pt-br")
           
     link(rel="stylesheet" type="text/css" href=assets+"bootstrap/css/bootstrap.min.css")
     link(rel="stylesheet" href=assets+"iconpack/flaticon.css")
+    link(rel="stylesheet" href=assets+"css/magnific-popup.css")
     
     link(rel="stylesheet" href=assets+"css/"+stylesheet)
     
@@ -34,6 +35,7 @@ html(lang="pt-br")
     
     script(src=assets+"js/jquery-3.1.0.min.js")
     script(src=assets+"bootstrap/js/bootstrap.min.js")
+    script(src=assets+"js/jquery.magnific-popup.min.js")
     
     script(src=assets+"js/mobile-header.js")
   
@@ -107,6 +109,17 @@ html(lang="pt-br")
                   | #{page.name}
                 
     block content
+    
+    script.
+      $(document).ready(function() {
+        $('.iframe-link').magnificPopup({
+          type:'iframe'
+        });
+        
+        $('.image-link').magnificPopup({
+          type:'image'
+        });
+      });
     
     include includes/footer.jade
         

@@ -6,3 +6,4 @@
 .sass-cache
 deploy
 node_modules
+dist
