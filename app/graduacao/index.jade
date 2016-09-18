@@ -50,7 +50,7 @@ block content
             h1.session-title
               | Engenharia Metalúrgica
             p.session-body.
-              O curso de Engenharia metalúrgica cobre três áreas principais:
+              O curso de Engenharia Metalúrgica cobre três áreas principais:
             ul
               li.session-body
                 strong
@@ -66,7 +66,7 @@ block content
                 | Lida com as características do material
             br/
             p.session-body.
-              Sendo assim, os engenheiros e engenheiras metalúrgicos podem operar 
+              Sendo assim, os Engenheiros e Engenheiras Metalúrgicos podem operar 
               tanto em processos de beneficiamento de minérios, quanto na obtenção 
               de ligas metálicas com propriedades físicas, químicas e metalúrgicas 
               adaptadas aos mais variados usos e inclusive na fabricação de peças 
@@ -76,17 +76,17 @@ block content
             p.session-body.
               Adicionalmente estas atividades estão fortemente relacionadas às 
               indústrias de base e ao setor metal-mecânico, sendo assim o escopo 
-              de responsabilidade do engenheiro metalurgista se expandiu 
+              de responsabilidade do Engenheiro Metalurgista se expandiu 
               consideravelmente no que tange o desenvolvimento e gestão de 
               projetos, seleção de materiais, controle de qualidade, segurança 
               e gestão ambiental.
             br/
             p.session-body.
-              Nos últimos 20 anos cerca de 300 engenheiras e engenheiros 
-              metalurgistas foram formados pelo departamento. Atualmente são 
+              Nos últimos 20 anos cerca de 300 Engenheiras e Engenheiros 
+              Metalurgistas foram formados pelo departamento. Atualmente são 
               oferecidas 20 vagas por ano. O Departamento de Engenharia 
               Metalúrgica e de Materiais da Escola Politécnica, possui renome 
-              no campo de ensino de engenharia metalúrgica. Não somente pela 
+              no campo de ensino de Engenharia Metalúrgica. Não somente pela 
               sua tradição, mas também por estar sempre na vanguarda e focada 
               em criar os melhores e mais completos engenheiros. Tal fato é 
               acentuado pelo grande número de profissionais, formados pelo 
@@ -107,8 +107,8 @@ block content
             h1.session-title
               | Engenharia de Materiais
             p.session-body.
-              O escopo de responsabilidades dos engenheiros e engenheiras de 
-              materiais compreende o estudo dos materiais metálicos, poliméricos 
+              O escopo de responsabilidades dos Engenheiros e Engenheiras de 
+              Materiais compreende o estudo dos materiais metálicos, poliméricos 
               e cerâmicos no que se refere à caracterização de propriedades, 
               processos de manufatura e aplicações, adicionalmente à análise, 
               criação e desenvolvimento de novos produtos. Além disso a análise 
@@ -119,7 +119,7 @@ block content
             p.session-body.
               Os materiais representam as matérias-primas nas quais uma grande 
               quantidade de projetos de engenharia se baseiam. Sendo assim, 
-              engenheiras e engenheiros de materiais possuem uma extensa área de 
+              Engenheiras e Engenheiros de Materiais possuem uma extensa área de 
               atuação, uma vez que o curso provê um amplo conhecimento teórico 
               e prático que enfatiza as relações entre microestruturas, 
               processamento, propriedades e consequentemente a performance 
@@ -131,8 +131,8 @@ block content
               curso no campo de materiais, refletida em inovações em 
               praticamente todos os setores de atividade humana, e, 
               principalmente nos campos da computação, telecomunicações, 
-              transporte e saúde. O mercado de trabalho para engenheiros e 
-              engenheiras de materiais compreende o suprimento de 
+              transporte e saúde. O mercado de trabalho para Engenheiros e 
+              Engenheiras de Materiais compreende o suprimento de 
               matérias-primas, indústrias de transformação, prestação de 
               serviço, consultorias técnica e P&D. 20 vagas por ano são 
               atualmente oferecidas ao curso de Engenharia de Materiais, que se 
@@ -156,6 +156,21 @@ block content
         .col-sm-3.col-sm-pull-9
           .sidebar
             h2.sidebar-title
+              | Informações
+            
+            p.session-body
+              strong
+                | Coordenador: 
+              a(href=home_path+"equipe/docentes/samuel-marcio-toffoli/index.html")
+                | Prof. Dr. Samuel Marcio Toffoli
+              br/
+              strong
+                | Secretária: 
+              a(href="mailto:patriciasantos@usp.br")
+                | Patricia dos Santos
+          
+          .sidebar
+            h2.sidebar-title
               | Links úteis
             ul
               each link in quick_links
@@ -163,12 +178,12 @@ block content
                   a(href=link.url target="_blank")
                     | #{link.title}
 
-          .sidebar
-            h2.sidebar-title
-              | Documentos & Formulários
-            
-            ul
-              each document in documents
-                li.sidebar-body
-                  a(href=document.url target="_blank")
-                    | #{document.title}
+          //- .sidebar
+          //-   h2.sidebar-title
+          //-     | Documentos & Formulários
+          //-   
+          //-   ul
+          //-     each document in documents
+          //-       li.sidebar-body
+          //-         a(href=document.url target="_blank")
+          //-           | #{document.title}
