@@ -14,30 +14,30 @@ block page-title
 
 block content
   
-  //- .news-bar
-  //-   
-  //-   include _news/news.jade
-  //-   
-  //-   .container-fluid
-  //-     .container 
-  //-       h1.session-title
-  //-         | Últimas Notícias
-  //-       
-  //-       .row
-  //-         each item, index in news.sort(function(a,b){return b.date-a.date})
-  //-           if index < 4
-  //-             .col-sm-3.news-col
-  //-               .news-block
-  //-                 .news-content
-  //-                   .news-header
-  //-                     h3.news-title
-  //-                       | #{item.title}
-  //-                     p.news-date 
-  //-                       span(class="glyphicon glyphicon-time" aria-hidden="true")
-  //-                       = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
-  //-                   p.news-body 
-  //-                     != item.body
-  //-   
+  .news-bar
+    
+    include _news/news.jade
+    
+    .container-fluid
+      .container 
+        h1.session-title
+          | Últimas Notícias
+        
+        .row
+          each item, index in news.sort(function(a,b){return b.date-a.date})
+            if index < 4
+              .col-sm-3.news-col
+                .news-block
+                  .news-content
+                    .news-header
+                      h3.news-title
+                        | #{item.title}
+                      p.news-date 
+                        span(class="glyphicon glyphicon-time" aria-hidden="true")
+                        = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
+                    p.news-body 
+                      != item.body
+    
   .container.landing
     .row
       .col-sm-9
