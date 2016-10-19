@@ -21,9 +21,9 @@ block stylesheet
 doctype html
 html(lang="pt-br")
   head
+    meta(http-equiv="content-type", name="viewport", content="width=device-width, initial-scale=1, charset=UTF-8")
     title
       | #{page_title}
-    meta(http-equiv="content-type", name="viewport", content="width=device-width, initial-scale=1, charset=UTF-8")
           
     link(rel="stylesheet" type="text/css" href=assets+"bootstrap/css/bootstrap.min.css")
     link(rel="stylesheet" href=assets+"iconpack/flaticon.css")
@@ -93,7 +93,7 @@ html(lang="pt-br")
         h1.page-name
           | #{page_name}
         
-        if paths[page_name].length > 1
+        if paths[page_name] && paths[page_name].length > 1
           div.expand-menu
             span(class="arrow-down glyphicon glyphicon-menu-down" aria-hidden="true")
             ul.page-menu

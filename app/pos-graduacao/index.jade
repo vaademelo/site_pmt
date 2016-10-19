@@ -24,9 +24,9 @@ block content
       .container 
         h1.session-title
           | Notícias
-        a(href=home_path+"pos-graduacao/noticias/index.html")  
-          span.pull-right.more-news-btn
-            | + Notícias
+        //- a(href=home_path+"pos-graduacao/noticias/index.html")  
+        //-   span.pull-right.more-news-btn
+        //-     | + Notícias
         .row
           each item, index in news.sort(function(a,b){return b.date-a.date})
             if index < 4

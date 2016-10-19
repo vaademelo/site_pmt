@@ -1,4 +1,4 @@
-!.keep
+ver!.keep
 *.DS_Store
 /.env
 /log/*

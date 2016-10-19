@@ -31,7 +31,10 @@ block content
           .col-sm-3.col-lg-2
             .professor-picture
               a(href=professor.page+"index.html")  
-                img(src=professor.picture)
+                if professor.pictureSmall
+                  img(src=professor.pictureSmall)
+                else
+                  img(src=professor.picture)
           .col-sm-9.col-lg-10
             .professor-name
               a(href=professor.page+"index.html")  

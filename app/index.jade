@@ -22,6 +22,9 @@ block content
       .container 
         h1.session-title
           | Últimas Notícias
+        //- a(href=home_path+"noticias/index.html")  
+        //-   span.pull-right.more-news-btn
+        //-     | + Notícias
         
         .row
           each item, index in news.sort(function(a,b){return b.date-a.date})
@@ -140,5 +143,7 @@ block content
         
         .sidebar.ferreiro
           img(src=assets+"img/ferreiro.gif", style="width: 100%; border: 1px solid #eae7e3")
+          .contador(style="text-align: center; margin-top: 20px;")
+            script(type="text/javascript" src="http://www.contadorgratis.pog.com.br/contador.php?page=201610101476143424&estilo=web1&tp=0")
           
               
