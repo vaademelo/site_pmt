@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-charset": "0.0.3",
     "gulp-ruby-sass": "^2.0.6",
     "webpack": "^1.13.1"
   },

@@ -4,8 +4,9 @@ var gulp = require('gulp'),
     minifycss = require("gulp-minify-css"),
     rename = require("gulp-rename"),
     ext_replace = require("gulp-ext-replace"),
-    jade = require("gulp-jade");
-    minify = require('gulp-minify');
+    jade = require("gulp-jade"),
+    minify = require('gulp-minify'),
+    charset = require('gulp-charset');
 
 gulp.task("templates", function(){
 
@@ -15,6 +16,7 @@ gulp.task("templates", function(){
     .pipe(jade({
       locals: YOUR_LOCALS
     }))
+    // .pipe(charset({to: 'utf8'}))
     .pipe(gulp.dest('../deploy/'));
 });
 
