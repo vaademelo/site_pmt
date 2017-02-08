@@ -11,9 +11,10 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home" : home_path,
-                        "Pesquisa" : home_path + "pesquisa/index.html",
-                        "Laboratórios" : false }
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.pesquisa] = "nolink"
+    breadcrumbs_path[strings.breadcrumbs.laboratorios] = false
 
 block content
   include ./_lab-info/lab-info.jade
@@ -22,7 +23,7 @@ block content
   .laboratorios
     .container.laboratories-list
       .session-title
-        | Laboratórios 
+        != strings.pesquisa.laboratorios.laboratorios
       each laboratory in laboratories.sort(function (a, b) { if (a.name > b.name) {return 1;} if (a.name < b.name) { return -1; } return 0;})
         .row.laboratory
           .col-sm-12
@@ -32,7 +33,7 @@ block content
                   | #{laboratory.name} - !{laboratory.initials}
               .laboratory-info
                 span.field-title
-                  | Responsável: 
+                  != strings.pesquisa.laboratorios.responsavel
                 span.field-body  
                   - var professorFound = false
                   each professor in professors
@@ -44,6 +45,6 @@ block content
                     | #{laboratory.professor}
               .laboratory-info.research-area  
                 span.field-title
-                  | Atividades: 
+                  != strings.pesquisa.laboratorios.atividades
                 span.field-body
                   | #{laboratory.activities} 

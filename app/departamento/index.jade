@@ -11,8 +11,11 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home": home_path, 
-                        "O Departamento" : false}
+    breadcrumbs_path = {}
+    
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.departamento] = false
+    
 
 block content
 
@@ -20,179 +23,68 @@ block content
     .container
       #departamento-overview.session
         h1.session-title
-          | Panorama
+          != strings.department.overview.overview
         .row
           .col-md-6
             img.full-width(src=assets+"img/praca_relogio.jpg")
             p.image-subtitle
-              | Praça do Relógio - Cidade Universitária - São Paulo/SP
+              != strings.department.overview.clockSquare
           .col-md-6
             h2.session-subtitle
-              | Universidade de São Paulo
-            p.session-body.
-              Após São Paulo ter sido derrotado na revolução constitucionalista 
-              de 1932, o Estado percebeu a necessidade de criar uma nova elite 
-              intelectual capaz de contribuir para o avanço das instituições, do 
-              governo e do país como um todo. Com essa ideia em mente um grupo 
-              de empreendedores fundaram a Escola Livre de Sociologia e Política 
-              (ELSP) (atual Fundação Escola de Sociologia e Política de São Paulo) 
-              em 1933, e o Interventor Federal de São Paulo (posição equivalente 
-              ao cargo de governador) Armando de Salles Oliveira, criou a 
-              <strong>Universidade de São Paulo (USP)</strong> em 1934. A <strong>USP</strong> surgiu da união 
-              da recém-criada Faculdade de Filosofia, Ciências e Letras (FFCL) 
-              com as já existente Escola Politécnica de São Paulo, Escola 
-              Superior de Agricultura "Luiz de Queiroz", Faculdade de Medicina, 
-              Faculdade de Direito e Faculdade de Farmácia e Odontologia.
+              != strings.department.overview.usp
+            p.session-body
+              != strings.department.overview.uspText1
             br/
-            p.session-body.
-              <strong>A Universidade de São Paulo</strong> hoje é a mais importante instituição 
-              de ensino superior do Brasil. A <strong>USP</strong> é uma universidade pública, 
-              mantida pelo Estado de São Paulo e ligada à Secretaria de 
-              Desenvolvimento Econômico, Ciência e Tecnologia.
+            p.session-body
+              != strings.department.overview.uspText2
             br/
-            p.session-body.
-              A cada ano cerca de 130.000 alunos prestam o exame de admissão 
-              (Vestibular) buscando competir pelas mais de 10.000 vagas na USP, 
-              fazendo deste o mais disputado vestibular do país. A Universidade 
-              conta com 89.000 alunos matriculados entre graduação e pós-graduação, 
-              16.000 funcionários, 5.800 docentes, 264 cursos de graduação e 255 
-              cursos de pós-graduação nas 42 unidades de ensino espalhadas pelos 
-              8 campi (São Paulo, Bauru, Lorena, Piracicaba, Pirassununga, 
-                Ribeirão Preto, Santos e São Carlos).
+            p.session-body
+              != strings.department.overview.uspText3
             br/
-            p.session-body.
-              A <strong>Universidade de São Paulo</strong> é responsável por cerca de 30% da 
-              produção acadêmica do país e pelo maior número de graduados em PhD 
-              no mundo, de acordo com o <a href="http://www.shanghairanking.com/" target="_blank">Academic Ranking University compilado 
-              pelo Center for World-Class Universities (CWCU)</a> da Universidade de 
-              Shanghai Jiao Tong na China (2012). Esses números não representam 
-              apenas quantidade, uma vez que o talento e dedicação dos docentes, 
-              alunos e funcionários são reconhecidos por diversos rankings globais, 
-              que consideram a <strong>USP</strong> a mais importante instituição de ensino e 
-              pesquisa do Brasil e da América Latina.
+            p.session-body
+              != strings.department.overview.uspText4
             br/
-            p.session-body.
-              Alguns dos mais importantes destes rankings a se saber são: Sanghai 
-              Jiao Tong University; Times Higher Education World University 
-              Rankings; Performance Ranking of Scientific Papers for World 
-              Universities of the Higher Education Evaluation & Accreditation 
-              Concil of Taiwan e o Webometrics Ranking of World Universities.
-            p.session-body.
-              Todo esse reconhecimento foi adquirido ao longo de mais de 75 
-              anos de inabalável busca pela excelência, permitiu à <strong>USP</strong> (fundada 
-                em 1934) a fazer parte de um seleto grupo de intituições com 
-                padrões internacionais.
+            p.session-body
+              != strings.department.overview.uspText5
+            p.session-body
+              != strings.department.overview.uspText6
       .session
         .row
           .col-md-6
             h2.session-subtitle
-              | Escola Politécnica
-            p.session-body.
-              A Escola Politécnica da Universidade de São Paulo (Poli/USP) tem mais de um século de história, formando gerações de engenheiros(as) que têm se destacado não só em suas especialidades profissionais, mas também na vida política do País e na administração de empresas e de órgãos públicos. Fundada em 1893, a então denominada Escola Politécnica de São Paulo foi incorporada à USP em 1934; hoje ela é referência nacional e considerada a mais completa faculdade de Engenharia da América Latina.
-              <br /><br />
-              A Poli ocupa nove prédios na Cidade Universitária, em São Paulo, num total de 141.500 metros quadrados de área construída. Ali trabalham ou estudam 457  professores, 478  funcionários, 4.500 alunos de graduação e 2.500 alunos de pós-graduação. A Escola está organizada em 15 departamentos, responsáveis pelas atividades de ensino, de pesquisa e de extensão de serviços à comunidade. 
-              <br /><br />
-              Na graduação, são oferecidos 17 cursos, agrupados em quatro grandes áreas da engenharia: Civil, Elétrica, Mecânica e Química. Desses cursos, 15 são semestrais e dois – Engenharia de Computação e Engenharia Química – têm características que os diferenciam dos demais: eles são organizados em períodos quadrimestrais e realizados em cooperação com empresas.
-              <br /><br />
-              Na pós-graduação, a Poli oferece dez cursos de mestrado, nove de doutorado e um de mestrado profissionalizante. De 1970 a 2006 foram outorgados cerca de 7.000 títulos, entre mestrado e doutorado, o que coloca a Escola como um dos maiores centros de pós-graduação do País e o maior na área de Engenharia.
-              <br /><br />
-              A Poli também se destaca na realização de pesquisas científicas e tecnológicas, com as quais contribui para o progresso social e econômico do País e para a modernização, competitividade e qualidade dos produtos e processos das empresas.
+              != strings.department.overview.poli
+            p.session-body
+              != strings.department.overview.poliText1
           .col-md-6
             img.full-width(src=assets+"img/bienio.jpg")
             p.image-subtitle.right-image
-              | Prédio do Biênio - Escola Politécnica - São Paulo/SP
+              != strings.department.overview.bienio
             
       #departamento-history.session
         h1.session-title
-          | Nossa História
+          != strings.department.ourHistory.ourHistory
         .row
           .col-md-6
             img.full-width(src=assets+"img/pmt.jpg")
             p.image-subtitle
-              | Prédio do Departamento de Engenharia Metalúrgica e de Materiais - Escola Politécnica - São Paulo/SP
+              != strings.department.ourHistory.pmtSubtitle
           .col-md-6
             h2.session-subtitle
-              | Histórico
-            p.session-body.
-              A fundação da Escola Politécnica e a preocupação sobre a relação entre fazer e descobrir levou à 
-              abertura da primeira fundição voltada para o aprendizado prático dos alunos em 1902. Este forno de 
-              cúpula de fundição ("cubilot"), um símbolo desse espírito é atualmente exibido no hall de entrada 
-              do Departamento de Engenharia Metalúrgica e de Materiais. Essa preocupação, voltada às bases 
-              experimentais de ensino deriva de escolas de engenharia da Alemanha, Suíça e dos Estados Unidos 
-              da América. A fundição foi inaugurada pelo fundador da Escola Politécnica, Antônio Francisco de 
-              Paula Souza. Engenharia Metalúrgica começou a ser ensinada na Escola Politécnica em 1939. O curso 
-              de graduação original englobava a área de engenharia de minas e tinha duração de seis anos. Em 1955, 
-              Engenharia Metalúrgica e Engenharia de Minas foram separadas dois cursos independentes de cinco anos. 
-              Assim, foi da Europa e dos Estados Unidos da América que o Departamento adotou o conceito de ensino 
-              profissional de engenharia de longo prazo, apresentando, adicionalmente ao básico e ciências de 
-              engenharia, projetos e práticas de engenharia assim como ciências sócio-econômicas, ensinadas 
-              em perspectiva de aplicação.
-            br
-            p.session-body.
-              O Programa de Graduação em Engenharia Metalúrgica foi expandido em 
-              1969 com a adição de cursos de Mestrado e Doutorado. Em 1972, o 
-              departamento se tornou o primeiro no campo de engenharia a ser 
-              aprovado pelo Conselho Federal de Educação.
-            br
-            p.session-body.
-              No final dos anos 80, a faculdade, formada amplamente por 
-              professores em meio-período, começou gradualmente a compreender 
-              ensino em tempo integral e professores pesquisadores com 
-              qualificações científico-acadêmicas modernas. Em 1990, o escopo do 
-              programa de graduação foi expandido para graduação em Engenharia 
-              Metalúrgica e de Materiais e, em 1995, o curso de graduação de 
-              Engenharia de Materiais foi introduzido com o objetivo de acompanhar 
-              a revolução que ocorria no campo dos materiais.
+              != strings.department.ourHistory.history
+            p.session-body
+              != strings.department.ourHistory.historyText1
       .session
         .row
           .col-md-6
             h2.session-subtitle
-              | O PMT
-            p.session-body.
-              O Departamento de Engenharia Metalúrgica e de Materiais (PMT) é 
-              responsável por ensinar engenheiros de materiais e metalurgistas 
-              na Escola Politécnica. O Departamento está localizado em um prédio 
-              próprio e abrange uma área de 6.700 m<sup>2</sup>. Os laboratórios ocupam uma 
-              área de aproximadamente 2.500 m<sup>2</sup> e a biblioteca 261 m<sup>2</sup> (que possui 
-              5.830 livros e 556 teses ou dissertações), o restante sendo 
-              dividido entre a oficina mecânica, salas de computação, salas 
-              de aula, anfiteatro, salas de professores e secretaria. O 
-              Departamento mantém convênios com agências privadas e estatais 
-              e agências de desenvolvimento como meio de condução de pesquisa, 
-              serviços de consultoria, cursos de educação continuada e 
-              atividades de treinamento orientada para a reciclagem da 
-              experiência dos profissionais que trabalham na área de 
-              Engenharia de Materiais e Metalúrgica.
-            br
-            p.session-body.    
-              O Departamento de Engenharia Metalúrgica e de Materiais emprega 25 
-              professores, 5 dos quais são professores titulares; 3 professores 
-              aposentados que ainda trabalham no Departamento (2 dos quais são 
-              professores titulares). Muitos dos professores são responsáveis 
-              por laboratórios que abrangem grupos de pesquisa em engenharia 
-              ativos.
-            br
-            p.session-body.
-              Os cursos de graduação de Engenharia Metalúrgica e de Materiais 
-              são de cinco anos. Informações científicas básicas em ciências de 
-              engenharia são adquiridas em dois anos. O terceiro ano do curso 
-              começa a focar em áreas de metalurgia e de materiais e ambos os 
-              cursos de graduação compartilham do mesmo currículo. Nos dois 
-              últimos anos, cada área segue um currículo específico de tecnologias 
-              e técnicas visando produzir profissionais com alta capacidade 
-              analítica, capazes de resolver problemas e de trabalhar em equipe 
-              e que possuam um espírito inovador e de liderança.
-            br
-            p.session-body.
-              O PMT também oferece cursos de Mestrado e Doutorado (strictu-sensu) 
-              nas áreas de Engenharia Metalúrgica e de Materiais. O objetivo 
-              dos programas é de produzir recursos humanos de primeira classe, 
-              particularmente professores e pesquisadores.
+              != strings.department.pmt.pmt
+            p.session-body
+              != strings.department.pmt.pmtText1
           
           .col-md-6
             img.full-width(src=assets+"img/pmt2.png")
             p.image-subtitle.right-image
-              | Prédio do Departamento de Engenharia Metalúrgica e de Materiais - Escola Politécnica - São Paulo/SP
+              != strings.department.pmt.pmtSubtitle
       
         .row
           .col-md-6
@@ -200,69 +92,73 @@ block content
           .col-md-6
           
             h1.session-subtitle.external-links
-              | Links Externos Sobre o Departamento        
+              != strings.department.pmt.externalLinks
             p
               ul.session-body
                 li
                   a.iframe-link(href="https://www.youtube.com/watch?v=6MB_NJ23Sbo")
-                    | Vídeo institucional do Departamento (2013)
+                    != strings.department.pmt.link1
                 li
                   a(href="http://minhafaculdade.exame2.com.br/faculdades/ficha/engenharia-metalurgica-departamento-de-engenharia-metalurgica-e-de-materiais-escola-politecnica-univ" target="_blank")
-                    | Página do PMT no catálogo da exame.com
+                    != strings.department.pmt.link2
                   span(class="external-link-icon glyphicon glyphicon-new-window") 
                 li
                   a(href="https://www.facebook.com/pages/Departamento-de-Engenharia-Metal%C3%BArgica-e-de-Materiais-da-USP/432007576919316" target="_blank")
-                    | PMT no facebook
+                    != strings.department.pmt.link3
                   span(class="external-link-icon glyphicon glyphicon-new-window") 
                 li
                   a(href="http://guiadoestudante.abril.com.br/profissoes/engenharia-producao/engenharia-metalurgica-685910.shtml" target="_blank")
-                    | Reportagem do guia do estudante sobre o curso de Engenharia Metalúrgica   
+                    != strings.department.pmt.link4
                   span(class="external-link-icon glyphicon glyphicon-new-window") 
                 li
                   a(href="http://guiadoestudante.abril.com.br/profissoes/engenharia-producao/engenharia-materiais-685542.shtml" target="_blank")
-                    | Reportagem do guia do estudante sobre o curso de Engenharia de Materiais
+                    != strings.department.pmt.link5
                   span(class="external-link-icon glyphicon glyphicon-new-window") 
                     
       #departamento-mission.session
         h1.session-title
-          | Missão
-        p.session-body.
-          "Formar recursos humanos de excelência em <strong> Engenharias Metalúrgica e de Materiais</strong>, bem como gerar conhecimento para o progresso sustentável do país"
+          != strings.department.mission.mission
+        p.session-body
+          != strings.department.mission.missionText
         
       #departamento-vision.session
         h1.session-title
-          | Visão
-        p.session-body.
-          "Ser um centro de excelência mundial de ensino, pesquisa e extensão em <strong>Engenharia Metalúrgica e Engenharia de Materiais</strong>"
+          != strings.department.vision.vision
+        p.session-body
+          != strings.department.vision.visionText
       
       #departamento-administracao.session
         h1.session-title
-          | Administração
+          != strings.department.admin.admin
         .row  
           .col-md-12
             .session-subtitle
-              | Administração
+              != strings.department.admin.admin
             .session-body
               ul
                 li
                   strong
-                    | Chefe do Departamento: 
+                    != strings.department.admin.adminText1
                   | Prof. Dr. Marcelo Breda Mourão
                 li  
                   strong
-                    | Vice-Chefe do Departamento: 
+                    != strings.department.admin.adminText2
                   | Prof. Dr. Douglas Gouvea
                 li  
                   strong
-                    | Secretária do Departamento: 
+                    != strings.department.admin.adminText3
                   | Maria Cristina Biasoli
             
             .session-subtitle
-              | Comissão de Coordenação dos Cursos de Engenharia Metalúrgica e Engenharia de Materiais
+              != strings.department.admin.adminText4
             .session-body
               ul
                 li
-                  | Prof. Dr. Samuel Toffoli (coordenador)
+                  | Prof. Dr. Samuel Toffoli 
+                  - if (lang == "en")
+                    | &nbsp;(Coordinator)
+                  - else
+                    | &nbsp;(Coordenador)
                 li  
                   | Prof. Dr. Guilherme F. B. Lenz e Silva
                 li  
@@ -270,60 +166,108 @@ block content
                 li  
                   | Prof. Dr. Ticiane Sanches Valera
                 li  
-                  | Prof. Dr. Francisco Valenzuela Diaz (suplente)
+                  | Prof. Dr. Francisco Valenzuela Diaz
+                  - if (lang == "en")
+                    | &nbsp;(Substitute)
+                  - else
+                    | &nbsp;(Suplente)
                 li  
-                  | Prof. Dr. Cesar Roberto F. Azevedo (suplente)
+                  | Prof. Dr. Cesar Roberto F. Azevedo
+                  - if (lang == "en")
+                    | &nbsp;(Substitute)
+                  - else
+                    | &nbsp;(Suplente)
                 li  
-                  | Prof. Dr. Yvette Oppenheim (suplente)
+                  | Prof. Dr. Yvette Oppenheim
+                  - if (lang == "en")
+                    | &nbsp;(Substitute)
+                  - else
+                    | &nbsp;(Suplente)
                 li  
-                  | Prof. Dr. Eduardo Franco de Monlevade (suplente)
+                  | Prof. Dr. Eduardo Franco de Monlevade
+                  - if (lang == "en")
+                    | &nbsp;(Substitute)
+                  - else
+                    | &nbsp;(Suplente)
                 li  
-                  | Isabela Casemiro Perini (Representante discente)
+                  | Isabela Casemiro Perini
+                  - if (lang == "en")
+                    | &nbsp;(Student representative)
+                  - else
+                    | &nbsp;(Representante discente)
                 li  
-                  | Jefferson Batista de Oliveira Alvares (Representante discente suplente)
+                  | Jefferson Batista de Oliveira Alvares
+                  - if (lang == "en")
+                    | &nbsp;(Substitute student representative)
+                  - else
+                    | &nbsp;(Representante discente suplente)
                 li
-                  | Secretária da Comissão: Patricia dos Santos
+                  - if (lang == "en")
+                    | Commission's secretary:&nbsp;
+                  - if (lang == "pt_br")
+                    | Secretária da comissão:&nbsp;
+                  | Patricia dos Santos
                   
             .session-subtitle
-              | Comissão  de Coordenação do Programa de Pós-Graduação em Engenharias Metalúrgica e de Materiais
+              != strings.department.admin.adminText5
             .session-body
               ul
                 li
-                  | Prof. Dr. André Paulo Tschiptschin (coordenador)
+                  | Prof. Dr. André Paulo Tschiptschin
+                  - if (lang == "en")
+                    | &nbsp;(Coordinator)
+                  - else
+                    | &nbsp;(Coordenador)
                 li  
                   | Profa. Dra. Ticiane Sanches Valera
                 li  
                   | Prof. Dr. Cesar Roberto F. Azevedo
                 li  
-                  | Prof. Dr. Guilherme F. B. Lenz e Silva (suplente)
+                  | Prof. Dr. Guilherme F. B. Lenz e Silva
+                  - if (lang == "en")
+                    | &nbsp;&nbsp;(Substitute)
+                  - else
+                    | &nbsp;&nbsp;(Suplente)
                 li  
-                  | Secretária da Comissão: Suellen Alves
+                  - if (lang == "en")
+                    | Commission's secretary:&nbsp;
+                  - if (lang == "pt_br")
+                    | Secretária da comissão:&nbsp;
+                  | Suellen Alves
 
             .session-subtitle
-              | Representantes na Comissão de Pesquisa da EPUSP
+              != strings.department.admin.adminText6
             .session-body
               ul
                 li
                   | Prof. Dr. Hélio Goldenstein
                 li
-                  | Prof. Dr. Guilherme F. B. Lenz e Silva (suplente)
+                  | Prof. Dr. Guilherme F. B. Lenz e Silva
+                  - if (lang == "en")
+                    | &nbsp;(Substitute)
+                  - else
+                    | &nbsp;(Suplente)
             .session-subtitle 
-              | Representante na Comissão de Cultura e Extensão da EPUSP
+              != strings.department.admin.adminText7
             .session-body
               ul
                 li  
                   | Prof. Dr. Francisco Rolando Valenzuela Diaz 
                 li  
-                  | Prof. Dr. Samuel Toffoli (suplente)
+                  | Prof. Dr. Samuel Toffoli
+                  - if (lang == "en")
+                    | &nbsp;(Substitute)
+                  - else
+                    | &nbsp;(Suplente)
 
 
             .session-subtitle
-              | Conselho do Departamento
+              != strings.department.admin.adminText8
             .session-body
               ul
                 li
                   strong
-                    | Professores Titulares
+                    != strings.department.admin.adminText9
                 ul
                   li
                     | Prof. Dr. André Paulo Tschiptschin
@@ -336,7 +280,7 @@ block content
                     
                 li
                   strong
-                    | Representantes dos Professores Associados (mandato 21/10/2015 a 20/10/2017)
+                    != strings.department.admin.adminText10
                 ul
                   li
                     | Prof. Dr. Antonio Carlos Vieira Coelho
@@ -347,11 +291,15 @@ block content
                   li  
                     | Profa. Dra. Wang Shu Hui
                   li
-                    | Prof. Dr. Cláudio Geraldo Schon (suplente) 
+                    | Prof. Dr. Cláudio Geraldo Schon
+                    - if (lang == "en")
+                      | &nbsp;(Substitute)
+                    - else
+                      | &nbsp;(Suplente) 
                 
                 li
                   strong
-                    | Representantes dos Professores Doutores (mandato 30/03/2015 a 29/03/2017)
+                    != strings.department.admin.adminText11
                 ul
                   li
                     | Prof. Dr. Guilherme F. B. Lenz e Silva
@@ -360,122 +308,68 @@ block content
                   li  
                     | Prof. Dr. Samuel Toffoli
                   li  
-                    | Prof. Dr. Francisco Rolando Valenzuela Diaz (suplente)
+                    | Prof. Dr. Francisco Rolando Valenzuela Diaz
+                    - if (lang == "en")
+                      | &nbsp;(Substitute)
+                    - else
+                      | &nbsp;(Suplente)
                   li  
-                    | Prof. Dr. Augusto Camara Neiva (suplente)
+                    | Prof. Dr. Augusto Camara Neiva
+                    - if (lang == "en")
+                      | &nbsp;(Substitute)
+                    - else
+                      | &nbsp;(Suplente)
                   li  
-                    | Prof. Dr. Eduardo Franco de Monlevade (suplente)
+                    | Prof. Dr. Eduardo Franco de Monlevade
+                    - if (lang == "en")
+                      | &nbsp;(Substitute)
+                    - else
+                      | &nbsp;(Suplente)
                 li
                   strong
-                    | Representação Discente
+                    != strings.department.admin.adminText12
                 ul
                   li
                     | Isabela Casemiro Perini
                   li
-                    | Jefferson Batista de Oliveira Alvares (suplente)
+                    | Jefferson Batista de Oliveira Alvares
+                    - if (lang == "en")
+                      | &nbsp;(Substitute)
+                    - else
+                      | &nbsp;(Suplente)
                 
                 li
                   strong
-                    | Representante dos Funcionários Não-Docentes
+                    != strings.department.admin.adminText13
                 ul
                   li
                     | Rafael Rocha Maia
                   li
-                    | José Rubens B. de Carvalho (suplente)
-
-
-
-            .session-subtitle
-              | Funcionários
-            .session-body
-              ul
-                li
-                  strong
-                    | Funcionários administrativos do PMT
-                ul
-                  li                  
-                    | Maria Cristina Biasoli
-                  li  
-                    | Patricia dos Santos
-                  li
-                    | Suellen Cristhine C. Alves Napi 
-                  li  
-                    | Vera Lúcia dos Santos
-                
-                li
-                  strong
-                    | Funcionários técnicos do PMT
-                ul
-                  li  
-                    | Danilo Augusto de Almeida Filho                           
-                  li
-                    | José Rubens Beserra de Carvalho             
-                  li  
-                    | Rafael Rocha Maia
-                  li  
-                    | Valquíria de Fátima J. Kozievitch 
-                  li  
-                    | Wilson da Silva Maia
-                
-                li
-                  strong
-                    | Biblioteca
-                ul
-                  li
-                    | Clélia de Lourdes Lara Meguerditchian 
-                  li  
-                    | Gilberto Martins
-                  li  
-                    | Jefferson dos Santos
-                
-                li
-                  strong
-                    | Zelador
-                ul
-                  li
-                    | Fábio Eduardo Teodoro
-                
-                li
-                  strong
-                    | Portaria
-                ul
-                  li    
-                    | Regina Aparecida Soares Pereira 
-                
-                li
-                  strong
-                    | Laboratório de Microscopia Eletrônica
-                ul
-                  li
-                    | José Verissímo S. dos Santos
+                    | José Rubens B. de Carvalho
+                    - if (lang == "en")
+                      | &nbsp;(Substitute)
+                    - else
+                      | &nbsp;(Suplente)
 
       #departamento-contact.session
         h1.session-title
-          | Contato
+          != strings.department.contact.contact
         .row  
           .col-md-6
             iframe.full-width(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.432512515424!2d-46.73069728531061!3d-23.552904867164468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdb372587646a5901!2sDepartamento+de+Engenharia+Metal%C3%BArgica+e+de+Materiais!5e0!3m2!1sen!2sbr!4v1463971653120" height="350" frameborder="0" style="border:0" allowfullscreen)
           .col-md-6
             .session-body
               strong
-                | Departamento de Engenharia Metalúrgica e de Materiais da Escola Politécnica da Universidade de São Paulo
+                != strings.department.contact.contactText1
               br/
               br/
               span.field-title
-                | Endereço:
-              br/
-              | Av. Professor Mello Moraes, 2463
-              br/
-              | CEP: 05508-030
-              br/
-              | São Paulo/SP
-              br/
-              br/
+                != strings.department.contact.contactText2
               span.field-title
-                | Telefone: 
+                != strings.department.contact.phone
               | +55 (11) 3091-5235
               br/
               span.field-title
-                | Fax: 
+                != strings.department.contact.fax
               | +55 (11) 3091-5243
               

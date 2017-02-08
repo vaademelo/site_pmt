@@ -11,143 +11,70 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home" : home_path,
-                        "Graduação" : false }
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.graduacao] = false
 
 block content
   .graduacao
-    .news-bar
+    - if (lang === "pt_br")
+      .news-bar
+        include _news/news.jade
+        
+        .container-fluid
+          .container 
+            h1.session-title
+              | Notícias
+            //- a(href=home_path+"graduacao/noticias/index.html")  
+            //-   span.pull-right.more-news-btn
+            //-     | + Notícias
+            .row
+              each item, index in news.sort(function(a,b){return b.date-a.date})
+                if index < 4
+                  .col-sm-3.news-col
+                    .news-block
+                      //- .news-image(style="background-image: url('../assets/img/news/#{item.image}')")
+                      .news-content
+                        .news-header
+                          h3.news-title
+                            | #{item.title}
+                          p.news-date 
+                            span(class="glyphicon glyphicon-time" aria-hidden="true")
+                            = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
+                        p.news-body 
+                          != item.body
       
-      include _news/news.jade
-      
-      .container-fluid
-        .container 
-          h1.session-title
-            | Notícias
-          //- a(href=home_path+"graduacao/noticias/index.html")  
-          //-   span.pull-right.more-news-btn
-          //-     | + Notícias
-          .row
-            each item, index in news.sort(function(a,b){return b.date-a.date})
-              if index < 4
-                .col-sm-3.news-col
-                  .news-block
-                    //- .news-image(style="background-image: url('../assets/img/news/#{item.image}')")
-                    .news-content
-                      .news-header
-                        h3.news-title
-                          | #{item.title}
-                        p.news-date 
-                          span(class="glyphicon glyphicon-time" aria-hidden="true")
-                          = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
-                      p.news-body 
-                        != item.body
-    
     .container
       .row
         .col-sm-9.col-sm-push-3
           .session
             h1.session-title
-              | Engenharia Metalúrgica
-            p.session-body.
-              O curso de Engenharia Metalúrgica cobre três áreas principais:
-            ul
-              li.session-body
-                strong
-                  | Metalurgia extrativa: 
-                | Processos de produção primário e refino de metais e ligas metálicas
-              li.session-body
-                strong
-                  | Transformações metalúrgicas: 
-                | Conformação mecânica, fundição, tratamentos térmicos, tratamento de superfícies, soldagem e metalurgia do pó)
-              li.session-body
-                strong
-                  | Metalurgia física: 
-                | Lida com as características do material
-            br/
-            p.session-body.
-              Sendo assim, os Engenheiros e Engenheiras Metalúrgicos podem operar 
-              tanto em processos de beneficiamento de minérios, quanto na obtenção 
-              de ligas metálicas com propriedades físicas, químicas e metalúrgicas 
-              adaptadas aos mais variados usos e inclusive na fabricação de peças 
-              e produtos para uso em outras indústrias, com propriedades adaptadas 
-              às diferentes necessidades.
-            br/
-            p.session-body.
-              Adicionalmente estas atividades estão fortemente relacionadas às 
-              indústrias de base e ao setor metal-mecânico, sendo assim o escopo 
-              de responsabilidade do Engenheiro Metalurgista se expandiu 
-              consideravelmente no que tange o desenvolvimento e gestão de 
-              projetos, seleção de materiais, controle de qualidade, segurança 
-              e gestão ambiental.
-            br/
-            p.session-body.
-              Nos últimos 20 anos cerca de 300 Engenheiras e Engenheiros 
-              Metalurgistas foram formados pelo departamento. Atualmente são 
-              oferecidas 20 vagas por ano. O Departamento de Engenharia 
-              Metalúrgica e de Materiais da Escola Politécnica, possui renome 
-              no campo de ensino de Engenharia Metalúrgica. Não somente pela 
-              sua tradição, mas também por estar sempre na vanguarda e focada 
-              em criar os melhores e mais completos engenheiros. Tal fato é 
-              acentuado pelo grande número de profissionais, formados pelo 
-              departamento, ocupando posições de destaque tanto na indústria 
-              quanto no setor de P&D. Não menos importante é a participação de 
-              ex-alunos em instituições de planejamento governamentais e na 
-              indústria metalúrgica doméstica.
+              != strings.undergrad.main.metalurgica
+            p.session-body
+              != strings.undergrad.main.metalurgicaText
             h2.session-subtitle
-              | Programa do curso
+              != strings.undergrad.main.metalurgicaProgram
             p
               ul
                 li
                   a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3062&codhab=3000&tipo=N" target="_blank")
                     span.field-body  
-                      | Programa do Curso (3061)
+                      | #{strings.undergrad.main.metalurgicaProgram} (3061)
                   span(class="external-link-icon glyphicon glyphicon-new-window")
            
             h1.session-title
-              | Engenharia de Materiais
-            p.session-body.
-              O escopo de responsabilidades dos Engenheiros e Engenheiras de 
-              Materiais compreende o estudo dos materiais metálicos, poliméricos 
-              e cerâmicos no que se refere à caracterização de propriedades, 
-              processos de manufatura e aplicações, adicionalmente à análise, 
-              criação e desenvolvimento de novos produtos. Além disso a análise 
-              de materiais em si é essencial para entender as bases dos processos 
-              de manufatura, que são as pedras fundamentais da competitividade 
-              das indústrias.
-            br/
-            p.session-body.
-              Os materiais representam as matérias-primas nas quais uma grande 
-              quantidade de projetos de engenharia se baseiam. Sendo assim, 
-              Engenheiras e Engenheiros de Materiais possuem uma extensa área de 
-              atuação, uma vez que o curso provê um amplo conhecimento teórico 
-              e prático que enfatiza as relações entre microestruturas, 
-              processamento, propriedades e consequentemente a performance 
-              do material durante sua utilização.
-            br/
-            p.session-body.
-              O curso de Engenharia de Materiais foi criado na Escola 
-              Politécnica em 1995, com o objetivo de acompanhar a revolução em 
-              curso no campo de materiais, refletida em inovações em 
-              praticamente todos os setores de atividade humana, e, 
-              principalmente nos campos da computação, telecomunicações, 
-              transporte e saúde. O mercado de trabalho para Engenheiros e 
-              Engenheiras de Materiais compreende o suprimento de 
-              matérias-primas, indústrias de transformação, prestação de 
-              serviço, consultorias técnica e P&D. 20 vagas por ano são 
-              atualmente oferecidas ao curso de Engenharia de Materiais, que se 
-              diferencia do curso de engenharia metalúrgica no que se refere ao 
-              espaço dedicado ao estudo de materiais poliméricos e cerâmicos 
-              além dos metálicos.
+              != strings.undergrad.main.materiais
+            p.session-body
+              != strings.undergrad.main.materiaisText
           
             h2.session-subtitle
-              | Programa do curso
+              != strings.undergrad.main.materiaisProgram
             p        
               ul
                 li
                   a(href="https://uspdigital.usp.br/jupiterweb/listarGradeCurricular?codcg=3&codcur=3102&codhab=3000&tipo=N" target="_blank")
                     span.field-body  
-                      | Programa do Curso (3101)
+                      | #{strings.undergrad.main.materiaisProgram} (3101)
                   span(class="external-link-icon glyphicon glyphicon-new-window")
                   
         include _documentos/documentos.jade
@@ -156,28 +83,36 @@ block content
         .col-sm-3.col-sm-pull-9
           .sidebar
             h2.sidebar-title
-              | Informações
+              != strings.undergrad.main.informacoes
             
             p.session-body
               strong
-                | Coordenador: 
+                | #{strings.undergrad.main.coordenador}: 
               a(href=home_path+"equipe/docentes/samuel-marcio-toffoli/index.html")
                 | Prof. Dr. Samuel Marcio Toffoli
               br/
               strong
-                | Secretária: 
+                | #{strings.undergrad.main.secretaria}: 
               a(href="mailto:patriciasantos@usp.br")
                 | Patricia dos Santos
           
           .sidebar
             h2.sidebar-title
-              | Links úteis
+              != strings.undergrad.main.linksUteis
             ul
-              each link in quick_links
-                li.sidebar-body
-                  a(href=link.url target="_blank")
-                    | #{link.title}
-
+              li.sidebar-body
+                a(href="https://uspdigital.usp.br/jupiterweb/jupCalendario2017_final.jsp?codmnu=7920" target="_blank")
+                  - if (lang == "en") 
+                    | Calendar 2017
+                  - if (lang == "pt_br") 
+                    | Calendário 2017 
+              
+              li.sidebar-body
+                a(href="https://uspdigital.usp.br/jupiterweb/jupDisciplinaLista?codcg=3&pfxdisval=PMT&tipo=D" target="_blank")
+                  - if (lang == "en") 
+                    | Courses
+                  - if (lang == "pt_br") 
+                    | Disciplinas oferecidas
           //- .sidebar
           //-   h2.sidebar-title
           //-     | Documentos & Formulários

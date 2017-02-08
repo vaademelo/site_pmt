@@ -11,36 +11,38 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home"   : home_path,
-                        "Pós-graduação" : false}
-
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.posgrad] = false
+    
 block content
   
-  .news-bar
-    
-    include _news/news.jade
-    
-    .container-fluid
-      .container 
-        h1.session-title
-          | Notícias
-        //- a(href=home_path+"pos-graduacao/noticias/index.html")  
-        //-   span.pull-right.more-news-btn
-        //-     | + Notícias
-        .row
-          each item, index in news.sort(function(a,b){return b.date-a.date})
-            if index < 4
-              .col-sm-3.news-col
-                .news-block
-                  .news-content
-                    .news-header
-                      h3.news-title
-                        | #{item.title}
-                      p.news-date 
-                        span(class="glyphicon glyphicon-time" aria-hidden="true")
-                        = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
-                    p.news-body 
-                      != item.body
+  - if (lang === "pt_br")
+    .news-bar
+      
+      include _news/news.jade
+      
+      .container-fluid
+        .container 
+          h1.session-title
+            | Notícias
+          //- a(href=home_path+"pos-graduacao/noticias/index.html")  
+          //-   span.pull-right.more-news-btn
+          //-     | + Notícias
+          .row
+            each item, index in news.sort(function(a,b){return b.date-a.date})
+              if index < 4
+                .col-sm-3.news-col
+                  .news-block
+                    .news-content
+                      .news-header
+                        h3.news-title
+                          | #{item.title}
+                        p.news-date 
+                          span(class="glyphicon glyphicon-time" aria-hidden="true")
+                          = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
+                      p.news-body 
+                        != item.body
             
   .container
     include _documentos/documentos.jade
@@ -51,123 +53,58 @@ block content
         .col-sm-9.col-sm-push-3
           .session
             h1.session-title
-              | Objetivos (Visão Geral, Evolução e Tendências)
-            p.session-body.
-              O Departamento de Engenharia Metalúrgica e de Materiais (PMT) da Escola 
-              Politécnica da Universidade de São Paulo (EPUSP) responsável pela área 
-              de pós-graduação, "strictu-sensu", de Engenharia Metalúrgica e de 
-              Materiais, oferece programas de pós-graduação de Mestrado e Doutorado 
-              com <a href="https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/programa/viewPrograma.jsf?popup=true&id_programa=981" target="_blank">conceito 7 da CAPES</a>.
-              <br/>
-              <br/>
-              Os objetivos principais do programa são:
-            ul
-              li.session-body
-                | Formação de recursos humanos de alto nível nas áreas de Engenharia Metalúrgica e Engenharia de Materiais
-              li.session-body
-                | Formação de professores universitários e pesquisadores;
-              li.session-body
-                | Formação de pesquisadores para instituições públicas e centros de pesquisa industrial;
-              li.session-body
-                | Realização de pesquisa científica e tecnológica;
-            br/
-            p.session-body.
-              O Programa de Pós-Graduação em Engenharia Metalúrgica da Escola 
-              Politécnica da USP, nos níveis de Mestrado e Doutorado, foi implantado 
-              em 1969, e em 1972 tornou-se o primeiro no campo da engenharia a ser 
-              credenciado pelo Conselho Federal de Educação. Em 1990 o escopo do 
-              Programa foi ampliado para Pós-Graduação em Engenharia Metalúrgica e 
-              de Materiais. Em 1995, foi implantado um Plano de Recuperação do Curso 
-              que implicou na transformação de diversos aspectos do Programa, como 
-              reformulação de disciplinas, professores orientadores na maior parte de 
-              período integral, organização da pesquisa em cinco Linhas e Grupos de 
-              Pesquisa definidos, contratação de novos professores, aumento do número 
-              de alunos-bolsistas em tempo integral, implantação do Pós-Doutoramento, 
-              implantação de novos laboratórios e reformulação dos existentes.
+              != strings.grad.objetivos
+            p.session-body
+              != strings.grad.objetivosTexto
            
             h1.session-title
-              | Estrutura acadêmica
-            p.session-body.
-              O Programa segue a regulamentação geral da Universidade de São Paulo 
-              formalizada no Regimento da Pós-Graduação; os órgãos deliberativos são o 
-              Conselho de Pós-Graduação da Universidade de São Paulo e a Comissão de 
-              Pós-Graduação da Escola Politécnica, e os executivos responsáveis são o 
-              Pró-Reitor de Pós-Graduação, o Presidente da Comissão de Pós-Graduação e 
-              os Coordenadores de cada Programa.
+              != strings.grad.estruturaAcademica
+            p.session-body
+              != strings.grad.estruturaAcademicaTexto
           
             h1.session-title
-              | Admissão no Programa
+              != strings.grad.admissao
             h2.session-subtitle
-              | Candidatos ao Mestrado 
-            p.session-body.
-              Devem realizar exame de ingresso aplicado pelo 
-              programa de pós graduação do departamento, contendo questões básicas 
-              sobre Engenharia Metalúrgica e de Materiais. O exame de ingresso será 
-              eliminatório, cuja nota mínima deve ser 5,0 (cinco). O candidato tem a 
-              possibilidade de, no ato da inscrição para a prova de ingresso, optar 
-              por concorrer a bolsa de estudos pela CAPES ou CNPq, conforme 
-              disponibilidade, sendo as bolsas distribuídas conforme a classificação 
-              das notas dos candidatos concorrentes a bolsa.
+              != strings.grad.candidatoMestrado 
+            p.session-body
+              != strings.grad.candidatoMestradoTexto
             h2.session-subtitle
-              | Candidatos ao Doutorado
-            p.session-body.
-              Candidatos ao Doutorado, devem realizar exame de ingresso aplicado pelo 
-              programa de pós graduação do departamento, contendo questões básicas 
-              sobre Engenharia Metalúrgica e de Materiais. O exame de ingresso será 
-              eliminatório, cuja nota mínima deve ser 5,0 (cinco). O candidato tem a 
-              possibilidade de, no ato da inscrição para a prova de ingresso, optar 
-              por concorrer a bolsa de estudos pela CAPES ou CNPq, conforme 
-              disponibilidade, sendo as bolsas distribuídas conforme a classificação 
-              das notas dos candidatos concorrentes a bolsa. O candidato que já tenha 
-              sido aprovado no exame de suficiência para mestrado em Engenharia 
-              Metalúrgica e de Materiais no PMT, não precisará fazer novamente o 
-              exame de ingresso.
-            strong
-              | Verifique mais informações nas Regras do Programa de Pós Graduação, disponível neste site.
+              != strings.grad.candidatoDoutorado
+            p.session-body
+              != strings.grad.candidatoDoutoradoTexto
           
           
             h1.session-title
-              | Obtenção do título
-            p.session-body.
-              Para a obtenção do título de Mestre, os candidatos a Mestrado devem obter 
-              créditos equivalentes a 5 disciplinas de pós-graduação, apresentar exame 
-              de qualificação perante banca de três professores (com um trabalho 
-              completo em Congresso) e ter a Dissertação aprovada por banca de 
-              três professores, sendo obrigatoriamente um deles externo ao Programa. 
-              Para estar apto para a defesa o aluno necessita submeter um trabalho 
-              para revista internacional. Os mestrandos deverão ser aprovados em 
-              exame de inglês.
-            br/
-            p.session-body.
-              Os portadores do título de Mestre podem obter o título de Doutor em 
-              Ciências após a integralização de créditos equivalentes a 3 disciplinas 
-              de pós-graduação, exame de qualificação (com dois trabalhos completos 
-              em Congresso) e defesa de Tese perante Banca de 5 professores, dos 
-              quais no mínimo dois externos ao programa.  Para estar apto para a 
-              defesa o aluno necessita submeter dois trabalho para revista 
-              internacional. Os doutorandos deverão ser aprovados em exame de inglês.
+              != strings.grad.obtencaoTitulo
+            p.session-body
+              != strings.grad.obtencaoTituloTexto
           
         .col-sm-3.col-sm-pull-9
           .sidebar
             h2.sidebar-title
-              | Informações
+              != strings.grad.informacoes
             
             p.session-body
               strong
-                | Coordenador: 
+                != strings.grad.coordenador
               a(href=home_path+"equipe/docentes/andre-paulo-tschiptschin/index.html")
                 | Prof. Dr. André Paulo Tschiptschin
               br/
               strong
-                | Secretária: 
+                != strings.grad.secretaria
               a(href="mailto:suellen.alves@usp.br")
                 | Suellen Alves
           .sidebar
             h2.sidebar-title
-              | Documentos & Formulários
+              != strings.grad.docs
             
             ul
               each document in documents
                 li.sidebar-body
                   a(href=document.url target="_blank")
-                    | #{document.title}
+                    - if (lang == "en") 
+                      | #{document.title_en}
+                    - if (lang == "es") 
+                      | #{document.title_es}
+                    - if (lang == "pt_br") 
+                      | #{document.title}

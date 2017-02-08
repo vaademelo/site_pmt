@@ -11,9 +11,10 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = { "Home" : home_path, 
-                         "Equipe" : home_path+"equipe/index.html",
-                         "Corpo Docente" : ""}
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.equipe] = home_path + "equipe/index.html"
+    breadcrumbs_path[strings.breadcrumbs.docentes] = false
                          
 block content
 
@@ -24,7 +25,7 @@ block content
       include _professores-info/professores-info.jade
       
       .session-title
-        | Corpo Docente
+        != strings.equipe.corpoDocente.corpoDocente
       
       each professor in professors 
         .row.professor
@@ -42,27 +43,27 @@ block content
             
             .professor-info
               span.field-title 
-                | Telefone: 
+                != strings.equipe.corpoDocente.telefone
               span.field-body
                 | #{professor.phone}
             
             .professor-info
               span.field-title 
-                | E-mail: 
+                != strings.equipe.corpoDocente.email
               a(href="mailto:"+professor.email)  
                 span.field-body
                   | #{professor.email}
             
             .professor-info
               span.field-title 
-                | Professor(a): 
+                != strings.equipe.corpoDocente.professor
               span.field-body
                 | #{professor.category}
                 
                 
             .professor-info.research-area
               span.field-title 
-                | Áreas de Pesquisa: 
+                != strings.equipe.corpoDocente.areaPesquisa
               each area in professor.research
                 span.field-body
                   | #{area}

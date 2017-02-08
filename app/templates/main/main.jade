@@ -1,7 +1,13 @@
-include ../../../config/paths.jade
+- if (lang == "en") 
+  include ../../../config/paths_en.jade
+  include ../../../config/locale/en.jade
+
+- if (lang == "pt_br") 
+  include ../../../config/paths.jade
+  include ../../../config/locale/pt_br.jade
 
 block page-name
-  - var page_name = "O Departamento"
+  - var page_name = strings.template.main.pageName
 
 - var page_title = page_name + " | PMT - POLI/USP"
 
@@ -10,16 +16,21 @@ block before
 block page-title 
 
 block home
+  
   - var home_path = "../../"
   
 block assets
-  - var assets = home_path + "assets/"
+  - if (lang == "pt_br") 
+    - var assets = home_path + "assets/"
+  
+  - if (lang == "en") 
+    - var assets = home_path + "../assets/"
 
 block stylesheet
   - var stylesheet = ""
   
 doctype html
-html(lang="pt-br")
+html(lang=lang)
   head
     meta(http-equiv="X-UA-Compatible", content="IE=8")/
     meta(charset="utf-8")

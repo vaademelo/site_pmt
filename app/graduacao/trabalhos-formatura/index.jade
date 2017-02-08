@@ -7,35 +7,62 @@ block stylesheet
   - var stylesheet = "graduacao.min.css"
   
 block page-title
-  - page_title = "Estágio - " + page_title
+  - page_title = strings.breadcrumbs.tf + " - " + page_title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home"   : home_path,
-                        "Graduação" : home_path + "graduacao/index.html",
-                        "Trabalhos de Formatura" : false}
-
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.graduacao] = home_path + "graduacao/index.html"
+    breadcrumbs_path[strings.breadcrumbs.tf] = false
+  
 block content
 
   .graduacao-programa
     .container
       .session
         h1.session-title
-          | Trabalhos de Formatura
+          != strings.undergrad.tf.tf
         
         p.session-subtitle
-          | Normas e Diretrizes:
+          != strings.undergrad.tf.normasDiretrizes
         p
           ul
             
             li
               a(href="http://www.usp.br/prolam/ABNT_2011.pdf" target="_blank")
                 span.field-body  
-                  | Normas ABNT
+                  != strings.undergrad.tf.normasABNT
               span(class="external-link glyphicon glyphicon-new-window")
 
             li
-              a(href="http://www.teses.usp.br/index.php?option=com_content&view=article&id=52&Itemid=67&lang=pt-br" target="_blank")
+              a(href="http://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/111" target="_blank")
                 span.field-body  
-                  | Guia de formatação dos trabalhos de conclusão de curso
+                  - if (lang == "en") 
+                    | [Portuguese] 
+                  | Diretrizes para apresentação de dissertações e teses da USP: parte I (ABNT) 
+              span(class="external-link glyphicon glyphicon-new-window")
+            
+            li
+              a(href="http://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/112" target="_blank")
+                span.field-body  
+                  - if (lang == "en") 
+                    | [Portuguese] 
+                  | Diretrizes para apresentação de dissertações e teses da USP: parte II (APA)
+              span(class="external-link glyphicon glyphicon-new-window")
+              
+            li
+              a(href="http://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/113" target="_blank")
+                span.field-body  
+                  - if (lang == "en") 
+                    | [Portuguese] 
+                  | Diretrizes para apresentação de dissertações e teses da USP: parte III (ISO)
+              span(class="external-link glyphicon glyphicon-new-window")
+              
+            li
+              a(href="http://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/115" target="_blank")
+                span.field-body  
+                  - if (lang == "en") 
+                    | [Portuguese] 
+                  | Diretrizes para apresentação de dissertações e teses da USP: parte IV (Vancouver)
               span(class="external-link glyphicon glyphicon-new-window")

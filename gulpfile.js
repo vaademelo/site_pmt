@@ -10,13 +10,21 @@ var gulp = require('gulp'),
 
 gulp.task("templates", function(){
 
-  var YOUR_LOCALS = {};
+  var YOUR_LOCALS = {lang: "en"};
 
   gulp.src("app/**/index.jade")
     .pipe(jade({
       locals: YOUR_LOCALS
     }))
-    // .pipe(charset({to: 'utf8'}))
+    .pipe(gulp.dest('../deploy/en/'));
+
+  YOUR_LOCALS = {lang: "pt_br"};
+
+  // Then the english language version.
+  gulp.src("app/**/index.jade")
+    .pipe(jade({
+      locals: YOUR_LOCALS
+    }))
     .pipe(gulp.dest('../deploy/'));
 });
 

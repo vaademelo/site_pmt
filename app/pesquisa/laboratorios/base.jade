@@ -1,7 +1,10 @@
 extends ./../../templates/main/main.jade
 
 block page-name
-  - var page_name = "Pesquisa"
+  - if (lang == "en")
+    - var page_name = "Research"
+  - if (lang == "pt_br")
+    - var page_name = "Pesquisa"
 
 block home
   - var home_path = "../../../"
@@ -14,12 +17,12 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home" : home_path,
-                        "Pesquisa": home_path + "/pesquisa/index.html",
-                        "Laboratórios" : home_path + "/pesquisa/laboratorios/index.html"}
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.pesquisa] = "nolink"
+    breadcrumbs_path[strings.breadcrumbs.laboratorios] = home_path + "/pesquisa/index.html",
+    breadcrumbs_path[laboratory_name] = false 
   
-  - breadcrumbs_path[laboratory_name] = "" 
-
 block content
 
   include ./_lab-info/lab-info.jade
@@ -40,12 +43,18 @@ block content
     .container
       #departamento-overview.session
         h1.session-title
-          | !{laboratory.initials} - #{laboratory.name}
+          - if (lang == "pt_br") 
+            | !{laboratory.initials} - #{laboratory.name}
+          - if (lang == "en") 
+            | !{laboratory.initials} - #{laboratory.name_en}
         .row
           .col-md-12
             p.session-body
               strong
-                | Professor responsável: 
+                - if (lang == "pt_br") 
+                  | Professor responsável: 
+                - if (lang == "en") 
+                  | Responsible Professor: 
               a(href=home_path+"equipe/docentes/"+professor.page+"index.html" target="_blank")
                 if professor.name
                   | #{professor.accademicTitle} #{professor.name}
@@ -53,23 +62,43 @@ block content
                   | #{laboratory.professor}
             p.session-body
               strong
-                | Telefone: 
+                - if (lang == "pt_br") 
+                  | Telefone: 
+                - if (lang == "en")
+                  | Phone: 
               | #{laboratory.phone_number}
             if (laboratory.external_site_url)
               p.session-body
                 strong
-                  | Site do laboratório: 
+                  - if (lang == "pt_br") 
+                    | Site do laboratório: 
+                  - if (lang == "en") 
+                    | laboratory's homepage:
                 a(href=laboratory.external_site_url target="_blank")
                   | !{laboratory.initials} 
             h2.session-subtitle
-              | Atividades
+              - if (lang == "pt_br") 
+                | Atividades
+              - if (lang == "en") 
+                | Activities
             p.session-body
-              | #{laboratory.activities}
+              - if (lang == "pt_br") 
+                | #{laboratory.activities}
+              - if (lang == "en") 
+                | #{laboratory.activities_en}
         .row
           .col-sm-12
             h2.session-subtitle
-              | Principais equipamentos
+              - if (lang == "pt_br") 
+                | Principais equipamentos
+              - if (lang == "en") 
+                | Main equipments
             ul.session-body
-              each equipment in laboratory.equipments
-                li
-                  | #{equipment}
+              - if (lang == "pt_br") 
+                each equipment in laboratory.equipments
+                  li
+                    | #{equipment}
+              - if (lang == "en") 
+                each equipment in laboratory.equipments_en
+                  li
+                    | #{equipment}

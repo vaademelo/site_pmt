@@ -6,7 +6,10 @@ footer
           ul
             li
               span.share
-                | COMPARTILHE O PMT 
+                - if (lang == "en") 
+                  | SHARE THE PMT
+                - if (lang == "pt_br")
+                  | COMPARTILHE O PMT 
             li
               div(class="fb-share-button" data-href="http://www.pmt.usp.br" data-layout="button_count" data-mobile-iframe="true")
             li
@@ -19,66 +22,137 @@ footer
       .row
         .col-sm-4
           h3.footer-title
-            | O Departamento
+            - if (lang == "en") 
+              | The Department
+            - if (lang == "pt_br") 
+              | O Departamento
           ul  
-            each page in paths["O Departamento"]
-              li 
-                a(href=home_path+page.relative_path)
-                  | #{page.name}
+            - if (lang == "en") 
+              each page in paths["The Department"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
+            - if (lang == "pt_br") 
+              each page in paths["O Departamento"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
           
           h3.footer-title
-            | Equipe
+            - if (lang == "en") 
+              | People
+            - if (lang == "pt_br")
+              | Equipe
           ul  
-            each page in paths["Equipe"]
-              li 
-                a(href=home_path+page.relative_path)
-                  | #{page.name}
+            - if (lang == "en") 
+              each page in paths["People"]
+                li 
+                  a(href=home_path+page.relative_path)
+              
+            - if (lang == "pt_br") 
+              each page in paths["Equipe"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
         
         .col-sm-4
           h3.footer-title
-            | Graduação
+            - if (lang == "en") 
+              | Undergraduate
+            - if (lang == "pt_br")
+              | Graduação
           ul  
-            each page in paths["Graduação"]
-              li 
-                a(href=home_path+page.relative_path)
-                  | #{page.name}
+            - if (lang == "en") 
+              each page in paths["Undergraduate"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
+
+            - if (lang == "pt_br") 
+              each page in paths["Graduação"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
 
           h3.footer-title
-            | Pós-Graduação
+            - if (lang == "en") 
+              | Graduate
+            - if (lang == "pt_br")
+              | Pós-Graduação
           ul  
-            each page in paths["Pós-Graduação"]
-              li 
-                a(href=home_path+page.relative_path)
-                  | #{page.name}
+            - if (lang == "en") 
+              each page in paths["Graduate"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
+            - if (lang == "pt_br") 
+              each page in paths["Pós-Graduação"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
 
         .col-sm-4
           h3.footer-title
-            | Pesquisa
+            - if (lang == "en") 
+              | Research
+            - if (lang == "pt_br")
+              | Pesquisa
           ul  
-            each page in paths["Pesquisa"]
-              li 
-                a(href=home_path+page.relative_path)
-                  | #{page.name}
+            - if (lang == "en") 
+              each page in paths["Research"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
+            - if (lang == "pt_br") 
+              each page in paths["Pesquisa"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
           
           h3.footer-title
-            | Extensão e Cultura
+            - if (lang == "en") 
+              | Extension and Culture
+            - if (lang == "pt_br")
+              | Extensão e Cultura
           ul  
-            each page in paths["Extensão e Cultura"]
-              li 
-                a(href=home_path+page.relative_path)
-                  | #{page.name}
+            - if (lang == "en") 
+              each page in paths["Extension and Culture"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
+            - if (lang == "pt_br") 
+              each page in paths["Extensão e Cultura"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
                   
           h3.footer-title
-            | Diversos
+            - if (lang == "en") 
+              | Misc
+            - if (lang == "pt_br")
+              | Diversos
           ul  
-            each page in paths["Diversos"]
-              li 
-                a(href=home_path+page.relative_path)
-                  | #{page.name}
+            - if (lang == "en")
+              each page in paths["Misc"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
+            - if (lang == "pt_br")  
+              each page in paths["Diversos"]
+                li 
+                  a(href=home_path+page.relative_path)
+                    | #{page.name}
       .row
         .col-sm-12
           p.copyright
-            != "&copy; " + new Date().getFullYear() + " - Departamento de Engenharia Metalúrgica e de Materiais da Escola Politécnica de Universidade de São Paulo"
+            - if (lang == "en") 
+              != "&copy; " + new Date().getFullYear() + " - Department of Metallurgical and Materials Engineering - Polytechnic School - University of São Paulo"
+            - if (lang == "pt_br") 
+              != "&copy; " + new Date().getFullYear() + " - Departamento de Engenharia Metalúrgica e de Materiais da Escola Politécnica de Universidade de São Paulo"
+              
             br/
             span(style="font-size: 12px;")
-              | Este site é melhor visualizado em navegadores atualizados e compatíveis como Firefox, Opera ou Google Chrome.
+              - if (lang == "en") 
+                | THis website is better viewed in compatible and updated browsers as Firefox, Opera or Google Chrome.
+              - if (lang == "pt_br")
+                | Este site é melhor visualizado em navegadores atualizados e compatíveis como Firefox, Opera ou Google Chrome.

@@ -44,13 +44,13 @@ block content
           
           .info-row
             span.field-title 
-              | Telefone: 
+              != strings.equipe.corpoDocente.template.telefone
             span.field-body  
               | #{professor.phone}
           
           .info-row
             span.field-title 
-              | E-mail:
+              != strings.equipe.corpoDocente.template.email
             a(href="mailto:"+professor.email target="_blank")
               span.field-body  
                 | #{professor.email}
@@ -58,14 +58,14 @@ block content
           if professor.laboratory.name
             .info-row
               span.field-title 
-                | Laboratório: 
+                != strings.equipe.corpoDocente.template.laboratorio
               a(href=professor.laboratory.link)
                 span.field-body  
                   | #{professor.laboratory.name}
                 
           .info-row
             span.field-title 
-              | Professor(a):           
+              != strings.equipe.corpoDocente.template.professor
             span.field-body  
               | #{professor.category}      
           
@@ -81,7 +81,7 @@ block content
         .col-md-12
           
           h3.session-title
-            | Formação Acadêmica
+            != strings.equipe.corpoDocente.template.formacaoAcademica
           
           each info in education_background
             .row
@@ -104,11 +104,11 @@ block content
       .row.session.professor-modules
         .col-md-12
           h3.session-title
-            | Disciplinas Ministradas no Departamento
+            != strings.equipe.corpoDocente.template.disciplinas
           
           if undergraduation_module.length > 0
             h4.session-subtitle
-              | Graduação
+              != strings.equipe.corpoDocente.template.grad
             
             ul
               each module in undergraduation_module
@@ -117,7 +117,7 @@ block content
                     | #{module.name}
           if graduation_module.length > 0
             h4.session-subtitle
-              | Pós-Graduação
+              != strings.equipe.corpoDocente.template.posgrad
 
             ul
               each module in graduation_module
@@ -128,10 +128,10 @@ block content
       .row.session.research
         .col-md-12
           h3.session-title
-            | Linhas de Pesquisa e Consultorias
+            != strings.equipe.corpoDocente.template.linhaPesquisaConsultorias
             
           h4.session-subtitle
-            | Linhas de Pesquisa
+            != strings.equipe.corpoDocente.template.linhaPesquisa
           
           ul
             each area in research_areas
@@ -141,7 +141,7 @@ block content
           
           if (consultings.length > 0)
             h4.session-subtitle
-              | Consultorias
+              != strings.equipe.corpoDocente.template.consultoria
 
             ul
               each consulting in consultings

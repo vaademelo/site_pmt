@@ -7,13 +7,14 @@ block stylesheet
   - var stylesheet = "graduacao.min.css"
   
 block page-title
-  - page_title = "Estágio - " + page_title
+  - page_title = strings.breadcrumbs.estagio + " - " + page_title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home"   : home_path,
-                        "Graduação" : home_path + "graduacao/index.html",
-                        "Estágio" : false}
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.graduacao] = home_path + "graduacao/index.html"
+    breadcrumbs_path[strings.breadcrumbs.estagio] = false
 
 block content
 
@@ -21,47 +22,41 @@ block content
     .container
       .session
         h1.session-title
-          | Estágio
+          != strings.undergrad.estagio.estagio
         
-        p.session-body.
-          Os estágios de estudantes de graduação e pós-graduação da Escola Politécnica obedecem aos termos da Nova Lei de Estágio – Lei 11.788, de 25 de setembro de 2008 e são regidos pela Resolução USP No 5.528 (18-03-2009). O objetivo do estágio é propiciar a complementação do ensino e da aprendizagem, constituindo instrumento de integração em termos de treinamento prático, aperfeiçoamento técnico-cultural, científico e de relacionamento humano. O estágio pode ser realizado na comunidade em geral ou junto a pessoas jurídicas de direito público ou privado, sob responsabilidade e coordenação da instituição de ensino.
-          <br /><br />
-          É permitido aos alunos da Poli realizar estágios a partir do 3º ano do curso de graduação. O aluno precisa dividir seu tempo entre as atividades acadêmicas e do estágio. Nessa modalidade, os estágios são divididos em não obrigatórios (não incluídos no currículo escolar) e obrigatórios (incluídos no currículo, contando como crédito para as disciplinas). 
-          <br /><br />
-          Cada estágio deve ser planejado, realizado, acompanhado e avaliado levando em conta os currículos, programas e calendários escolares dos cursos. A jornada de atividade em estágio deve ser compatível com o horário escolar e com o funcionamento da empresa ou entidade que oferece o estágio. No entanto, nos períodos de férias escolares, o aluno pode negociar de estágio  diferenciado, estabelecido em comum acordo com o concedente.
-          <br /><br />
-          O aluno da Poli que estagiar em qualquer empresa ou instituição não deve criar vínculo empregatício com a mesma. No entanto, pode receber bolsa-estágio e, obrigatoriamente, tem de estar segurado contra acidentes e receber a cobertura previdenciária prevista em lei.
+        p.session-body
+          != strings.undergrad.estagio.estagioTexto
            
         p.session-subtitle
-          | Regulamentação:
+          != strings.undergrad.estagio.regulamentacao
         p
           ul
             li
               a(href="http://www.poli.usp.br/pt/ensino/graduacao/aluno/atendimento-ao-aluno/estagios/informacoes-para-o-aluno/149-orientacoes-gerais.html" target="_blank")
                 span.field-body  
-                  | Orientações gerais
+                  != strings.undergrad.estagio.orientacoes
               span(class="external-link glyphicon glyphicon-new-window") 
             li
               a(href="http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2008/Lei/L11788.htm" target="_blank")
                 span.field-body  
-                  | Lei federal de estágios (Governo Federal, Lei 11788 de 25 de setembro de 2008)
+                  != strings.undergrad.estagio.leiEstagio
               span(class="external-link glyphicon glyphicon-new-window")
 
             li
               a(href="http://www.leginf.usp.br/?resolucao=resolucao-no-5528-de-18-de-marco-de-2009" target="_blank")
                 span.field-body  
-                  | Graduação
+                  != strings.undergrad.estagio.graduacao
               span(class="external-link glyphicon glyphicon-new-window")
 
             li
               a(href="http://www.leginf.usp.br/?resolucao=resolucao-no-6090-de-26-de-marco-de-2012" target="_blank")
                 span.field-body  
-                  | Concessão de estágios na USP (Resolução no. 5528 de 18 de março de 2009)
+                  != strings.undergrad.estagio.concessao
               span(class="external-link glyphicon glyphicon-new-window")
 
             li
               a(href="http://www.poli.usp.br/images/stories/media/download/estagios/regulamentacao-estagios-poli.pdf" target="_blank")
                 span.field-body  
-                  | Regulamentação de estágios na Escola Politécnica:
+                  != strings.undergrad.estagio.regulamentacao
               span(class="external-link glyphicon glyphicon-new-window")
         

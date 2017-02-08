@@ -1,4 +1,8 @@
 extends ./../templates/main/main.jade
 
 block page-name
-  - var page_name = "Diversos"
+  - if (lang == "en") 
+    - var page_name = "Misc"
+  - if (lang == "pt_br") 
+    - var page_name = "Diversos"
+  

@@ -11,9 +11,10 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = { "Home" : home_path, 
-                         "Equipe" : home_path+"equipe/index.html",
-                         "Equipe de Apoio" : ""}
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.equipe] = home_path + "equipe/index.html"
+    breadcrumbs_path[strings.breadcrumbs.apoio] = false
                          
 block content
 
@@ -24,7 +25,7 @@ block content
       include _staff-info/staff-info.jade
       
       .session-title
-        | Equipe de Apoio
+        != strings.equipe.funcionarios.equipeApoio
       
       each staffMember in staff 
         if staffMember.status === "active"
@@ -38,14 +39,14 @@ block content
               
               .staff-info
                 span.field-title 
-                  | Cargo: 
+                  != strings.equipe.funcionarios.cargo
                 span.field-body
                   | #{staffMember.function}
               
               if staffMember.email
                 .staff-info
                   span.field-title 
-                    | E-mail: 
+                    != strings.equipe.funcionarios.email
                   a(href="mailto:"+staffMember.email)  
                     span.field-body
                       | #{staffMember.email}
@@ -53,14 +54,14 @@ block content
               if staffMember.phone
                 .staff-info
                   span.field-title 
-                    | Telefone:   
+                    != strings.equipe.funcionarios.telefone 
                   span.field-body
                     | #{staffMember.phone}
                     
               if staffMember.fax
                 .staff-info
                   span.field-title 
-                    | Fax:   
+                    != strings.equipe.funcionarios.fax 
                   span.field-body
                     | #{staffMember.fax}
               

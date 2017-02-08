@@ -11,19 +11,20 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home" : home_path,
-                        "Diversos" : home_path + "diversos/index.html",
-                        "Sites & Links Externos" : false }
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.diversos] = home_path + "diversos/index.html"
+    breadcrumbs_path[strings.breadcrumbs.sitesLinks] = false
 
 block content
   .diversos-sites-links
     .container
       .session
         .session-title
-          | Sites & Links Externos
+          != strings.diversos.sitesLinks.sitesLinks
         
         .session-subtitle
-          | Poli USP
+          != strings.diversos.sitesLinks.poli
         ul
           li
             a(href="http://sites.poli.usp.br/org/informativos/guiapoli/guiapoli2014-versaoWeb.pdf" target="_blank") 
@@ -32,7 +33,7 @@ block content
             
       .session
         .session-subtitle
-          | Acervo Bibliográfico
+          != strings.diversos.sitesLinks.acervo
         ul
           li
             a(href="http://www5.usp.br/pesquisa/bibliotecas/" target="_blank") 
@@ -69,7 +70,7 @@ block content
       
       .session
         .session-subtitle
-          | Comunidade Científica, Ferramentas de Busca Científica e Redes Sociais Acadêmicas
+          != strings.diversos.sitesLinks.comunidade
         ul
           li
             a(href="https://www.researchgate.net/institution/University_of_Sao_Paulo/department/Departamento_de_Engenharia_Metalurgica_e_de_Materiais_PMT_POLI" target="_blank") 
@@ -102,7 +103,7 @@ block content
           
       .session
         .session-subtitle
-          | Fundações de Amparo/Apoio à Pesquisa
+          != strings.diversos.sitesLinks.fundacoes
         ul
           li
             a(href="http://www.cnpq.br/" target="_blank") 
@@ -119,7 +120,7 @@ block content
       
       .session
         .session-subtitle
-          | Associações Técnicas e Científicas Brasileiras & Latino-Americanas
+          != strings.diversos.sitesLinks.associacoes
         ul
           li
             a(href="http://www.abmbrasil.com.br/" target="_blank") 
@@ -152,7 +153,7 @@ block content
 
       .session
         .session-subtitle
-          | Associações Técnicas e Científicas Estrangeiras
+          != strings.diversos.sitesLinks.associacoesEstrangeiras
         ul
           li
             a(href="http://www.tms.org/TMSHome.aspx" target="_blank") 
@@ -177,7 +178,7 @@ block content
       
       .session
         .session-subtitle
-          | Sites de Engenharia
+          != strings.diversos.sitesLinks.engenharia
         ul
           li
             a(href="http://politecnicos.org.br/" target="_blank") 
