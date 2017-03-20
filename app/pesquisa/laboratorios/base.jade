@@ -20,7 +20,7 @@ block breadcrumbs-path
     breadcrumbs_path = {}
     breadcrumbs_path[strings.breadcrumbs.home] = home_path
     breadcrumbs_path[strings.breadcrumbs.pesquisa] = "nolink"
-    breadcrumbs_path[strings.breadcrumbs.laboratorios] = home_path + "/pesquisa/index.html",
+    breadcrumbs_path[strings.breadcrumbs.laboratorios] = home_path + "pesquisa/laboratorios/index.html",
     breadcrumbs_path[laboratory_name] = false 
   
 block content
@@ -73,7 +73,7 @@ block content
                   - if (lang == "pt_br") 
                     | Site do laboratório: 
                   - if (lang == "en") 
-                    | laboratory's homepage:
+                    | laboratory's homepage: 
                 a(href=laboratory.external_site_url target="_blank")
                   | !{laboratory.initials} 
             h2.session-subtitle
@@ -96,9 +96,7 @@ block content
             ul.session-body
               - if (lang == "pt_br") 
                 each equipment in laboratory.equipments
-                  li
-                    | #{equipment}
+                  li!= equipment
               - if (lang == "en") 
                 each equipment in laboratory.equipments_en
-                  li
-                    | #{equipment}
+                  li!= equipment

@@ -6,34 +6,7 @@ block content
     .container
   
       block professor-info
-        -
-          professor = {name = "Nome", 
-                      picture_path : "assets/img/professores/profAndrePauloTschiptschin.jpg", 
-                      phone : "Telefone",
-                      email : "Email",
-                      category : "Categoria",
-                      laboratory : { name: "Nome Laboratório", link: "#" },
-                      lattes: "Link Lattes" } 
-        -
-          education_background = [{ year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: false },
-                                  { year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: false },
-                                  { year : "Ano", title : "Título do Curso", university : "Nome da Universidade", link_university: "#" }]   
         
-        -
-          undergraduation_module = [{ name : "Nome da Disciplina", link : "#" },
-                                    { name : "Nome da Disciplina", link : "#" },
-                                    { name : "Nome da Disciplina", link : "#" }]
-        -
-          graduation_module = [{ name : "Nome da Disciplina", link : "#" },
-                              { name : "Nome da Disciplina", link : "#" },
-                              { name : "Nome da Disciplina", link : "#" }]
-                              
-        -
-          research_areas = ["Área1","Área2","Área3"]
-          
-        -
-          consultings = []
-    
       .row.session.professor-general-info
         .col-sm-3.professor-picture
           img(alt="Imagem do Professor" src=professor.picture_path)
@@ -75,7 +48,23 @@ block content
             a(href=professor.lattes target="_blank")
               span.field-body  
                 | #{professor.lattes}
-              span(class="external-link glyphicon glyphicon-new-window")  
+            span(class="external-link glyphicon glyphicon-new-window")  
+              
+          .info-row
+            span.field-title 
+              | Researcher ID:
+            a(href="http://www.researcherid.com/rid/" + professor.researcherId target="_blank")
+              span.field-body  
+                | #{professor.researcherId}
+            span(class="external-link glyphicon glyphicon-new-window")  
+              
+          .info-row
+            span.field-title 
+              | ORCID:
+            a(href="http://orcid.org/" + professor.orcid target="_blank")
+              span.field-body  
+                | #{professor.orcid}
+            span(class="external-link glyphicon glyphicon-new-window")  
 
       .row.session.professor-academic-background
         .col-md-12
@@ -97,7 +86,7 @@ block content
                   if info.link
                     a(href=info.link target="_blank")
                       | #{info.university}
-                      span(class="external-link glyphicon glyphicon-new-window")  
+                    span(class="external-link glyphicon glyphicon-new-window")  
                   else
                     | #{info.university}
 
@@ -136,12 +125,12 @@ block content
           ul
             each area in research_areas
               li 
-                | #{area}
+                != area
 
           
           if (consultings.length > 0)
             h4.session-subtitle
-              != strings.equipe.corpoDocente.template.consultoria
+              != strings.equipe.corpoDocente.template.consultorias
 
             ul
               each consulting in consultings
