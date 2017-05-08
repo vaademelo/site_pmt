@@ -31,9 +31,9 @@ block content
               .laboratory-name
                 a(href=laboratory.internal_site_url)
                   - if (lang == "pt_br") 
-                    | #{laboratory.name_en} - !{laboratory.initials}
-                  - if (lang == "en") 
                     | #{laboratory.name} - !{laboratory.initials}
+                  - if (lang == "en") 
+                    | #{laboratory.name_en} - !{laboratory.initials}
               .laboratory-info
                 span.field-title
                   != strings.pesquisa.laboratorios.responsavel

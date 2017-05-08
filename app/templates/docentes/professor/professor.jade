@@ -53,10 +53,11 @@ block content
           .info-row
             span.field-title 
               | Researcher ID:
-            a(href="http://www.researcherid.com/rid/" + professor.researcherId target="_blank")
-              span.field-body  
-                | #{professor.researcherId}
-            span(class="external-link glyphicon glyphicon-new-window")  
+            each researcherId in professor.researcherId
+              a(href="http://www.researcherid.com/rid/" + researcherId target="_blank")
+                span.field-body  
+                  | #{researcherId}
+              span(class="external-link glyphicon glyphicon-new-window")  
               
           .info-row
             span.field-title 

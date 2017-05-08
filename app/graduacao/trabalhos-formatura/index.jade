@@ -66,3 +66,51 @@ block content
                     | [Portuguese] 
                   | Diretrizes para apresentação de dissertações e teses da USP: parte IV (Vancouver)
               span(class="external-link glyphicon glyphicon-new-window")
+          
+        include _info_trabalhos_formatura.jade
+        
+        include ../../equipe/docentes/_professores-info/professores-info.jade
+        
+        hr(style="margin-bottom: 70px")
+        
+        each works, year in tfs
+          
+          h1.session-title
+            = year.substring(0,4)
+          
+          table.table.table-striped
+            thead
+              tr
+                th 
+                  != strings.undergrad.tf.title
+                th 
+                  != strings.undergrad.tf.autor
+                th 
+                  != strings.undergrad.tf.professor
+                th
+                  | Download
+            tbody
+              each tf in works
+                tr
+                  td
+                    = tf.title
+                  td
+                    = tf.autor
+                  td
+                    - var professorFound = false
+                    each professor in professors
+                      if professor.name == tf.professor
+                        - professorFound = true
+                        a(href=home_path+"equipe/docentes/"+professor.page+"index.html" target="_blank")
+                          | #{professor.name}
+                    if !professorFound  
+                      | #{tf.professor}
+                  
+                  if tf.file_name
+                    td
+                      a(href=assets + "downloads/TF/" + tf.file_name target="_blank") Download
+                  else
+                    td(style="text-align: center")
+                      span
+                        | -
+                    

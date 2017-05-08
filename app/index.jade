@@ -22,25 +22,26 @@ block content
         .container 
           h1.session-title
             | Últimas Notícias
-          //- a(href=home_path+"noticias/index.html")  
-          //-   span.pull-right.more-news-btn
-          //-     | + Notícias
+          a(href=home_path+"noticias/index.html")  
+            span.pull-right.more-news-btn
+              | + Notícias
           
-          .row
+          //- .row
+          .multiple-items
             each item, index in news.sort(function(a,b){return b.date-a.date})
-              if index < 4
-                .col-sm-3.news-col
-                  .news-block
-                    .news-content
-                      .news-header
-                        h3.news-title
-                          | #{item.title}
-                        p.news-date 
-                          span(class="glyphicon glyphicon-time" aria-hidden="true")
-                          = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
-                      p.news-body 
-                        != item.body
-      
+              if index < 6
+                //- .col-sm-3.news-col
+                .news-block
+                  .news-content
+                    .news-header
+                      h3.news-title
+                        | #{item.title}
+                      p.news-date 
+                        span(class="glyphicon glyphicon-time" aria-hidden="true")
+                        = item.date.getDate() + "." + item.date.getMonth() + "." + item.date.getFullYear() 
+                    p.news-body 
+                      != item.body
+    
   .container.landing
     .row
       .col-sm-9

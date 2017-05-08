@@ -41,7 +41,8 @@ html(lang=lang)
     link(rel="stylesheet" type="text/css" href=assets+"bootstrap/css/bootstrap.min.css")
     link(rel="stylesheet" href=assets+"iconpack/flaticon.css")
     link(rel="stylesheet" href=assets+"css/magnific-popup.css")
-    
+    link(rel="stylesheet" href=assets+"js/slick/slick.css")
+    link(rel="stylesheet" href=assets+"js/slick/slick-theme.css")
     link(rel="stylesheet" href=assets+"css/"+stylesheet)
     
     link(rel="canonical" href="https://dev.twitter.com/web/tweet-button")
@@ -49,51 +50,53 @@ html(lang=lang)
     script(src=assets+"js/jquery-3.1.0.min.js")
     script(src=assets+"bootstrap/js/bootstrap.min.js")
     script(src=assets+"js/jquery.magnific-popup.min.js")
+    script(src=assets+"js/slick/slick.min.js")    
+    
     
     script(src=assets+"js/mobile-header.js")
   
   body
     
-    //- Google Plus share button
-    <!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
-    script(src="https://apis.google.com/js/platform.js" async defer).
-      {lang: 'pt-BR'}
-
-    //- facebook share button script
-    div(id="fb-root")
-    script.
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    
-    //- Linkedin share button script
-    script(src="//platform.linkedin.com/in.js" type="text/javascript")
-      lang: pt_BR
-      
-    //- Twitter share button script
-    script.
-      window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-          t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-       
-        t._e = [];
-        t.ready = function(f) {
-          t._e.push(f);
-        };
-       
-        return t;
-      }(document, "script", "twitter-wjs"));
-
-      
+    //- //- Google Plus share button
+    //- <!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
+    //- script(src="https://apis.google.com/js/platform.js" async defer).
+    //-   {lang: 'pt-BR'}
+    //- 
+    //- //- facebook share button script
+    //- div(id="fb-root")
+    //- script.
+    //-   (function(d, s, id) {
+    //-     var js, fjs = d.getElementsByTagName(s)[0];
+    //-     if (d.getElementById(id)) return;
+    //-     js = d.createElement(s); js.id = id;
+    //-     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    //-     fjs.parentNode.insertBefore(js, fjs);
+    //-     }(document, 'script', 'facebook-jssdk'));
+    //- 
+    //- //- Linkedin share button script
+    //- script(src="//platform.linkedin.com/in.js" type="text/javascript")
+    //-   lang: pt_BR
+    //-   
+    //- //- Twitter share button script
+    //- script.
+    //-   window.twttr = (function(d, s, id) {
+    //-     var js, fjs = d.getElementsByTagName(s)[0],
+    //-       t = window.twttr || {};
+    //-     if (d.getElementById(id)) return t;
+    //-     js = d.createElement(s);
+    //-     js.id = id;
+    //-     js.src = "https://platform.twitter.com/widgets.js";
+    //-     fjs.parentNode.insertBefore(js, fjs);
+    //-    
+    //-     t._e = [];
+    //-     t.ready = function(f) {
+    //-       t._e.push(f);
+    //-     };
+    //-    
+    //-     return t;
+    //-   }(document, "script", "twitter-wjs"));
+    //- 
+    //-   
     include includes/dark_header.jade
     
     include includes/banner.jade
@@ -123,6 +126,8 @@ html(lang=lang)
                 
     block content
     
+    include includes/footer.jade
+      
     script.
       $(document).ready(function() {
         $('.iframe-link').magnificPopup({
@@ -133,8 +138,32 @@ html(lang=lang)
           type:'image'
         });
       });
-    
-    include includes/footer.jade
-        
-          
-            
+      
+      $('.multiple-items').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
