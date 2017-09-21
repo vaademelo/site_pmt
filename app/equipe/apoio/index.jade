@@ -41,7 +41,7 @@ block content
                 span.field-title 
                   != strings.equipe.funcionarios.cargo
                 span.field-body
-                  | #{staffMember.function}
+                  | #{eval("staffMember.function." + lang)}
               
               if staffMember.email
                 .staff-info

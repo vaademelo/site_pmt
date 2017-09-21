@@ -302,11 +302,17 @@ block content
                     != strings.department.admin.adminText11
                 ul
                   li
-                    | Prof. Dr. Guilherme F. B. Lenz e Silva
+                    | Prof. Dr. Flavio Beneduce Neto
                   li  
                     | Prof. Dr. Hercílio Gomes de Melo
                   li  
                     | Prof. Dr. Samuel Toffoli
+                  li
+                    | Prof. Dr. Guilherme F. B. Lenz e Silva
+                    - if (lang == "en")
+                      | &nbsp;(Substitute)
+                    - else
+                      | &nbsp;(Suplente)
                   li  
                     | Prof. Dr. Francisco Rolando Valenzuela Diaz
                     - if (lang == "en")

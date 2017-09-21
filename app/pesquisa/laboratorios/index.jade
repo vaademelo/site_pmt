@@ -51,6 +51,6 @@ block content
                   != strings.pesquisa.laboratorios.atividades
                 span.field-body
                   - if (lang == "pt_br") 
-                    | #{laboratory.activities} 
+                    != laboratory.activities 
                   - if (lang == "en") 
-                    | #{laboratory.activities_en} 
+                    != laboratory.activities_en

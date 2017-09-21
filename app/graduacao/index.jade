@@ -93,32 +93,17 @@ block content
               br/
               strong
                 | #{strings.undergrad.main.secretaria}: 
-              a(href="mailto:patriciasantos@usp.br")
-                | Patricia dos Santos
+              a(href="mailto:vera.santos@usp.br")
+                | Vera Lúcia dos Santos
           
           .sidebar
             h2.sidebar-title
               != strings.undergrad.main.linksUteis
             ul
-              li.sidebar-body
-                a(href="https://uspdigital.usp.br/jupiterweb/jupCalendario2017_final.jsp?codmnu=7920" target="_blank")
-                  - if (lang == "en") 
-                    | Calendar 2017
-                  - if (lang == "pt_br") 
-                    | Calendário 2017 
-              
-              li.sidebar-body
-                a(href="https://uspdigital.usp.br/jupiterweb/jupDisciplinaLista?codcg=3&pfxdisval=PMT&tipo=D" target="_blank")
-                  - if (lang == "en") 
-                    | Courses
-                  - if (lang == "pt_br") 
-                    | Disciplinas oferecidas
-          //- .sidebar
-          //-   h2.sidebar-title
-          //-     | Documentos & Formulários
-          //-   
-          //-   ul
-          //-     each document in documents
-          //-       li.sidebar-body
-          //-         a(href=document.url target="_blank")
-          //-           | #{document.title}
+              each document in documents
+                li.sidebar-body
+                  a(href=document.url target="_blank")
+                    - if (lang == "en") 
+                      | #{document.title.en}
+                    - if (lang == "pt_br") 
+                      | #{document.title.ptBr}

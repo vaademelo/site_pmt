@@ -11,9 +11,10 @@ block page-title
 
 block breadcrumbs-path
   -
-    breadcrumbs_path = {"Home" : home_path,
-                        "Diversos" : false,
-                        "Notícias" : false }
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.diversos] = "nolink"
+    breadcrumbs_path[strings.breadcrumbs.noticias] = false
 
 block content
 
@@ -21,121 +22,121 @@ block content
     .container
       .session
         h1.session-title
-          | Notícias
+          != strings.diversos.noticias.noticias
            
         p.session-subtitle
-          | Notícias e Informações:
+          != strings.diversos.noticias.noticiasEInformacoes
         p
           ul
             li
               a(href="http://www.usp.br/agen/" target="_blank")
                 span.field-body  
-                  | Agência USP de Notícias
+                  != strings.diversos.noticias.agenciaUSP
               span(class="external-link glyphicon glyphicon-new-window") 
             li
               a(href="http://www.poli.usp.br/pt/comunicacao/noticias.html" target="_blank")
                 span.field-body  
-                  | Serviço de comunicação social da POLI-USP
+                  != strings.diversos.noticias.servicoComunicacao
               span(class="external-link glyphicon glyphicon-new-window")
 
       
         p.session-subtitle
-          | Graduação
+          != strings.diversos.noticias.graduate
         p
           ul
             li
               a(href="http://www.prg.usp.br/" target="_blank")
                 span.field-body  
-                  | USP: Pró-Reitoria de Graduação
+                  != strings.diversos.noticias.proReitoriaGraduacao
               span(class="external-link glyphicon glyphicon-new-window") 
             li
               a(href="http://www.poli.usp.br/pt/comunicacao/noticias.html" target="_blank")
                 span.field-body  
-                  | POLI-USP: Graduação
+                  != strings.diversos.noticias.poliGraduacao
               span(class="external-link glyphicon glyphicon-new-window")
 
 
         p.session-subtitle
-          | Intercâmbio USP & CR-Int
+          != strings.diversos.noticias.intercambio
         p
           ul
             li
               a(href="http://www.reitoria.usp.br/intercambio/" target="_blank")
                 span.field-body  
-                  | USP: Programa de Bolsas de Intercâmbio Internacional para Alunos de Graduação
+                  != strings.diversos.noticias.programaBolsaIntercambio
               span(class="external-link glyphicon glyphicon-new-window") 
             li
               a(href="http://www.poli.usp.br/io/comissao-de-relacoes-internacionais.html" target="_blank")
                 span.field-body  
-                  | POLI-USP: Comissão de Relações Internacionais 
+                  != strings.diversos.noticias.crint
               span(class="external-link glyphicon glyphicon-new-window")
 
   
         p.session-subtitle
-          | Jornal CMR
+          != strings.diversos.noticias.jornalCMR
         p
           ul
             li
               a(href="http://www.cmr.poli.usp.br/noticias/Nosso-jornal-esta-de-volta.html" target="_blank")
                 span.field-body  
-                  | Jornal do CMR
+                  != strings.diversos.noticias.jornalCMR
               span(class="external-link glyphicon glyphicon-new-window") 
 
 
         p.session-subtitle
-          | Pesquisa
+          != strings.diversos.noticias.pesquisa
         p
           ul
             li
               a(href="http://www.prp.usp.br/" target="_blank")
                 span.field-body  
-                  | USP: Pró-reitoria de Pesquisa
+                  != strings.diversos.noticias.proreitoriaPesquisa
               span(class="external-link glyphicon glyphicon-new-window") 
             li
               a(href="http://www.poli.usp.br/pt/pesquisa.html" target="_blank")
                 span.field-body  
-                  | POLI-USP
+                  != strings.diversos.noticias.poli
               span(class="external-link glyphicon glyphicon-new-window")
 
 
         p.session-subtitle
-          | Cultura e Extensão
+          != strings.diversos.noticias.culturaEExtensao
         p
           ul
             li
               a(href="http://prceu.usp.br/" target="_blank")
                 span.field-body  
-                  | USP: Pró-reitoria de Cultura e Extensão Universitária
+                  != strings.diversos.noticias.proreitoriaCulturaExtensao
               span(class="external-link glyphicon glyphicon-new-window") 
             li
               a(href="http://www.poli.usp.br/pt/cultura-e-extensao.html" target="_blank")
                 span.field-body  
-                  | POLI-USP: Cultura e Extensão
+                  != strings.diversos.noticias.poliUspCulturaExtensao
               span(class="external-link glyphicon glyphicon-new-window")
 
 
         p.session-subtitle
-          | Pós-Graduação
+          != strings.diversos.noticias.posGraduacao
         p
           ul
             li
               a(href="http://www.prpg.usp.br/index.php/pt-br/" target="_blank")
                 span.field-body  
-                  | USP: Pró-reitoria de Pós-graduação
+                  != strings.diversos.noticias.proReitoriaPosGraduacao
               span(class="external-link glyphicon glyphicon-new-window") 
             li
               a(href="http://www.poli.usp.br/pt/ensino/pos-graduacao/cpg.html" target="_blank")
                 span.field-body  
-                  | POLI-USP: Pós-graduação
+                  != strings.diversos.noticias.poliUspPosGraduacao
               span(class="external-link glyphicon glyphicon-new-window")
 
 
         p.session-subtitle
-          | Escola Politécnica
+          != strings.diversos.noticias.escolaPolitecnica
         p
           ul
             li
               a(href="http://www.poli.usp.br/pt/ensino.html" target="_blank")
                 span.field-body  
-                  | POLI-USP: Ensino
+                  != strings.diversos.noticias.poliUspEnsino
               span(class="external-link glyphicon glyphicon-new-window") 

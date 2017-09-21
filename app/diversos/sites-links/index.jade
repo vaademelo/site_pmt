@@ -13,7 +13,7 @@ block breadcrumbs-path
   -
     breadcrumbs_path = {}
     breadcrumbs_path[strings.breadcrumbs.home] = home_path
-    breadcrumbs_path[strings.breadcrumbs.diversos] = home_path + "diversos/index.html"
+    breadcrumbs_path[strings.breadcrumbs.diversos] = "nolink"
     breadcrumbs_path[strings.breadcrumbs.sitesLinks] = false
 
 block content
@@ -28,7 +28,7 @@ block content
         ul
           li
             a(href="http://sites.poli.usp.br/org/informativos/guiapoli/guiapoli2014-versaoWeb.pdf" target="_blank") 
-              | Guia Poli de Serviços e Atividades
+              != strings.diversos.sitesLinks.guiaPoli
             span(class="external-link-icon glyphicon glyphicon-new-window") 
             
       .session
@@ -37,15 +37,15 @@ block content
         ul
           li
             a(href="http://www5.usp.br/pesquisa/bibliotecas/" target="_blank") 
-              | Bibliotecas
+              != strings.diversos.sitesLinks.biblioteca
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.revistas.usp.br/wp/ " target="_blank") 
-              | Portal de revistas
+              != strings.diversos.sitesLinks.portalRevistas
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.teses.usp.br/" target="_blank") 
-              | Teses e dissertações
+              != strings.diversos.sitesLinks.tesesEDissertacoes
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.sibi.usp.br/" target="_blank") 
@@ -53,7 +53,7 @@ block content
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://buscaintegrada.usp.br/primo_library/libweb/action/search.do?dscnt=1&dstmp=1469476251273&vid=USP&fromLogin=true" target="_blank") 
-              | Portal de busca integrada
+              != strings.diversos.sitesLinks.portalBuscaIntegrada
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://biblioteca.versila.com/" target="_blank") 
@@ -65,7 +65,7 @@ block content
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.dominiopublico.gov.br/pesquisa/PesquisaObraForm.jsp" target="_blank") 
-              | Portal Domínio Público
+              != strings.diversos.sitesLinks.portalDominioPublico
             span(class="external-link-icon glyphicon glyphicon-new-window") 
       
       .session
@@ -107,15 +107,15 @@ block content
         ul
           li
             a(href="http://www.cnpq.br/" target="_blank") 
-              | CNPq: Conselho Nacional de Desenvolvimento Científico e Tecnológico
+              != strings.diversos.sitesLinks.cnpq
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.capes.gov.br/" target="_blank") 
-              | Capes:  Fundação Capes / Ministério da Educação
+              != strings.diversos.sitesLinks.capes
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.fapesp.br/" target="_blank") 
-              | FAPESP: Fundação de Amparo à Pesquisa do Estado de São Paulo
+              != strings.diversos.sitesLinks.fapesp
             span(class="external-link-icon glyphicon glyphicon-new-window") 
       
       .session
@@ -124,31 +124,31 @@ block content
         ul
           li
             a(href="http://www.abmbrasil.com.br/" target="_blank") 
-              | ABM: Associação Brasileira de Metalurgia, Materiais e Mineração
+              != strings.diversos.sitesLinks.abm
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.abpol.com.br/" target="_blank") 
-              | ABPol: Associação Brasileira de Polímeros
+              != strings.diversos.sitesLinks.abpol
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://abceram.org.br/" target="_blank") 
-              | ABCeram: Associação Brasileira de Cerâmica
+              != strings.diversos.sitesLinks.abceram
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.abcarb.org.br/br_abcarb.html" target="_blank") 
-              | ABCarb: Associação Brasileira de Carbono
+              != strings.diversos.sitesLinks.abcarb
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://sbpmat.org.br/pt/" target="_blank") 
-              | SBPMat:  Sociedade Brasileira de Pesquisa em Materiais
+              != strings.diversos.sitesLinks.sbpmat
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.almaco.org.br/" target="_blank") 
-              | ALMACO: Associação Latino-Americana de Materiais Compósitos
+              != strings.diversos.sitesLinks.almaco
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.alafar.org/" target="_blank") 
-              | ALAFAR: Associação Latino-America de Fabricantes de Refratários
+              != strings.diversos.sitesLinks.alafar
             span(class="external-link-icon glyphicon glyphicon-new-window") 
 
       .session
@@ -182,17 +182,17 @@ block content
         ul
           li
             a(href="http://politecnicos.org.br/" target="_blank") 
-              | AEP: Associação dos Engenheiros Politécnicos
+              != strings.diversos.sitesLinks.aep
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.amigosdapoli.com.br/" target="_blank") 
-              | Fundo Patrimonial "Amigos da POLI"
+              != strings.diversos.sitesLinks.fundoPatrimonial
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.creasp.org.br" target="_blank") 
-              | CREA-SP: Conselho Regional de Engenharia de São Paulo
+              != strings.diversos.sitesLinks.creasp
             span(class="external-link-icon glyphicon glyphicon-new-window") 
           li
             a(href="http://www.hsenano.com/pt/index.php" target="_blank") 
-              | HSEnano: Plataforma de Saúde, Segurança e Meio-Ambiente em Nanotecnologia
+              != strings.diversos.sitesLinks.hsenano
             span(class="external-link-icon glyphicon glyphicon-new-window")               

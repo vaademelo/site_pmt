@@ -33,14 +33,25 @@ block content
               span.field-title 
                 != strings.equipe.corpoDocente.template.laboratorio
               a(href=professor.laboratory.link)
-                span.field-body  
-                  | #{professor.laboratory.name}
+                span.field-body 
+                  - if (lang == "pt_br") 
+                    | #{professor.laboratory.name}
+                  - if (lang == "en") 
+                    | #{professor.laboratory.name_en}
+                  - if (lang == "es") 
+                    | #{professor.laboratory.name_en}
+                  
                 
           .info-row
             span.field-title 
               != strings.equipe.corpoDocente.template.professor
             span.field-body  
-              | #{professor.category}      
+              - if (lang == "pt_br") 
+                | #{professor.category}
+              - if (lang == "en") 
+                | #{professor.category_en}
+              - if (lang == "es") 
+                | #{professor.category_es}
           
           .info-row
             span.field-title 
@@ -49,23 +60,34 @@ block content
               span.field-body  
                 | #{professor.lattes}
             span(class="external-link glyphicon glyphicon-new-window")  
-              
-          .info-row
-            span.field-title 
-              | Researcher ID:
-            each researcherId in professor.researcherId
-              a(href="http://www.researcherid.com/rid/" + researcherId target="_blank")
+
+          if professor.researcherId      
+            .info-row
+              span.field-title 
+                | Researcher ID:
+              each researcherId in professor.researcherId
+                a(href="http://www.researcherid.com/rid/" + researcherId target="_blank")
+                  span.field-body  
+                    | #{researcherId}
+                span(class="external-link glyphicon glyphicon-new-window")  
+
+          if professor.orcid  
+            .info-row
+              span.field-title 
+                | ORCID:
+              a(href="http://orcid.org/" + professor.orcid target="_blank")
                 span.field-body  
-                  | #{researcherId}
+                  | #{professor.orcid}
               span(class="external-link glyphicon glyphicon-new-window")  
-              
-          .info-row
-            span.field-title 
-              | ORCID:
-            a(href="http://orcid.org/" + professor.orcid target="_blank")
-              span.field-body  
-                | #{professor.orcid}
-            span(class="external-link glyphicon glyphicon-new-window")  
+          
+          if professor.scopusId
+            .info-row
+              span.field-title 
+                | Scopus ID:
+              a(href="https://www.scopus.com/authid/detail.uri?authorId=" + professor.scopusId target="_blank")
+                span.field-body  
+                  | #{professor.scopusId}
+              span(class="external-link glyphicon glyphicon-new-window")  
 
       .row.session.professor-academic-background
         .col-md-12
@@ -81,7 +103,12 @@ block content
                   
               .col-sm-10.info
                 p.title.field-title
-                  | #{info.title}
+                  - if (lang == "pt_br") 
+                    | #{info.title}
+                  - if (lang == "en") 
+                    | #{info.title_en}
+                  - if (lang == "es") 
+                    | #{info.title_es}
                   
                 p.field-body.university
                   if info.link

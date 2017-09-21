@@ -14,11 +14,11 @@ block page-title
   
 block breadcrumbs-path
   -
-    breadcrumbs_path = { "Home"   : home_path, 
-                         "Equipe" : home_path + "equipe/index.html",  
-                         "Corpo Docente" : home_path + "equipe/docentes/index.html" }
-                         
-  = breadcrumbs_path[professor_name] = ""
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.equipe] = home_path + "equipe/index.html"
+    breadcrumbs_path[strings.breadcrumbs.docentes] = home_path + "equipe/docentes/index.html"
+    breadcrumbs_path[professor_name] = false
 
 block professor-info
    
@@ -40,10 +40,13 @@ block professor-info
                      phone : professorInfo.phone,
                      email : professorInfo.email,
                      category : professorInfo.category,
-                     laboratory : { name: laboratory.name, link: laboratory.internal_site_url},
+                     category_en : professorInfo.category_en,
+                     category_es : professorInfo.category_es,
+                     laboratory : { name_en: laboratory.name_en, name: laboratory.name, link: laboratory.internal_site_url},
                      lattes: professorInfo.lattes,
                      researcherId: professorInfo.researcherId,
-                     orcid: professorInfo.orcid} 
+                     orcid: professorInfo.orcid,
+                     scopusId: professorInfo.scopusId} 
      -
        education_background = professorInfo.academic_backgroud   
      -
