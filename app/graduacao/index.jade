@@ -48,6 +48,26 @@ block content
       .row
         .col-sm-9.col-sm-push-3
           .session
+            p.session-body
+              != strings.undergrad.main.texto1
+              br/
+              br/
+              a(href="https://guiadoestudante.abril.com.br/universidades/entenda-os-criterios-do-premio-melhores-universidades-2016/" target="_blank")
+                != strings.undergrad.main.link1
+            p.session-body
+              .row(style='margin-top: 30px;')
+                .col-md-6.text-center
+                  img(src=`${assets}img/guia_estudante_1.jpg` style='width: 70%;')
+                .col-md-6.text-center
+                  img(src=`${assets}img/guia_estudante_2.jpg` style='width: 70%;')
+              
+              .row(style='margin-top: 30px;')
+                .col-md-6.text-center
+                  img(src=`${assets}img/guia_estudante_3.jpg` style='width: 70%;')
+                .col-md-6.text-center
+                  img(src=`${assets}img/guia_estudante_4.jpg` style='width: 70%;')
+            
+          .session
             h1.session-title
               != strings.undergrad.main.metalurgica
             p.session-body

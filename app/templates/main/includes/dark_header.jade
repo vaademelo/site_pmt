@@ -7,6 +7,15 @@ header
           != strings.menu.poli
         a(class="poli-shorten" href="http://www.poli.usp.br" target="_blank")
           | POLI/USP
+        
+        - if (lang == "en") 
+          a(href='http://www.pmt.usp.br/' style='border: 0px')
+            img(src=`${assets}img/br_flag.jpg` style='width: 30px; margin-left: 10px; margin-top: -5px')          
+        
+        - if (lang == "pt_br") 
+          a(href='http://www.pmt.usp.br/en/' style='border: 0px')
+            img(src=`${assets}img/en_flag.jpg` style='width: 30px; margin-left: 10px; margin-top: -5px')
+
   .header-dark
     .container
       .header-logo

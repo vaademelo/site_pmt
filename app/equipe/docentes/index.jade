@@ -58,14 +58,24 @@ block content
               span.field-title 
                 != strings.equipe.corpoDocente.professor
               span.field-body
-                | #{professor.category}
-                
-                
+                - if (lang == "en") 
+                  | #{professor.category_en}
+                - if (lang == "pt_br")
+                  | #{professor.category}
+                  
             .professor-info.research-area
               span.field-title 
                 != strings.equipe.corpoDocente.areaPesquisa
-              each area in professor.research
-                span.field-body
-                  != area
-                span.comma
+              - if (lang == "en") 
+                each area in professor.research_en
+                  span.field-body
+                    != area
+                  span.comma
                   | , 
+              - if (lang == "pt_br") 
+                each area in professor.research
+                  span.field-body
+                    != area
+                  span.comma
+                    | , 
+              

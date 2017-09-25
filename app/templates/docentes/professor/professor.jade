@@ -131,7 +131,10 @@ block content
               each module in undergraduation_module
                 li 
                   a(href=module.link target="_blank")
-                    | #{module.name}
+                    - if (lang == "en")
+                      | #{module.name_en}
+                    - if (lang == "pt_br")
+                      | #{module.name_pt}
           if graduation_module.length > 0
             h4.session-subtitle
               != strings.equipe.corpoDocente.template.posgrad
@@ -140,7 +143,10 @@ block content
               each module in graduation_module
                 li 
                   a(href=module.link target="_blank")
-                    | #{module.name}
+                    - if (lang == "en")
+                      | #{module.name_en}
+                    - if (lang == "pt_br")
+                      | #{module.name_pt}
               
       .row.session.research
         .col-md-12

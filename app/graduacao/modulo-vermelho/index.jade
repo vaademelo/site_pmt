@@ -1,0 +1,78 @@
+extends ../base.jade
+
+block home
+  - var home_path = "../../"
+  
+block stylesheet
+  - var stylesheet = "graduacao.min.css"
+  
+block page-title
+  - page_title = strings.breadcrumbs.modulo_vermelho + " - " + page_title
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.graduacao] = home_path + "graduacao/index.html"
+    breadcrumbs_path[strings.breadcrumbs.modulo_vermelho] = false
+
+block content
+
+  .graduacao-programa
+    .container
+      .session
+        h1.session-title
+          != strings.undergrad.modulo_vermelho.titulo
+        
+        p.session-body
+          != strings.undergrad.modulo_vermelho.texto1
+
+        p.session-body
+          ul
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto2
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto3
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto4
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto5
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto6
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto7
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto8
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto9
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto10
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto11
+              ul
+                li
+                  span.field-body  
+                    != strings.undergrad.modulo_vermelho.texto12
+                li
+                  span.field-body  
+                    != strings.undergrad.modulo_vermelho.texto13
+            li
+              span.field-body  
+                != strings.undergrad.modulo_vermelho.texto14
+              ul
+                li
+                  span.field-body  
+                    != strings.undergrad.modulo_vermelho.texto15
+                li
+                  span.field-body  
+                    != strings.undergrad.modulo_vermelho.texto16

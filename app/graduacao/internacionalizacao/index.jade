@@ -1,0 +1,94 @@
+extends ../base.jade
+
+block home
+  - var home_path = "../../"
+  
+block stylesheet
+  - var stylesheet = "graduacao.min.css"
+  
+block page-title
+  - page_title = strings.breadcrumbs.internacionalizacao + " - " + page_title
+
+block breadcrumbs-path
+  -
+    breadcrumbs_path = {}
+    breadcrumbs_path[strings.breadcrumbs.home] = home_path
+    breadcrumbs_path[strings.breadcrumbs.graduacao] = home_path + "graduacao/index.html"
+    breadcrumbs_path[strings.breadcrumbs.internacionalizacao] = false
+
+block content
+
+  .graduacao-programa
+    .container
+      .session
+        h1.session-title
+          != strings.undergrad.internacionalizacao.titulo
+        
+        p.session-body
+          != strings.undergrad.internacionalizacao.texto1
+
+        p.session-body
+          != strings.undergrad.internacionalizacao.texto2
+          ul
+            li
+              a(href=`${assets}img/internacional.jpg` class='image-link') 
+                != strings.undergrad.internacionalizacao.link0
+      
+      .session 
+        p.session-body
+          != strings.undergrad.internacionalizacao.texto3
+          ul
+            li
+              a(href="http://www.polytechnique.fr/" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link1
+              span(class="external-link glyphicon glyphicon-new-window")
+            li
+              a(href="http://www.ecp.fr/" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link2
+              span(class="external-link glyphicon glyphicon-new-window")
+            li
+              a(href="http://www.ec-lille.fr/" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link3
+              span(class="external-link glyphicon glyphicon-new-window")
+            li
+              a(href="http://www.ec-nantes.fr/" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link4
+              span(class="external-link glyphicon glyphicon-new-window")
+            li
+              a(href="http://www.ec-lyon.fr/" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link5
+              span(class="external-link glyphicon glyphicon-new-window")
+            li
+              a(href="http://www.enpc.fr/" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link6
+              span(class="external-link glyphicon glyphicon-new-window")
+            li
+              a(href="http://www.enscp.jussieu.fr/" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link7
+              span(class="external-link glyphicon glyphicon-new-window")
+
+        p.session-body
+          != strings.undergrad.internacionalizacao.texto4
+          ul
+            li
+              a(href="http://www3.poli.usp.br/relacoes-internacionais.html" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link8
+              span(class="external-link glyphicon glyphicon-new-window")
+            li
+              a(href="http://www.usp.br/ccint/" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link9
+              span(class="external-link glyphicon glyphicon-new-window")
+            li
+              a(href="http://www.poli.usp.br/pt/a-poli/adm/servico-de-relacoes-internacionais.html" target="_blank")
+                span.field-body  
+                  != strings.undergrad.internacionalizacao.link10
+              span(class="external-link glyphicon glyphicon-new-window")    
